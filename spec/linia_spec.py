@@ -32,20 +32,20 @@ with description('Calculando el TI de una linia'):
                 with it('must be TI-1UX'):
                     for s in range(1, 180):
                         self.l.seccio = s
-                        expect(self.l.tipoinstalacion, 'TI-1UX')
+                        expect(self.l.tipoinstalacion).to(equal('TI-1UX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea simple circuito-Simplex'):
                 with it('must be TI-1UY'):
                     for s in range(181, 300):
                         self.l.seccio = s
-                        expect(self.l.tipoinstalacion, 'TI-1UY')
+                        expect(self.l.tipoinstalacion).to(equal('TI-1UY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea simple circuito-Simplex'):
                 with it('must be TI-1UZ'):
                     self.l.seccio = 301
-                    expect(self.l.tipoinstalacion, 'TI-1UZ')
+                    expect(self.l.tipoinstalacion).to(equal('TI-1UZ'))
 
     with context('si lat tensión > 123 kV'):
         with before.each:
@@ -59,20 +59,20 @@ with description('Calculando el TI de una linia'):
                 with it('must be TI-2UX'):
                     for s in range(1, 180):
                         self.l.seccio = s
-                        expect(self.l.tipoinstalacion, 'TI-2UX')
+                        expect(self.l.tipoinstalacion).to(equal('TI-2UX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea simple circuito-Duplex'):
                 with it('must be TI-2UY'):
                     for s in range(181, 300):
                         self.l.seccio = s
-                        expect(self.l.tipoinstalacion, 'TI-2UY')
+                        expect(self.l.tipoinstalacion).to(equal('TI-2UY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea simple circuito-Duplex'):
                 with it('must be TI-2UZ'):
                     self.l.seccio = 301
-                    expect(self.l.tipoinstalacion, 'TI-2UZ')
+                    expect(self.l.tipoinstalacion).to(equal('TI-2UZ'))
 
     with context('si lat tensión > 123 kV'):
         with before.each:
@@ -86,20 +86,20 @@ with description('Calculando el TI de una linia'):
                 with it('TI-3UX'):
                     for s in range(1, 180):
                         self.l.seccio = s
-                        expect(self.l.tipoinstalacion, 'TI-3UX')
+                        expect(self.l.tipoinstalacion).to(equal('TI-3UX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea doble circuito-Simplex'):
                 with it('must be TI-3UY'):
                     for s in range(181, 300):
                         self.l.seccio = s
-                        expect(self.l.tipoinstalacion, 'TI-3UY')
+                        expect(self.l.tipoinstalacion).to(equal('TI-3UY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea doble circuito-Simplex'):
                 with it('must be TI-3UZ'):
                     self.l.seccio = 301
-                    expect(self.l.tipoinstalacion, 'TI-3UZ')
+                    expect(self.l.tipoinstalacion).to(equal('TI-3UZ'))
 
     with context('si lat tensión > 123 kV'):
         with before.each:
@@ -113,20 +113,20 @@ with description('Calculando el TI de una linia'):
                 with it('must be TI-4UX'):
                     for s in range(1, 180):
                         self.l.seccio = s
-                        expect(self.l.tipoinstalacion, 'TI-4UX')
+                        expect(self.l.tipoinstalacion).to(equal('TI-4UX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea doble circuito-Duplex'):
                 with it('must be TI-4UY'):
                     for s in range(181, 300):
                         self.l.seccio = s
-                        expect(self.l.tipoinstalacion, 'TI-4UY')
+                        expect(self.l.tipoinstalacion).to(equal('TI-4UY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea doble circuito-Duplex'):
                 with it('must be TI-4UZ'):
                     self.l.seccio = 301
-                    expect(self.l.tipoinstalacion, 'TI-4UZ')
+                    expect(self.l.tipoinstalacion).to(equal( 'TI-4UZ'))
 
     with context('si lat tensión > 123 kV'):
         with before.each:
@@ -140,20 +140,20 @@ with description('Calculando el TI de una linia'):
                 with it('must be TI-3AUX'):
                     for s in range(1, 180):
                         self.l.seccio = s
-                        expect(self.l.tipoinstalacion, 'TI-3AUX')
+                        expect(self.l.tipoinstalacion).to(equal( 'TI-3AUX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea doble circuito-Duplex'):
                 with it('must be TI-3AUY'):
                     for s in range(181, 300):
                         self.l.seccio = s
-                        expect(self.l.tipoinstalacion, 'TI-3AUY')
+                        expect(self.l.tipoinstalacion).to(equal( 'TI-3AUY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea doble circuito-Duplex'):
                 with it('must be TI-3AUZ'):
                     self.l.seccio = 301
-                    expect(self.l.tipoinstalacion, 'TI-3AUZ')
+                    expect(self.l.tipoinstalacion).to(equal('TI-3AUZ'))
 
     with context('si la 72,5Kv < tensión<=123Kv'):
         with before.each:
@@ -170,7 +170,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-1VX')
+                            expect(self.l.tipoinstalacion).to(equal( 'TI-1VX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -179,7 +179,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-1VY')
+                            expect(self.l.tipoinstalacion).to(equal( 'TI-1VY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -187,7 +187,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-1VZ')
+                        expect(self.l.tipoinstalacion).to(equal( 'TI-1VZ'))
 
     with context('si la 72,5Kv < tensión<=123Kv'):
         with before.each:
@@ -204,7 +204,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-2VX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-2VX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -213,7 +213,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-2VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-2VY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -221,7 +221,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-2VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-2VZ'))
 
     with context('si la 72,5Kv < tensión<=123Kv'):
         with before.each:
@@ -238,7 +238,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-3VX')
+                            expect(self.l.tipoinstalacion).to(equal( 'TI-3VX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito doble-Simplex'):
@@ -247,7 +247,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-3VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-3VY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito doble-Simplex'):
@@ -255,7 +255,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-3VZ')
+                        expect(self.l.tipoinstalacion).to(equal( 'TI-3VZ'))
 
     with context('si la 72,5Kv < tensión<=123Kv'):
         with before.each:
@@ -272,7 +272,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-4VX')
+                            expect(self.l.tipoinstalacion).to(equal( 'TI-4VX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito doble-Duplex'):
@@ -281,7 +281,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-4VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-4VY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito doble-Dupluex'):
@@ -289,7 +289,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-4VZ')
+                        expect(self.l.tipoinstalacion).to(equal( 'TI-4VZ'))
 
     with context('si la 72,5Kv < tensión<=123Kv'):
         with before.each:
@@ -306,7 +306,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-3AVX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-3AVX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -315,7 +315,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-3AVY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-3AVY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -323,7 +323,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-3AVZ')
+                        expect(self.l.tipoinstalacion).to(equal( 'TI-3AVZ'))
 
     with context('si la 52Kv < tensión<=72,5Kv'):
         with before.each:
@@ -340,7 +340,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-5UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-5UX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -349,7 +349,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-5UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-5UY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -357,7 +357,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-5UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-5UZ'))
 
     with context('si la 52Kv < tensión<=72,5Kv'):
         with before.each:
@@ -374,7 +374,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-7UX')
+                            expect(self.l.tipoinstalacion).to(equal( 'TI-7UX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito doble-Simplex'):
@@ -383,7 +383,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-7UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-7UY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito doble-Simplex'):
@@ -391,7 +391,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-7UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-7UZ'))
 
     with context('si la 52Kv < tensión<=72,5Kv'):
         with before.each:
@@ -408,7 +408,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-8UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-8UX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito doble-Duplex'):
@@ -417,7 +417,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-8UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-8UY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito doble-Duplex'):
@@ -425,7 +425,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-8UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-8UZ'))
 
     with context('si la 52Kv < tensión<=72,5Kv'):
         with before.each:
@@ -442,7 +442,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-7AUY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-7AUY'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -451,7 +451,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-7AUX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-7AUX'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -459,7 +459,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-7AUZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-7AUZ'))
 
     with context('si la  36Kv < tensión <= 52Kv'):
         with before.each:
@@ -476,7 +476,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-5VX')
+                            expect(self.l.tipoinstalacion).to(equal( 'TI-5VX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -485,7 +485,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-5VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-5VY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -493,7 +493,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-5VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-5VZ'))
 
     with context('si la  36Kv < tensión <= 52Kv'):
         with before.each:
@@ -510,7 +510,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-6VX')
+                            expect(self.l.tipoinstalacion).to(equal( 'TI-6VX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito simple-Duplex'):
@@ -519,7 +519,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-6VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-6VY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito simple-Duplex'):
@@ -527,7 +527,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-6VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-6VZ'))
 
     with context('si la  36Kv < tensión <= 52Kv'):
         with before.each:
@@ -544,7 +544,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-7VX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-7VX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito doble-Simplex'):
@@ -553,7 +553,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-7VY')
+                            expect(self.l.tipoinstalacion).to(equal( 'TI-7VY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito doble-Simplex'):
@@ -561,7 +561,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-7VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-7VZ'))
 
     with context('si la  36Kv < tensión <= 52Kv'):
         with before.each:
@@ -578,7 +578,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-8VX')
+                            expect(self.l.tipoinstalacion).to(equal( 'TI-8VX'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito doble-Duplex'):
@@ -587,7 +587,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-8VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-8VY'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito doble-Duplex'):
@@ -595,7 +595,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-8VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-8VZ'))
 
     with context('si la  36Kv < tensión <= 52Kv'):
         with before.each:
@@ -612,7 +612,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 179):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-7AVY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-7AVY'))
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -621,7 +621,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(180, 299):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-7AVX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-7AVX'))
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -629,7 +629,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-7AVZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-7AVZ'))
 
     with context('si la  24Kv < tensión <= 36Kv'):
         with before.each:
@@ -646,7 +646,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-9UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-9UX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito simple'):
@@ -655,7 +655,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-9UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-9UY'))
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito simple'):
@@ -663,7 +663,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-9UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-9UZ'))
 
     with context('si la  24Kv < tensión <= 36Kv'):
         with before.each:
@@ -680,7 +680,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10UX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito triple'):
@@ -689,7 +689,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10UY'))
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito triple'):
@@ -697,7 +697,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-10UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-10UZ'))
 
     with context('si la  24Kv < tensión <= 36Kv'):
         with before.each:
@@ -714,7 +714,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10AUX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AUX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito triple'):
@@ -723,7 +723,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10AUY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AUY'))
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito triple'):
@@ -731,7 +731,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-10AUZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-10AUZ'))
 
     with context('si la  17,5Kv < tensión <= 24Kv'):
         with before.each:
@@ -748,7 +748,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-9VX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-9VX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -757,7 +757,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-9VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-9VY'))
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -765,7 +765,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-9VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-9VZ'))
 
     with context('si la  17,5Kv < tensión <= 24Kv'):
         with before.each:
@@ -782,7 +782,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10VX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10VX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -791,7 +791,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10VY'))
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -799,7 +799,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-10VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-10VZ'))
 
     with context('si la 12Kv < tensión <= 17,5Kv'):
         with before.each:
@@ -816,7 +816,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-9WX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-9WX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito simple'):
@@ -825,7 +825,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-9WY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-9WY'))
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito simple'):
@@ -833,7 +833,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-9WZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-9WZ'))
 
     with context('si la 12Kv < tensión <= 17,5Kv'):
         with before.each:
@@ -850,7 +850,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10WX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10WX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito doble'):
@@ -859,7 +859,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10WY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10WY'))
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito doble'):
@@ -867,7 +867,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-10WZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-10WZ'))
 
     with context('si la 12Kv < tensión <= 17,5Kv'):
         with before.each:
@@ -884,7 +884,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10AWX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AWX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito triple'):
@@ -893,7 +893,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10AWY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AWY'))
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito triple'):
@@ -901,7 +901,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-10AWZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-10AWZ'))
 
     with context('si la 1Kv < tensión <= 12Kv'):
         with before.each:
@@ -918,7 +918,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-9BX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-9BX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito simple'):
@@ -927,7 +927,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-9BY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-9BY'))
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito simple'):
@@ -935,7 +935,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-9BZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-9BZ'))
 
     with context('si la 1Kv < tensión <= 12Kv'):
         with before.each:
@@ -952,7 +952,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10BX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10BX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito doble'):
@@ -961,7 +961,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10BY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10BY'))
 
         with context('si la sección  110 < s '):
             with context('si la linea es Aerea circuito doble'):
@@ -969,7 +969,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-10BZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-10BZ'))
 
     with context('si la 1Kv < tensión <= 12Kv'):
         with before.each:
@@ -986,7 +986,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 56):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10ABX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10ABX'))
 
         with context('si la sección 56 < s <= 110 '):
             with context('si la linea es Aerea circuito triple'):
@@ -995,7 +995,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(57, 110):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-10ABY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-10ABY'))
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito triple'):
@@ -1003,7 +1003,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
-                        expect(self.l.tipoinstalacion, 'TI-10ABZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-10ABZ'))
 
     with context('si la tensión < 1Kv'):
         with before.each:
@@ -1017,14 +1017,14 @@ with description('Calculando el TI de una linia'):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-11X'):
                     self.l.seccion = 76
-                    expect(self.l.tipoinstalacion, 'TI-11X')
+                    expect(self.l.tipoinstalacion).to(equal('TI-11X'))
 
         with context('si la sección s >= 75'):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-11Y'):
                     for s in range(0, 75):
                         self.l.seccion = s
-                        expect(self.l.tipoinstalacion, 'TI-11Y')
+                        expect(self.l.tipoinstalacion).to(equal('TI-11Y'))
 
     with context('si la tensión < 1Kv'):
         with before.each:
@@ -1038,14 +1038,14 @@ with description('Calculando el TI de una linia'):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-13X'):
                     self.l.seccion = 76
-                    expect(self.l.tipoinstalacion, 'TI-13X')
+                    expect(self.l.tipoinstalacion).to(equal('TI-13X'))
 
         with context('si la sección s >= 75'):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-13Y'):
                     for s in range(0, 75):
                         self.l.seccion = s
-                        expect(self.l.tipoinstalacion, 'TI-13Y')
+                        expect(self.l.tipoinstalacion).to(equal('TI-13Y'))
 
     with context('si la tensión < 1Kv'):
         with before.each:
@@ -1059,14 +1059,14 @@ with description('Calculando el TI de una linia'):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-12X'):
                     self.l.seccion = 76
-                    expect(self.l.tipoinstalacion, 'TI-12X')
+                    expect(self.l.tipoinstalacion).to(equal('TI-12X'))
 
         with context('si la sección s >= 75'):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-12Y'):
                     for s in range(0, 75):
                         self.l.seccion = s
-                        expect(self.l.tipoinstalacion, 'TI-12Y')
+                        expect(self.l.tipoinstalacion).to(equal('TI-12Y'))
 
     with context('si la 123Kv < tensión '):
         with before.each:
@@ -1083,7 +1083,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 630):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-14UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-14UX'))
 
         with context('si la sección 630 < s <= 1200 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1092,7 +1092,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(631, 1200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-14UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-14UY'))
 
         with context('si la sección  1200 < s  '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1100,7 +1100,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 1201
-                        expect(self.l.tipoinstalacion, 'TI-14UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-14UZ'))
 
     with context('si la 123Kv < tensión '):
         with before.each:
@@ -1117,7 +1117,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 630):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-15UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-15UX'))
 
         with context('si la sección 630 < s <= 1200 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1126,7 +1126,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(631, 1200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-15UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-15UY'))
 
         with context('si la sección  1200 < s '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1134,7 +1134,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 1201
-                        expect(self.l.tipoinstalacion, 'TI-15UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-15UZ'))
 
     with context('si la 123Kv < tensión '):
         with before.each:
@@ -1151,7 +1151,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 630):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-15UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-15UX'))
 
         with context('si la sección 630 < s <= 1200 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1160,7 +1160,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(631, 1200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-15UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-15UY'))
 
         with context('si la sección  1200 < s '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1168,7 +1168,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 1201
-                        expect(self.l.tipoinstalacion, 'TI-15UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-15UZ'))
 
     with context('si la 72,5Kv < tensión =<123Kv'):
         with before.each:
@@ -1185,7 +1185,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 630):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-14VX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-14VX'))
 
         with context('si la sección 630 < s <= 1200 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1194,7 +1194,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(631, 1200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-14VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-14VY'))
 
         with context('si la sección 1200 < s '):
             with context('si la linea es Subterranea circuito simpe'):
@@ -1202,7 +1202,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 1201
-                        expect(self.l.tipoinstalacion, 'TI-14VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-14VZ'))
 
     with context('si la 72,5Kv < tensión =<123Kv'):
         with before.each:
@@ -1219,7 +1219,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 630):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-15VX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-15VX'))
 
         with context('si la sección 630 < s <= 1200 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1228,7 +1228,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(631, 1200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-15VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-15VY'))
 
         with context('si la sección  1200 < s '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1236,7 +1236,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 1201
-                        expect(self.l.tipoinstalacion, 'TI-15VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-15VZ'))
 
     with context('si la 72,5Kv < tensión =<123Kv'):
         with before.each:
@@ -1253,7 +1253,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 630):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-15AVX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-15AVX'))
 
         with context('si la sección 0 < s <= 630 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1262,7 +1262,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(631, 1200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-15AVY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-15AVY'))
 
         with context('si la sección  s <= 630 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1270,7 +1270,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 1201
-                        expect(self.l.tipoinstalacion, 'TI-15AVZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-15AVZ'))
 
     with context('si la  52Kv < tensión =<72,5Kv'):
         with before.each:
@@ -1287,7 +1287,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-16UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-16UX'))
 
         with context('si la sección 300 < s <= 500 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1296,7 +1296,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(301, 500):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-16UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-16UY'))
 
         with context('si la sección  500 < s '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1304,7 +1304,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 1201
-                        expect(self.l.tipoinstalacion, 'TI-16UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-16UZ'))
 
     with context('si la  52Kv < tensión =<72,5Kv'):
         with before.each:
@@ -1321,7 +1321,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-17UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-17UY'))
 
         with context('si la sección 300 < s <= 500 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1330,7 +1330,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(301, 500):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-17UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-17UX'))
 
         with context('si la sección  500 < s '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1338,7 +1338,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 1201
-                        expect(self.l.tipoinstalacion, 'TI-17UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-17UZ'))
 
     with context('si la  52Kv < tensión =<72,5Kv'):
         with before.each:
@@ -1355,7 +1355,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-17AUX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-17AUX'))
 
         with context('si la sección 300 < s <= 500 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1364,7 +1364,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(301, 500):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-17AUY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-17AUY'))
 
         with context('si la sección  500 < s '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1372,7 +1372,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 1201
-                        expect(self.l.tipoinstalacion, 'TI-17AUZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-17AUZ'))
 
     with context('si la   36Kv < tensión =<52Kv'):
         with before.each:
@@ -1389,7 +1389,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-16VX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-16VX'))
 
         with context('si la sección 300 < s <= 500 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1398,7 +1398,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(301, 500):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-16VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-16VY'))
 
         with context('si la sección  500 < s '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1406,7 +1406,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 501
-                        expect(self.l.tipoinstalacion, 'TI-16VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-16VZ'))
 
     with context('si la   36Kv < tensión =<52Kv'):
         with before.each:
@@ -1423,7 +1423,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-17VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-17VY'))
 
         with context('si la sección 300 < s <= 500 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1440,7 +1440,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 501
-                        expect(self.l.tipoinstalacion, 'TI-17VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-17VZ'))
 
     with context('si la   36Kv < tensión =<52Kv'):
         with before.each:
@@ -1457,7 +1457,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-17AVX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-17AVX'))
 
         with context('si la sección 300 < s <= 500 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1466,7 +1466,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(301, 500):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-17AVY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-17AVY'))
 
         with context('si la sección  500 < s '):
             with context('si la linea es Subterranea circuito tripl'):
@@ -1474,7 +1474,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 501
-                        expect(self.l.tipoinstalacion, 'TI-17AVZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-17AVZ'))
 
     with context('si la   24Kv < tensión =<36Kv'):
         with before.each:
@@ -1491,7 +1491,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-18UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-18UX'))
 
         with context('si la sección 200 < s <= 300 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1500,7 +1500,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-18UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-18UY'))
 
         with context('si la sección  300 < s '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1508,7 +1508,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-18UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-18UZ'))
 
     with context('si la   24Kv < tensión =<36Kv'):
         with before.each:
@@ -1525,7 +1525,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19UX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19UX'))
 
         with context('si la sección 200 < s <= 300 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1534,7 +1534,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19UY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19UY'))
 
         with context('si la sección  300 < s '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1542,7 +1542,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-19UZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-19UZ'))
 
     with context('si la   24Kv < tensión =<36Kv'):
         with before.each:
@@ -1559,7 +1559,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19AUX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AUX'))
 
         with context('si la sección 200 < s <= 300 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1568,7 +1568,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19AUY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AUY'))
 
         with context('si la sección  300 < s '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1576,7 +1576,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-19AUZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-19AUZ'))
 
     with context('si la  17,5Kv < tensión =<24Kv'):
         with before.each:
@@ -1593,7 +1593,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-18VX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-18VX'))
 
         with context('si la sección 200 < s <= 300 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1602,7 +1602,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-18VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-18VY'))
 
         with context('si la sección  300 < s '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1610,7 +1610,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-18Z')
+                        expect(self.l.tipoinstalacion).to(equal('TI-18Z'))
 
     with context('si la  17,5Kv < tensión =<24Kv'):
         with before.each:
@@ -1627,7 +1627,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19VX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19VX'))
 
         with context('si la sección 200 < s <= 300 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1636,7 +1636,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19VY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19VY'))
 
         with context('si la sección  300 < s '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1644,7 +1644,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-19VZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-19VZ'))
 
     with context('si la  17,5Kv < tensión =<24Kv'):
         with before.each:
@@ -1661,7 +1661,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19AVX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AVX'))
 
         with context('si la sección 200 < s <= 300 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1670,7 +1670,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19AVY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AVY'))
 
         with context('si la sección  300 < s '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1678,7 +1678,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-19AVZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-19AVZ'))
 
     with context('si la  12Kv < tensión =<17,5Kv'):
         with before.each:
@@ -1695,7 +1695,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-18WX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-18WX'))
 
         with context('si la sección 200 < s <= 300 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1704,7 +1704,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-18WY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-18WY'))
 
         with context('si la sección  300 < s '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1712,7 +1712,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-18WZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-18WZ'))
 
     with context('si la  12Kv < tensión =<17,5Kv'):
         with before.each:
@@ -1729,7 +1729,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19WX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19WX'))
 
         with context('si la sección 200 < s <= 300 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1738,7 +1738,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19WY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19WY'))
 
         with context('si la sección  300 < s '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1746,7 +1746,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-19WZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-19WZ'))
 
     with context('si la  12Kv < tensión =<17,5Kv'):
         with before.each:
@@ -1763,7 +1763,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19AWX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AWX'))
 
         with context('si la sección 200 < s <= 300 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1772,7 +1772,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19AWY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AWY'))
 
         with context('si la sección  300 < s '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1780,7 +1780,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-19AWZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-19AWZ'))
 
     with context('si la 1Kv < tensión =<12Kv'):
         with before.each:
@@ -1797,7 +1797,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-18BX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-18BX'))
 
         with context('si la sección 100 < s <= 200 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1806,7 +1806,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-18BY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-18BY'))
 
         with context('si la sección  200 < s '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1814,7 +1814,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-18BZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-18BZ'))
 
     with context('si la 1Kv < tensión =<12Kv'):
         with before.each:
@@ -1831,7 +1831,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-18BX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-18BX'))
 
         with context('si la sección 100 < s <= 200 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1840,7 +1840,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-18BY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-18BY'))
 
         with context('si la sección  200 < s '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1848,7 +1848,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-18BZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-18BZ'))
 
     with context('si la 1Kv < tensión =<12Kv'):
         with before.each:
@@ -1865,7 +1865,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19ABX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19ABX'))
 
         with context('si la sección 100 < s <= 200 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1874,7 +1874,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(201, 300):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-19ABY')
+                            expect(self.l.tipoinstalacion).to(equal('TI-19ABY'))
 
         with context('si la sección  200 < s '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1882,7 +1882,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion, 'TI-19ABZ')
+                        expect(self.l.tipoinstalacion).to(equal('TI-19ABZ'))
 
     with context('si la tensión =<1Kv '):
         with before.each:
@@ -1899,7 +1899,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 150):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-20X')
+                            expect(self.l.tipoinstalacion).to(equal('TI-20X'))
 
         with context('si la sección  s > 150'):
             with context('si la linea es Subterranea circuito simple'):
@@ -1907,7 +1907,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 151
-                        expect(self.l.tipoinstalacion, 'TI-20Y')
+                        expect(self.l.tipoinstalacion).to(equal('TI-20Y'))
 
     with context('si la tensión =<1Kv '):
         with before.each:
@@ -1924,7 +1924,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 150):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-20X')
+                            expect(self.l.tipoinstalacion).to(equal('TI-20X'))
 
         with context('si la sección  s > 150'):
             with context('si la linea es Subterranea circuito doble'):
@@ -1932,4 +1932,4 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 151
-                        expect(self.l.tipoinstalacion, 'TI-20Y')
+                        expect(self.l.tipoinstalacion).to(equal('TI-20Y'))
