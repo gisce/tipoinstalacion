@@ -1185,7 +1185,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 630):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion).to(equal('TI-15UX'))
+                            expect(self.l.tipoinstalacion).to(equal('TI-15AUX'))
 
         with context('si la sección 630 < s <= 1200 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1194,7 +1194,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(631, 1200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion).to(equal('TI-15UY'))
+                            expect(self.l.tipoinstalacion).to(equal('TI-15AUY'))
 
         with context('si la sección  1200 < s '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1202,7 +1202,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 1201
-                        expect(self.l.tipoinstalacion).to(equal('TI-15UZ'))
+                        expect(self.l.tipoinstalacion).to(equal('TI-15AUZ'))
 
     with context('si la 72,5Kv < tensión =<123Kv'):
         with before.each:
@@ -1312,7 +1312,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123) + [72.5]
+            self.tensiones = range(53, 72) + [72.5]
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1337,7 +1337,7 @@ with description('Calculando el TI de una linia'):
                 with it('must be TI-16UZ'):
                     for t in self.tensiones:
                         self.l.tension = t
-                        self.l.seccion = 1201
+                        self.l.seccion = 501
                         expect(self.l.tipoinstalacion).to(equal('TI-16UZ'))
 
     with context('si la  52Kv < tensión =<72,5Kv'):
@@ -1346,7 +1346,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123) + [72.5]
+            self.tensiones = range(53, 72) + [72.5]
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1380,7 +1380,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123) + [72.5]
+            self.tensiones = range(53, 72) + [72.5]
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito tripe'):
@@ -1466,7 +1466,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(301, 500):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion, 'TI-17VX')
+                            expect(self.l.tipoinstalacion).to(equal('TI-17VX'))
 
         with context('si la sección  500 < s '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1503,7 +1503,7 @@ with description('Calculando el TI de una linia'):
                             expect(self.l.tipoinstalacion).to(equal('TI-17AVY'))
 
         with context('si la sección  500 < s '):
-            with context('si la linea es Subterranea circuito tripl'):
+            with context('si la linea es Subterranea circuito triple'):
                 with it('must be TI-17AVZ'):
                     for t in self.tensiones:
                         self.l.tension = t
@@ -1516,7 +1516,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(24, 36)
+            self.tensiones = range(25, 36)
 
         with context('si la sección 0 < s <= 200 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1550,7 +1550,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(24, 36)
+            self.tensiones = range(25, 36)
 
         with context('si la sección 0 < s <= 200 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1584,7 +1584,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(24, 36)
+            self.tensiones = range(25, 36)
 
         with context('si la sección 0 < s <= 200 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1644,7 +1644,7 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion).to(equal('TI-18Z'))
+                        expect(self.l.tipoinstalacion).to(equal('TI-18VZ'))
 
     with context('si la  17,5Kv < tensión =<24Kv'):
         with before.each:
@@ -1720,7 +1720,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(12, 17) + [17.5]
+            self.tensiones = range(13, 17) + [17.5]
 
         with context('si la sección 0 < s <= 200 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1754,7 +1754,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(12, 17) + [17.5]
+            self.tensiones = range(13, 17) + [17.5]
 
         with context('si la sección 0 < s <= 200 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1788,7 +1788,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(12, 17) + [17.5]
+            self.tensiones = range(13, 17) + [17.5]
 
         with context('si la sección 0 < s <= 200 '):
             with context('si la linea es Subterranea circuito simple'):
