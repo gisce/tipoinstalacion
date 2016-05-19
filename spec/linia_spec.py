@@ -31,7 +31,7 @@ with description('Calculando el TI de una linia'):
             with context('si la linea es Aerea simple circuito-Simplex'):
                 with it('must be TI-1UX'):
                     for s in range(1, 180):
-                        self.l.seccion = s   
+                        self.l.seccion = s
                         expect(self.l.tipoinstalacion).to(equal('TI-1UX'))
 
         with context('si la sección 180 < s <= 300 '):

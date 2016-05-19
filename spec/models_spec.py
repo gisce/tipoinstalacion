@@ -23,6 +23,10 @@ with description('Una posicion'):
         self.posicion = Posicion()
     with it('must have atributo tensión'):
         assert hasattr(self.posicion, 'tension')
+    with it('must have atraibut situacion'):
+        assert hasattr(self.posicion, 'situacion')
+    with it('must have atraibut tipo'):
+        assert hasattr(self.posicion, 'tipo')
 
 with description('Un condensador'):
     with before.all:

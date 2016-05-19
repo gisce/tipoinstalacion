@@ -518,11 +518,23 @@ class Linea(object):
 
 class Posicion(object):
     """
-    Objeto que representa una posicion
-
-
+    Objeto de representa una posicion
     """
 
     def __init__(self):
-        pass
-
+        super(Posicion, self).__init__()
+        self.tension = None
+        self.situacion = None
+        """
+        Ubicación de la posición:
+          - Interior: ``I``
+          - Intemperie: ``E``
+          - Móvil: ``M``
+        """
+        self.tipo = None
+        """
+        Tipo de posición:
+          - Blindada ``B``
+          - Convencional ``C``
+          - Hibrida ``H``
+        """
