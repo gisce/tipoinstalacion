@@ -762,7 +762,4 @@ class Transformador(object):
                 return 'TI-165W'
             elif 12 >= self.tension_s >= 1:
                 return 'TI-165B'
-
-
-
         return 'TI-'
