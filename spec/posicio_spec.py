@@ -25,15 +25,15 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tension = 124
             self.p.tipo = 'B'
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-88U'):
                 self.p.situacion = 'I'
                 expect(self.l.tipoinstalacion).to(equal('TI-88U'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-89U'):
                 self.p.situacion = 'E'
                 expect(self.l.tipoinstalacion).to(equal('TI-89U'))
-        with ('situado en Mobil'):
+        with context('situado en Mobil'):
             with it('must be TI-90U'):
                 self.p.situacion = 'M'
                 expect(self.l.tipoinstalacion).to(equal('TI-89U'))
@@ -44,19 +44,19 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'B'
             self.tensions = range(73, 123)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-88V'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-88V'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-89V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-89V'))
-        with ('situado en Mobil'):
+        with context('situado en Mobil'):
             with it('must be TI-90V'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
@@ -69,19 +69,19 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'B'
             self.tensions = range(73, 123)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-95U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-TI-95U'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-TI-96U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-96U'))
-        with ('situado en Mobil'):
+        with context('situado en Mobil'):
             with it('must be TI-97U'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
@@ -94,19 +94,19 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'B'
             self.tensions = range(37, 52)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-95V'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-95V'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-96V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-96V'))
-        with ('situado en Mobil'):
+        with context('situado en Mobil'):
             with it('must be TI-97V'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
@@ -119,19 +119,19 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'B'
             self.tensions = range(24, 37)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-102U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-102U'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-103U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-103U'))
-        with ('situado en Mobil'):
+        with context('situado en Mobil'):
             with it('must be TI-104U'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
@@ -144,19 +144,19 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'B'
             self.tensions = range(18, 24)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-102V'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-102V'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-103V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-103V'))
-        with ('situado en Mobil'):
+        with context('situado en Mobil'):
             with it('must be TI-104V'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
@@ -169,19 +169,19 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'B'
             self.tensions = range(13, 17) + [17.5]
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-102W'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-102W'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-103W'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-103W'))
-        with ('situado en Mobil'):
+        with context('situado en Mobil'):
             with it('must be TI-104W'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
@@ -194,19 +194,19 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'B'
             self.tensions = range(1, 12)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-102W'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-102B'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-103B'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-103B'))
-        with ('situado en Mobil'):
+        with context('situado en Mobil'):
             with it('must be TI-104B'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
@@ -219,13 +219,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'C'
             self.tensions = range(73, 123)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-91V'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-91V'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-92V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -238,13 +238,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'C'
             self.tensions = range(53.72) + [72.5]
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-98U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-98U'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-99U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -257,13 +257,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'C'
             self.tensions = range(37, 52)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-98U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-98U'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-99U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -276,13 +276,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'C'
             self.tensions = range(24, 36)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-105U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-105U'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-106U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -295,13 +295,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'C'
             self.tensions = range(18, 24)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-105V'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-105V'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-106V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -314,13 +314,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'C'
             self.tensions = range(13, 17) + [17.5]
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-105W'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-105W'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-106W'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -333,13 +333,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'C'
             self.tensions = range(1, 12)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-105B'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-105B'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-106B'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -353,13 +353,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'H'
             self.tensions = [124]
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-93U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-93U'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-94U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -372,13 +372,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'H'
             self.tensions = range(73, 123)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-93V'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-93V'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-94V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -391,13 +391,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'H'
             self.tensions = range(53, 73) + [73.5]
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-100U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-100U'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-101U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -410,13 +410,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'H'
             self.tensions = range(37, 52)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-100V'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-100V'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-101V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -429,13 +429,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'H'
             self.tensions = range(24, 36)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-107U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-107U'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-108U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -448,13 +448,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'H'
             self.tensions = range(17, 24)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-107V'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-107V'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-108V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -467,13 +467,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'H'
             self.tensions = range(13, 17) + [17.5]
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-107W'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-107W'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-108W'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
@@ -486,13 +486,13 @@ with description('Calculando el TI de una linia'):
             self.p = Posicion()
             self.p.tipo = 'H'
             self.tensions = range(1, 12)
-        with ('situado en Initerior'):
+        with context('situado en Initerior'):
             with it('must be TI-107B'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
                     expect(self.l.tipoinstalacion).to(equal('TI-107B'))
-        with ('situado en Intemperie'):
+        with context('situado en Intemperie'):
             with it('must be TI-108B'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
