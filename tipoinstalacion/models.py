@@ -538,3 +538,151 @@ class Posicion(object):
           - Convencional ``C``
           - Hibrida ``H``
         """
+
+    @property
+    def tipoinstalacion(self):
+        """
+        Obtiene el tipo de instalacion de la linea
+
+        :return:
+        """
+        if self.tipo == 'B':
+            if self.tension > 123:
+                if self.situacion == 'I':
+                    return 'TI-88U'
+                elif self.situacion == 'E':
+                    return 'TI-89U'
+                elif self.situacion == 'M':
+                    return 'TI-90U'
+            elif 123 >= self.tension > 72.5:
+                if self.situacion == 'I':
+                    return 'TI-88V'
+                elif self.situacion == 'E':
+                    return 'TI-89V'
+                elif self.situacion == 'M':
+                    return 'TI-90V'
+            elif 72.5 >= self.tension > 52:
+                if self.situacion == 'I':
+                    return 'TI-95U'
+                elif self.situacion == 'E':
+                    return 'TI-96U'
+                elif self.situacion == 'M':
+                    return 'TI-97U'
+            elif 52 >= self.tension > 36:
+                if self.situacion == 'I':
+                    return 'TI-95V'
+                elif self.situacion == 'E':
+                    return 'TI-96V'
+                elif self.situacion == 'M':
+                    return 'TI-97V'
+            elif 36 >= self.tension > 24:
+                if self.situacion == 'I':
+                    return 'TI-102U'
+                elif self.situacion == 'E':
+                    return 'TI-103U'
+                elif self.situacion == 'M':
+                    return 'TI-104U'
+            elif 24 >= self.tension > 17.5:
+                if self.situacion == 'I':
+                    return 'TI-102V'
+                elif self.situacion == 'E':
+                    return 'TI-103V'
+                elif self.situacion == 'M':
+                    return 'TI-104V'
+            elif 17.5 >= self.tension > 12:
+                if self.situacion == 'I':
+                    return 'TI-102W'
+                elif self.situacion == 'E':
+                    return 'TI-103W'
+                elif self.situacion == 'M':
+                    return 'TI-104W'
+            elif 12 >= self.tension >= 1:
+                if self.situacion == 'I':
+                    return 'TI-102B'
+                elif self.situacion == 'E':
+                    return 'TI-103B'
+                elif self.situacion == 'M':
+                    return 'TI-104B'
+        elif self.tipo == 'C':
+            if self.tension > 123:
+                if self.situacion == 'I':
+                    return 'TI-91U'
+                elif self.situacion == 'E':
+                    return 'TI-92U'
+            elif 123 >= self.tension > 72.5:
+                if self.situacion == 'I':
+                    return 'TI-91V'
+                elif self.situacion == 'E':
+                    return 'TI-92V'
+            elif 72.5 >= self.tension > 52:
+                if self.situacion == 'I':
+                    return 'TI-98U'
+                elif self.situacion == 'E':
+                    return 'TI-99U'
+            elif 52 >= self.tension > 36:
+                if self.situacion == 'I':
+                    return 'TI-98V'
+                elif self.situacion == 'E':
+                    return 'TI-99V'
+            elif 36 >= self.tension > 24:
+                if self.situacion == 'I':
+                    return 'TI-105U'
+                elif self.situacion == 'E':
+                    return 'TI-106U'
+            elif 24 >= self.tension > 17.5:
+                if self.situacion == 'I':
+                    return 'TI-105V'
+                elif self.situacion == 'E':
+                    return 'TI-106V'
+            elif 17.5 >= self.tension > 12:
+                if self.situacion == 'I':
+                    return 'TI-105W'
+                elif self.situacion == 'E':
+                    return 'TI-106W'
+            elif 12>=self.tension>=1:
+                if self.situacion == 'I':
+                    return 'TI-105B'
+                elif self.situacion == 'E':
+                    return 'TI-106B'
+        elif self.tipo == 'H':
+            if self.tension >= 123:
+                if self.situacion == 'I':
+                    return 'TI-93U'
+                elif self.situacion == 'E':
+                    return 'TI-94U'
+            elif 123 >= self.tension > 72.5:
+                if self.situacion == 'I':
+                    return 'TI-93V'
+                elif self.situacion == 'E':
+                    return 'TI-94V'
+            elif 72.5 >= self.tension > 52:
+                if self.situacion == 'I':
+                    return 'TI-100U'
+                elif self.situacion == 'E':
+                    return 'TI-101U'
+            elif 52 >= self.tension > 36:
+                if self.situacion == 'I':
+                    return 'TI-100V'
+                elif self.situacion == 'E':
+                    return 'TI-101V'
+            elif 36 >= self.tension > 24:
+                if self.situacion == 'I':
+                    return 'TI-107U'
+                elif self.situacion == 'E':
+                    return 'TI-108U'
+            elif 24 >= self.tension > 17.5:
+                if self.situacion == 'I':
+                    return 'TI-107V'
+                elif self.situacion == 'E':
+                    return 'TI-108V'
+            elif 17.5 >= self.tension > 12:
+                if self.situacion == 'I':
+                    return 'TI-107W'
+                elif self.situacion == 'E':
+                    return 'TI-108W'
+            elif 12 >= self.tension >= 1:
+                if self.situacion == 'I':
+                    return 'TI-107B'
+                elif self.situacion == 'E':
+                    return 'TI-108B'
+        return 'TI-'
