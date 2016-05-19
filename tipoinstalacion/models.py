@@ -686,3 +686,16 @@ class Posicion(object):
                 elif self.situacion == 'E':
                     return 'TI-108B'
         return 'TI-'
+
+
+class Transformador(object):
+    """
+    Objeto que representa un transformador.
+    """
+    def __init__(self):
+        self.tension_p = None
+        """Tension primaria en kV
+        """
+        self.tension_s = None
+        """Tension primaria en kV
+        """
