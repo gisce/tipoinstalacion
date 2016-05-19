@@ -19,7 +19,7 @@ def frange(start, end, step=0.1):
         yield res
         r += step
 
-with description('Calculando el TI de una linia'):
+with description('Calculando el TI de una posicion'):
     with context('si lat tensión > 123 kV'):
         with before.each:
             self.p = Posicion()
@@ -28,17 +28,17 @@ with description('Calculando el TI de una linia'):
         with context('situado en Initerior'):
             with it('must be TI-88U'):
                 self.p.situacion = 'I'
-                expect(self.l.tipoinstalacion).to(equal('TI-88U'))
+                expect(self.p.tipoinstalacion).to(equal('TI-88U'))
         with context('situado en Intemperie'):
             with it('must be TI-89U'):
                 self.p.situacion = 'E'
-                expect(self.l.tipoinstalacion).to(equal('TI-89U'))
+                expect(self.p.tipoinstalacion).to(equal('TI-89U'))
         with context('situado en Mobil'):
             with it('must be TI-90U'):
                 self.p.situacion = 'M'
-                expect(self.l.tipoinstalacion).to(equal('TI-89U'))
+                expect(self.p.tipoinstalacion).to(equal('TI-90U'))
 
-with description('Calculando el TI de una linia'):
+with description('Calculando el TI de una posicion'):
     with context('si lat 123Kv >= tensión > 72.5kV'):
         with before.each:
             self.p = Posicion()
@@ -49,44 +49,44 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-88V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-88V'))
         with context('situado en Intemperie'):
             with it('must be TI-89V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-89V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-89V'))
         with context('situado en Mobil'):
             with it('must be TI-90V'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-90V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-90V'))
 
-with description('Calculando el TI de una linia'):
+with description('Calculando el TI de una posicion'):
     with context('si lat 72.5Kv >= tensión > 52kV'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'B'
-            self.tensions = range(73, 123)
+            self.tensions = range(53, 72) + [72.5]
         with context('situado en Initerior'):
             with it('must be TI-95U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-TI-95U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-95U'))
         with context('situado en Intemperie'):
-            with it('must be TI-TI-96U'):
+            with it('must be TI-96U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-96U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-96U'))
         with context('situado en Mobil'):
             with it('must be TI-97U'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-97U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-97U'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat 52kV >= tensión > 36kV'):
@@ -99,44 +99,44 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-95V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-95V'))
         with context('situado en Intemperie'):
             with it('must be TI-96V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-96V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-96V'))
         with context('situado en Mobil'):
             with it('must be TI-97V'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-97V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-97V'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat 36kV >= tensión > 24kV'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'B'
-            self.tensions = range(24, 37)
+            self.tensions = range(25, 37)
         with context('situado en Initerior'):
             with it('must be TI-102U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-102U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-102U'))
         with context('situado en Intemperie'):
             with it('must be TI-103U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-103U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-103U'))
         with context('situado en Mobil'):
             with it('must be TI-104U'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-104U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-104U'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat 24Kv >= tensión > 17.5kV'):
@@ -149,19 +149,19 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-102V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-102V'))
         with context('situado en Intemperie'):
             with it('must be TI-103V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-103V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-103V'))
         with context('situado en Mobil'):
             with it('must be TI-104V'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-104V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-104V'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat 17.5Kv >= tensión > 12kV'):
@@ -174,19 +174,19 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-102W'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-102W'))
         with context('situado en Intemperie'):
             with it('must be TI-103W'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-103W'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-103W'))
         with context('situado en Mobil'):
             with it('must be TI-104W'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-104W'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-104W'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat 12Kv >= tensión >= 1kV'):
@@ -199,19 +199,19 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-102B'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-102B'))
         with context('situado en Intemperie'):
             with it('must be TI-103B'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-103B'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-103B'))
         with context('situado en Mobil'):
             with it('must be TI-104B'):
                 self.p.situacion = 'M'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-104B'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-104B'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  123kV >= tensión > 72.5Kv'):
@@ -224,32 +224,32 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-91V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-91V'))
         with context('situado en Intemperie'):
             with it('must be TI-92V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-92V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-92V'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  72.5Kv >= tensión > 52Kv'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'C'
-            self.tensions = range(53.72) + [72.5]
+            self.tensions = range(53,72) + [72.5]
         with context('situado en Initerior'):
             with it('must be TI-98U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-98U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-98U'))
         with context('situado en Intemperie'):
             with it('must be TI-99U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-99U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-99U'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  52Kv >= tensión > 36Kv'):
@@ -258,36 +258,36 @@ with description('Calculando el TI de una linia'):
             self.p.tipo = 'C'
             self.tensions = range(37, 52)
         with context('situado en Initerior'):
-            with it('must be TI-98U'):
+            with it('must be TI-99V'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-98U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-98V'))
         with context('situado en Intemperie'):
-            with it('must be TI-99U'):
+            with it('must be TI-99V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-99U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-99V'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  36Kv >= tensión > 24Kv'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'C'
-            self.tensions = range(24, 36)
+            self.tensions = range(25, 36)
         with context('situado en Initerior'):
             with it('must be TI-105U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-105U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-105U'))
         with context('situado en Intemperie'):
             with it('must be TI-106U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-106U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-106U'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  24Kv >= tensión > 17.5Kv'):
@@ -300,13 +300,13 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-105V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-105V'))
         with context('situado en Intemperie'):
             with it('must be TI-106V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-106V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-106V'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  17.5Kv >= tensión > 12Kv'):
@@ -319,13 +319,13 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-105W'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-105W'))
         with context('situado en Intemperie'):
             with it('must be TI-106W'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-106W'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-106W'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  12Kv >= tensión >= 1Kv'):
@@ -338,13 +338,13 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-105B'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-105B'))
         with context('situado en Intemperie'):
             with it('must be TI-106B'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-106B'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-106B'))
 
 
 with description('Calculando el TI de una linia'):
@@ -358,13 +358,13 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-93U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-93U'))
         with context('situado en Intemperie'):
             with it('must be TI-94U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-94U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-94U'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  123Kv >= tensión > 73.5Kv'):
@@ -377,32 +377,32 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-93V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-93V'))
         with context('situado en Intemperie'):
             with it('must be TI-94V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-94V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-94V'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  73.5Kv >= tensión > 52Kv'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'H'
-            self.tensions = range(53, 73) + [73.5]
+            self.tensions = range(53, 72) + [72.5]
         with context('situado en Initerior'):
             with it('must be TI-100U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-100U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-100U'))
         with context('situado en Intemperie'):
             with it('must be TI-101U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-101U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-101U'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  52Kv >= tensión > 36Kv'):
@@ -415,51 +415,51 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-100V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-100V'))
         with context('situado en Intemperie'):
             with it('must be TI-101V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-101V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-101V'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  36Kv >= tensión > 24Kv'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'H'
-            self.tensions = range(24, 36)
+            self.tensions = range(25, 36)
         with context('situado en Initerior'):
             with it('must be TI-107U'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-107U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-107U'))
         with context('situado en Intemperie'):
             with it('must be TI-108U'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-108U'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-108U'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  24Kv >= tensión > 17.5Kv'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'H'
-            self.tensions = range(17, 24)
+            self.tensions = range(18, 24)
         with context('situado en Initerior'):
             with it('must be TI-107V'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-107V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-107V'))
         with context('situado en Intemperie'):
             with it('must be TI-108V'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-108V'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-108V'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  17.5Kv >= tensión > 12Kv'):
@@ -472,13 +472,13 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-107W'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-107W'))
         with context('situado en Intemperie'):
             with it('must be TI-108W'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-108W'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-108W'))
 
 with description('Calculando el TI de una linia'):
     with context('si lat  12Kv >= tensión >= 1v'):
@@ -491,10 +491,10 @@ with description('Calculando el TI de una linia'):
                 self.p.situacion = 'I'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-107B'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-107B'))
         with context('situado en Intemperie'):
             with it('must be TI-108B'):
                 self.p.situacion = 'E'
                 for t in self.tensions:
                     self.p.tension = t
-                    expect(self.l.tipoinstalacion).to(equal('TI-108B'))
+                    expect(self.p.tipoinstalacion).to(equal('TI-108B'))
