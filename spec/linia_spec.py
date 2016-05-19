@@ -1816,20 +1816,20 @@ with description('Calculando el TI de una linia'):
                         self.l.seccion = 301
                         expect(self.l.tipoinstalacion).to(equal('TI-19AWZ'))
 
-    with context('si la 1Kv < tensión =<12Kv'):
+    with context('si la 1Kv =< tensión =<12Kv'):
         with before.each:
             self.l = Linea()
             self.l.despliegue = 'S'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(2, 12)
+            self.tensiones = range(1, 12)
 
         with context('si la sección 0 < s <= 100 '):
             with context('si la linea es Subterranea circuito simple'):
                 with it('must be TI-18BX'):
                     for t in self.tensiones:
                         self.l.tension = t
-                        for s in range(1, 200):
+                        for s in range(1, 100):
                             self.l.seccion = s
                             expect(self.l.tipoinstalacion).to(equal('TI-18BX'))
 
@@ -1838,7 +1838,7 @@ with description('Calculando el TI de una linia'):
                 with it('must be TI-18BY'):
                     for t in self.tensiones:
                         self.l.tension = t
-                        for s in range(201, 300):
+                        for s in range(101, 200):
                             self.l.seccion = s
                             expect(self.l.tipoinstalacion).to(equal('TI-18BY'))
 
@@ -1847,57 +1847,57 @@ with description('Calculando el TI de una linia'):
                 with it('must be TI-18BZ'):
                     for t in self.tensiones:
                         self.l.tension = t
-                        self.l.seccion = 301
+                        self.l.seccion = 201
                         expect(self.l.tipoinstalacion).to(equal('TI-18BZ'))
 
-    with context('si la 1Kv < tensión =<12Kv'):
+    with context('si la 1Kv =< tensión =<12Kv'):
         with before.each:
             self.l = Linea()
             self.l.despliegue = 'S'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(2, 12)
+            self.tensiones = range(1, 12)
 
         with context('si la sección 0 < s <= 100 '):
             with context('si la linea es Subterranea circuito doble'):
-                with it('must be TI-18BX'):
+                with it('must be TI-19BX'):
                     for t in self.tensiones:
                         self.l.tension = t
-                        for s in range(1, 200):
+                        for s in range(1, 100):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion).to(equal('TI-18BX'))
+                            expect(self.l.tipoinstalacion).to(equal('TI-19BX'))
 
         with context('si la sección 100 < s <= 200 '):
             with context('si la linea es Subterranea circuito doble'):
-                with it('must be TI-18BY'):
+                with it('must be TI-19BY'):
                     for t in self.tensiones:
                         self.l.tension = t
-                        for s in range(201, 300):
+                        for s in range(101, 200):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion).to(equal('TI-18BY'))
+                            expect(self.l.tipoinstalacion).to(equal('TI-19BY'))
 
         with context('si la sección  200 < s '):
             with context('si la linea es Subterranea circuito doble'):
-                with it('must be TI-18BZ'):
+                with it('must be TI-19BZ'):
                     for t in self.tensiones:
                         self.l.tension = t
-                        self.l.seccion = 301
-                        expect(self.l.tipoinstalacion).to(equal('TI-18BZ'))
+                        self.l.seccion = 201
+                        expect(self.l.tipoinstalacion).to(equal('TI-19BZ'))
 
-    with context('si la 1Kv < tensión =<12Kv'):
+    with context('si la 1Kv =< tensión =<12Kv'):
         with before.each:
             self.l = Linea()
             self.l.despliegue = 'S'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(2, 12)
+            self.tensiones = range(1, 12)
 
         with context('si la sección 0 < s <= 100 '):
             with context('si la linea es Subterranea circuito doble'):
                 with it('must be TI-19ABX'):
                     for t in self.tensiones:
                         self.l.tension = t
-                        for s in range(1, 200):
+                        for s in range(1, 100):
                             self.l.seccion = s
                             expect(self.l.tipoinstalacion).to(equal('TI-19ABX'))
 
@@ -1906,7 +1906,7 @@ with description('Calculando el TI de una linia'):
                 with it('must be TI-19ABY'):
                     for t in self.tensiones:
                         self.l.tension = t
-                        for s in range(201, 300):
+                        for s in range(101, 200):
                             self.l.seccion = s
                             expect(self.l.tipoinstalacion).to(equal('TI-19ABY'))
 
@@ -1915,7 +1915,7 @@ with description('Calculando el TI de una linia'):
                 with it('must be TI-19ABZ'):
                     for t in self.tensiones:
                         self.l.tension = t
-                        self.l.seccion = 301
+                        self.l.seccion = 201
                         expect(self.l.tipoinstalacion).to(equal('TI-19ABZ'))
 
     with context('si la tensión =<1Kv '):
@@ -1958,7 +1958,7 @@ with description('Calculando el TI de una linia'):
                         self.l.tension = t
                         for s in range(1, 150):
                             self.l.seccion = s
-                            expect(self.l.tipoinstalacion).to(equal('TI-20X'))
+                            expect(self.l.tipoinstalacion).to(equal('TI-21X'))
 
         with context('si la sección  s > 150'):
             with context('si la linea es Subterranea circuito doble'):
@@ -1966,4 +1966,4 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 151
-                        expect(self.l.tipoinstalacion).to(equal('TI-20Y'))
+                        expect(self.l.tipoinstalacion).to(equal('TI-21Y'))

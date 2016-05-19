@@ -481,28 +481,37 @@ class Linea(object):
                         return 'TI-19AWZ'
             elif 12 >= u >= 1:
                 if self.num_circuitos == 1:
-                    if 0 < s <= 200:
+                    if 0 < s <= 100:
                         return 'TI-18BX'
-                    elif 200 < s <= 300:
+                    elif 100 < s <= 200:
                         return 'TI-18BY'
-                    elif 300 < s:
+                    elif 200 < s:
                         return 'TI-18BZ'
                 elif self.num_circuitos == 2:
-                    if 0 < s <= 200:
+                    if 0 < s <= 100:
                         return 'TI-19BX'
-                    elif 200 < s <= 300:
+                    elif 100 < s <= 200:
                         return 'TI-19BY'
-                    elif 300 < s:
+                    elif 200 < s:
                         return 'TI-19BZ'
                 elif self.num_circuitos == 3:
-                    if 0 < s <= 200:
+                    if 0 < s <= 100:
                         return 'TI-19ABX'
-                    elif 200 < s <= 300:
+                    elif 100 < s <= 200:
                         return 'TI-19ABY'
-                    elif 300 < s:
+                    elif 200 < s:
                         return 'TI-19ABZ'
             elif u < 1:
-                pass
+                if self.num_circuitos == 1:
+                    if 0 < s < 150:
+                        return 'TI-20X'
+                    elif 150 <= s:
+                        return 'TI-20Y'
+                elif self.num_circuitos == 2:
+                    if 0 < s < 150:
+                        return 'TI-21X'
+                    elif 150 <= s:
+                        return 'TI-21Y'
             return 'TI-'
         return 'TI-'
 

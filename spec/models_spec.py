@@ -21,13 +21,13 @@ with description('Una Linea'):
 with description('Una posicion'):
     with before.all:
         self.posicion = Posicion()
-    with _it('must have atributo tensión'):
+    with it('must have atributo tensión'):
         assert hasattr(self.posicion, 'tension')
 
 with description('Un condensador'):
     with before.all:
         self.condensador = Condensador()
-    with _it('must have atributo tensión'):
+    with it('must have atributo tensión'):
         assert hasattr(self.condensador, 'tension')
 
 
