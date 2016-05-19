@@ -1,5 +1,5 @@
 # coding=utf-8
-from tipoinstalacion.models import *
+from tipoinstalacion.models import Linea, Posicion, Transformador
 
 from expects import *
 
@@ -28,5 +28,10 @@ with description('Una posicion'):
     with it('must have atraibut tipo'):
         assert hasattr(self.posicion, 'tipo')
 
-
-
+with description('Una posicion'):
+    with before.all:
+        self.t = Transformador()
+    with it('must have atributo tensión primario'):
+        assert hasattr(self.t, 'tension_p')
+    with it('must have atraibut situacion'):
+        assert hasattr(self.t, 'tension_s')
