@@ -699,3 +699,12 @@ class Transformador(object):
         self.tension_s = None
         """Tension primaria en kV
         """
+
+    @property
+    def tipoinstalacion(self):
+        """
+        Obtiene el tipo de instalacion de la linea
+
+        :return:
+        """
+        return 'TI-'
