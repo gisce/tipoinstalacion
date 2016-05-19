@@ -707,4 +707,62 @@ class Transformador(object):
 
         :return:
         """
+        if self.tension_p == 420:
+            if 245 >= self.tension_s > 123:
+                return 'TI-157U'
+            elif 123 >= self.tension_s > 72.5:
+                return 'TI-157V'
+            if 245 >= self.tension_s > 123:
+                return 'TI-158U'
+            elif 123 >= self.tension_s > 72.5:
+                return 'TI-158V'
+            elif 72.5 >= self.tension_s > 36:
+                return 'TI-158W'
+        elif self.tension_p == 245:
+            if 245 >= self.tension_s > 123:
+                return 'TI-159U'
+            elif 123 >= self.tension_s > 72.5:
+                return 'TI-159V'
+            elif 72.5 >= self.tension_s > 36:
+                return 'TI-160U'
+            elif 36 >= self.tension_s > 24:
+                return 'TI-161U'
+            elif 24 >= self.tension_s > 12:
+                return 'TI-161W'
+            elif 12 >= self.tension_s >= 1:
+                return 'TI-161B'
+        elif 145 >= self.tension_p > 72.5:
+            if 72.5 >= self.tension_s > 52:
+                return 'TI-162U'
+            elif 52 >= self.tension_s > 36:
+                return 'TI-162V'
+            elif 36 >= self.tension_s > 24:
+                return 'TI-163U'
+            elif 24 >= self.tension_s > 17.5:
+                return 'TI-163V'
+            elif 17.5 >= self.tension_s > 12:
+                return 'TI-163W'
+            elif 12 >= self.tension_s >= 1:
+                return 'TI-163B'
+        elif 72.5 >= self.tension_p > 36:
+            if 36 >= self.tension_s > 24:
+                return 'TI-164U'
+            elif 24 >= self.tension_s > 17.5:
+                return 'TI-164V'
+            elif 17.5 >= self.tension_s > 12:
+                return 'TI-164W'
+            elif 12 >= self.tension_s >= 1:
+                return 'TI-164B'
+        elif 36 > self.tension_p >= 1:
+            if 30 >= self.tension_s > 24:
+                return 'TI-165U'
+            elif 24 >= self.tension_s > 17.5:
+                return 'TI-165V'
+            elif 175.5 >= self.tension_s > 12:
+                return 'TI-165W'
+            elif 12 >= self.tension_s >= 1:
+                return 'TI-165B'
+
+
+
         return 'TI-'
