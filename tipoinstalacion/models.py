@@ -320,6 +320,26 @@ class Linea(object):
             else:
                 return 'TI-'
         elif self.despliegue[0] == 'S':
+            u = self.tension
+            s = self.seccion
+            if u > 123:
+                pass
+            elif 123 >= u > 72.5:
+                pass
+            elif 72.5 >= u >52:
+                pass
+            elif 52 >= u > 36:
+                pass
+            elif 36 >= u > 24:
+                pass
+            elif 24 >= u > 17.5:
+                pass
+            elif 17.5 >= u > 12:
+                pass
+            elif 12 >= u >= 1:
+                pass
+            elif u < 1:
+                pass
             return 'TI-'
         return 'TI-'
 
