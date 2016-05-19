@@ -323,21 +323,184 @@ class Linea(object):
             u = self.tension
             s = self.seccion
             if u > 123:
-                pass
+                if self.num_circuitos == 1:
+                    if 0 < s <= 630:
+                        return 'TI-14UX'
+                    elif 630 < s <= 1200:
+                        return 'TI-14UY'
+                    elif 1200 < s:
+                        return 'TI-14UZ'
+                elif self.num_circuitos == 2:
+                    if 0 < s <= 630:
+                        return 'TI-15UX'
+                    elif 630 < s <= 1200:
+                        return 'TI-15UY'
+                    elif 1200 < s:
+                        return 'TI-15UZ'
+                elif self.num_circuitos == 3:
+                    if 0 < s <= 630:
+                        return 'TI-15AUX'
+                    elif 630 < s <= 1200:
+                        return 'TI-15AUY'
+                    elif 1200 < s:
+                        return 'TI-15AUZ'
             elif 123 >= u > 72.5:
-                pass
-            elif 72.5 >= u >52:
-                pass
+                if self.num_circuitos == 1:
+                    if 0 < s <= 630:
+                        return 'TI-14VX'
+                    elif 630 < s <= 1200:
+                        return 'TI-14VY'
+                    elif 1200 < s:
+                        return 'TI-14VZ'
+                elif self.num_circuitos == 2:
+                    if 0 < s <= 630:
+                        return 'TI-15VX'
+                    elif 630 < s <= 1200:
+                        return 'TI-15VY'
+                    elif 1200 < s:
+                        return 'TI-15VZ'
+                elif self.num_circuitos == 3:
+                    if 0 < s <= 630:
+                        return 'TI-15AVX'
+                    elif 630 < s <= 1200:
+                        return 'TI-15AVY'
+                    elif 1200 < s:
+                        return 'TI-15AVZ'
+            elif 72.5 >= u > 52:
+                if self.num_circuitos == 1:
+                    if 0 < s <= 300:
+                        return 'TI-16UX'
+                    elif 300 < s <= 500:
+                        return 'TI-16UY'
+                    elif 500 < s:
+                        return 'TI-16UZ'
+                elif self.num_circuitos == 2:
+                    if 0 < s <= 300:
+                        return 'TI-17UY'
+                    elif 300 < s <= 500:
+                        return 'TI-17UX'
+                    elif 500 < s:
+                        return 'TI-17UZ'
+                elif self.num_circuitos == 3:
+                    if 0 < s <= 300:
+                        return 'TI-17AUX'
+                    elif 300 < s <= 500:
+                        return 'TI-17AUY'
+                    elif 500 < s:
+                        return 'TI-17AUZ'
             elif 52 >= u > 36:
+                if self.num_circuitos == 1:
+                    if 0 < s <= 300:
+                        return 'TI-16VX'
+                    elif 300 < s <= 500:
+                        return 'TI-16VY'
+                    elif 500 < s:
+                        return 'TI-16VZ'
+                elif self.num_circuitos == 2:
+                    if 0 < s <= 300:
+                        return 'TI-17VY'
+                    elif 300 < s <= 500:
+                        return 'TI-17VX'
+                    elif 500 < s:
+                        return 'TI-17VZ'
+                elif self.num_circuitos == 3:
+                    if 0 < s <= 300:
+                        return 'TI-17AVX'
+                    elif 300 < s <= 500:
+                        return 'TI-17AVY'
+                    elif 500 < s:
+                        return 'TI-17AVZ'
                 pass
             elif 36 >= u > 24:
+                if self.num_circuitos == 1:
+                    if 0 < s <= 200:
+                        return 'TI-18UX'
+                    elif 200 < s <= 300:
+                        return 'TI-18UY'
+                    elif 300 < s:
+                        return 'TI-18UZ'
+                elif self.num_circuitos == 2:
+                    if 0 < s <= 200:
+                        return 'TI-19UX'
+                    elif 200 < s <= 300:
+                        return 'TI-19UY'
+                    elif 300 < s:
+                        return 'TI-19UZ'
+                elif self.num_circuitos == 3:
+                    if 0 < s <= 200:
+                        return 'TI-19AUX'
+                    elif 200 < s <= 300:
+                        return 'TI-19AUY'
+                    elif 300 < s:
+                        return 'TI-19AUZ'
                 pass
             elif 24 >= u > 17.5:
+                if self.num_circuitos == 1:
+                    if 0 < s <= 200:
+                        return 'TI-18VX'
+                    elif 200 < s <= 300:
+                        return 'TI-18VY'
+                    elif 300 < s:
+                        return 'TI-18VZ'
+                elif self.num_circuitos == 2:
+                    if 0 < s <= 200:
+                        return 'TI-19VX'
+                    elif 200 < s <= 300:
+                        return 'TI-19VY'
+                    elif 300 < s:
+                        return 'TI-19VZ'
+                elif self.num_circuitos == 3:
+                    if 0 < s <= 200:
+                        return 'TI-19AVX'
+                    elif 200 < s <= 300:
+                        return 'TI-19AVY'
+                    elif 300 < s:
+                        return 'TI-19AVZ'
                 pass
             elif 17.5 >= u > 12:
-                pass
+                if self.num_circuitos == 1:
+                    if 0 < s <= 200:
+                        return 'TI-18WX'
+                    elif 200 < s <= 300:
+                        return 'TI-18WY'
+                    elif 300 < s:
+                        return 'TI-18WZ'
+                elif self.num_circuitos == 2:
+                    if 0 < s <= 200:
+                        return 'TI-19WX'
+                    elif 200 < s <= 300:
+                        return 'TI-19WY'
+                    elif 300 < s:
+                        return 'TI-19WZ'
+                elif self.num_circuitos == 3:
+                    if 0 < s <= 200:
+                        return 'TI-19AWX'
+                    elif 200 < s <= 300:
+                        return 'TI-19AWY'
+                    elif 300 < s:
+                        return 'TI-19AWZ'
             elif 12 >= u >= 1:
-                pass
+                if self.num_circuitos == 1:
+                    if 0 < s <= 200:
+                        return 'TI-18BX'
+                    elif 200 < s <= 300:
+                        return 'TI-18BY'
+                    elif 300 < s:
+                        return 'TI-18BZ'
+                elif self.num_circuitos == 2:
+                    if 0 < s <= 200:
+                        return 'TI-19BX'
+                    elif 200 < s <= 300:
+                        return 'TI-19BY'
+                    elif 300 < s:
+                        return 'TI-19BZ'
+                elif self.num_circuitos == 3:
+                    if 0 < s <= 200:
+                        return 'TI-19ABX'
+                    elif 200 < s <= 300:
+                        return 'TI-19ABY'
+                    elif 300 < s:
+                        return 'TI-19ABZ'
             elif u < 1:
                 pass
             return 'TI-'
