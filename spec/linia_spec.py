@@ -841,7 +841,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(18, 24)
+            self.tensiones = range(13, 17)+[17.5]
 
         with context('si la sección 0 < s <= 56 '):
             with context('si la linea es Aerea circuito simple'):
@@ -875,7 +875,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(18, 24)
+            self.tensiones = range(13, 17)+[17.5]
 
         with context('si la sección 0 < s <= 56 '):
             with context('si la linea es Aerea circuito doble'):
@@ -909,7 +909,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(18, 24)
+            self.tensiones = range(13, 17) + [17.5]
 
         with context('si la sección 0 < s <= 56 '):
             with context('si la linea es Aerea circuito triple'):
@@ -1050,15 +1050,15 @@ with description('Calculando el TI de una linia'):
         with context('si la sección s < 75 '):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-11X'):
-                    self.l.seccion = 76
-                    expect(self.l.tipoinstalacion).to(equal('TI-11X'))
+                    for s in range(0, 75):
+                        self.l.seccion = s
+                        expect(self.l.tipoinstalacion).to(equal('TI-11X'))
 
         with context('si la sección s >= 75'):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-11Y'):
-                    for s in range(0, 75):
-                        self.l.seccion = s
-                        expect(self.l.tipoinstalacion).to(equal('TI-11Y'))
+                    self.l.seccion = 76
+                    expect(self.l.tipoinstalacion).to(equal('TI-11Y'))
 
     with context('si la tensión < 1Kv'):
         with before.each:
@@ -1071,15 +1071,15 @@ with description('Calculando el TI de una linia'):
         with context('si la sección s < 75 '):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-13X'):
-                    self.l.seccion = 76
-                    expect(self.l.tipoinstalacion).to(equal('TI-13X'))
+                    for s in range(0, 75):
+                        self.l.seccion = s
+                        expect(self.l.tipoinstalacion).to(equal('TI-13X'))
 
         with context('si la sección s >= 75'):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-13Y'):
-                    for s in range(0, 75):
-                        self.l.seccion = s
-                        expect(self.l.tipoinstalacion).to(equal('TI-13Y'))
+                    self.l.seccion = 76
+                    expect(self.l.tipoinstalacion).to(equal('TI-13Y'))
 
     with context('si la tensión < 1Kv'):
         with before.each:
@@ -1092,15 +1092,15 @@ with description('Calculando el TI de una linia'):
         with context('si la sección s < 75 '):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-12X'):
-                    self.l.seccion = 76
-                    expect(self.l.tipoinstalacion).to(equal('TI-12X'))
+                    for s in range(0, 75):
+                        self.l.seccion = s
+                        expect(self.l.tipoinstalacion).to(equal('TI-12X'))
 
         with context('si la sección s >= 75'):
             with context('si la linea es Aerea circuito simple'):
                 with it('must be TI-12Y'):
-                    for s in range(0, 75):
-                        self.l.seccion = s
-                        expect(self.l.tipoinstalacion).to(equal('TI-12Y'))
+                    self.l.seccion = 76
+                    expect(self.l.tipoinstalacion).to(equal('TI-12Y'))
 
     with context('si la 123Kv < tensión '):
         with before.each:
