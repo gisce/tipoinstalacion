@@ -235,6 +235,28 @@ class Linea(object):
             elif 24 >= u > 17.5:
                 if self.num_circuitos == 1:
                     if 0 < s <= 56:
+                        return 'TI-9VX'
+                    elif 56 < s <= 110:
+                        return 'TI-9VY'
+                    elif 110 < s:
+                        return 'TI-9VZ'
+                elif self.num_circuitos == 2:
+                    if 0 < s <= 56:
+                        return 'TI-10VX'
+                    elif 56 < s <= 110:
+                        return 'TI-10VY'
+                    elif 110 < s:
+                        return 'TI-10VZ'
+                elif self.num_circuitos == 3:
+                    if 0 < s <= 56:
+                        return 'TI-10AVX'
+                    elif 56 < s <= 110:
+                        return 'TI-10AVY'
+                    elif 110 < s:
+                        return 'TI-10AVZ'
+            elif 17.5 >= u > 12:
+                if self.num_circuitos == 1:
+                    if 0 < s <= 56:
                         return 'TI-9WX'
                     elif 56 < s <= 110:
                         return 'TI-9WY'
@@ -254,12 +276,47 @@ class Linea(object):
                         return 'TI-10AWY'
                     elif 110 < s:
                         return 'TI-10AWZ'
-            elif 17.5 >= u > 12:
-                pass
             elif 12 >= u > 1:
-                pass
+                if self.num_circuitos == 1:
+                    if 0 < s <= 56:
+                        return 'TI-9BX'
+                    elif 56 < s <= 110:
+                        return 'TI-9BY'
+                    elif 110 < s:
+                        return 'TI-9BZ'
+                elif self.num_circuitos == 2:
+                    if 0 < s <= 56:
+                        return 'TI-10BX'
+                    elif 56 < s <= 110:
+                        return 'TI-10BY'
+                    elif 110 < s:
+                        return 'TI-10BZ'
+                elif self.num_circuitos == 3:
+                    if 0 < s <= 56:
+                        return 'TI-10ABX'
+                    elif 56 < s <= 110:
+                        return 'TI-10ABY'
+                    elif 110 < s:
+                        return 'TI-10ABZ'
             elif 1 > u:
-                pass
+
+                if self.despliegue == 'AP':
+                    if self.num_circuitos == 1:
+                        if s < 75:
+                            return 'TI-11X'
+                        elif s >= 75:
+                            return 'TI-11Y'
+                    elif self.num_circuitos == 2:
+                        if s < 75:
+                            return 'TI-13X'
+                        elif s >= 75:
+                            return 'TI-13Y'
+                if self.despliegue == 'AF':
+                    if self.num_circuitos == 1:
+                        if s < 75:
+                            return 'TI-12X'
+                        elif s >= 75:
+                            return 'TI-12Y'
             else:
                 return 'TI-'
         elif self.despliegue[0] == 'S':
