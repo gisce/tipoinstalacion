@@ -28,10 +28,5 @@ with description('Una posicion'):
     with it('must have atraibut tipo'):
         assert hasattr(self.posicion, 'tipo')
 
-with description('Un condensador'):
-    with before.all:
-        self.condensador = Condensador()
-    with it('must have atributo tensión'):
-        assert hasattr(self.condensador, 'tension')
 
 
