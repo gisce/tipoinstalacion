@@ -1,5 +1,7 @@
 Tipo Instalacion
 ================
+.. image:: https://travis-ci.org/gisce/tipoinstalacion.svg?branch=master
+    :target: https://travis-ci.org/gisce/tipoinstalacion
 
 Libreria para calcular de forma automática el Tipo de Instalacion (TI)
 
