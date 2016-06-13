@@ -709,10 +709,6 @@ class Transformador(object):
         """
         if self.tension_p == 420:
             if 245 >= self.tension_s > 123:
-                return 'TI-157U'
-            elif 123 >= self.tension_s > 72.5:
-                return 'TI-157V'
-            if 245 >= self.tension_s > 123:
                 return 'TI-158U'
             elif 123 >= self.tension_s > 72.5:
                 return 'TI-158V'
