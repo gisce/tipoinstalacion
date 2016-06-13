@@ -9,7 +9,8 @@ Instalaciones soportadas
 ------------------------
 
 - Lineas
-
+- Posiciones
+- Transformadores
 
 Para desarrollar
 ----------------
