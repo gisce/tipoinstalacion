@@ -53,7 +53,6 @@ class Linea(object):
         if self.despliegue[0] == 'A':
             u = self.tension
             s = self.seccion
-            #print 'u:{}'.format(u)
             if u > 123:
                 if self.num_circuitos == 1:
                     if self.num_conductores == 1:
@@ -318,7 +317,8 @@ class Linea(object):
                         elif s >= 75:
                             return 'TI-12Y'
             else:
-                return 'TI-'
+                return None
+
         elif self.despliegue[0] == 'S':
             u = self.tension
             s = self.seccion
@@ -512,8 +512,8 @@ class Linea(object):
                         return 'TI-21X'
                     elif 150 <= s:
                         return 'TI-21Y'
-            return 'TI-'
-        return 'TI-'
+            return None
+        return None
 
 
 class Posicion(object):
@@ -685,7 +685,7 @@ class Posicion(object):
                     return 'TI-107B'
                 elif self.situacion == 'E':
                     return 'TI-108B'
-        return 'TI-'
+        return None
 
 
 class Transformador(object):
@@ -758,4 +758,4 @@ class Transformador(object):
                 return 'TI-165W'
             elif 12 >= self.tension_s >= 1:
                 return 'TI-165B'
-        return 'TI-'
+        return None
