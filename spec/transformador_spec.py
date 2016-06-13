@@ -10,18 +10,6 @@ with description('Calculando el TI de un transformador'):
 
     with context('si lat tensión primario = 420 kV'):
         with context('si 245Kv >= tension de secundario > 123Kv'):
-            with it('must be TI-157V'):
-                for t in range (124, 245):
-                    self.t.tension_s = t
-                    expect(self.t.tipoinstalacion).to(equal('TI-157U'))
-
-        with context('si 123Kv >= tension de secundario > 72.5Kv'):
-            with it('must be TI-157V'):
-                for t in range(73, 123):
-                    self.t.tension_s = t
-                    expect(self.t.tipoinstalacion).to(equal('TI-157V'))
-
-        with context('si 245Kv >= tension de secundario > 123Kv'):
             with it('must be TI-158U'):
                 for t in range(73, 123):
                     self.t.tension_s = t
