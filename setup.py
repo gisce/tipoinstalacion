@@ -3,7 +3,7 @@ import setuptools
 
 
 setuptools.setup(
-    name='cini',
+    name='tipoinstalacion',
     version='0.1.0',
     packages=setuptools.find_packages(),
     url='https://github.com/gisce/tipoinstalacion',
