@@ -1,7 +1,7 @@
 # coding=utf-8
 from tipoinstalacion.models import Reactancia
 
-from expects import *
+from expects import expect, equal
 
 with description('Calculando el TI de una reactancia'):
     with before.each:
