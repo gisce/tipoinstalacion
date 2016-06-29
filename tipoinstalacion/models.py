@@ -759,3 +759,27 @@ class Transformador(object):
             elif 12 >= self.tension_s >= 1:
                 return 'TI-165B'
         return None
+
+
+class Condensador(object):
+    """
+    Objeto que representa un condensador.
+    """
+    def __init__(self):
+        self.tension = None
+        """Tension
+        """
+
+    @property
+    def tipoinstalacion(self):
+        """
+        Obtiene el tipo de instalacion de la linea
+
+        :return:
+        """
+        if 132 >= self.tension > 66:
+            return 'TI-169'
+        elif 66 >= self.tension > 36:
+            return 'TI-170'
+        elif 36 >= self.tension > 1:
+            return 'TI-171'
