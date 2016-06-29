@@ -789,6 +789,6 @@ class Reactancia(object):
             return 'TI-166'
         elif 72.5 >= self.tension > 36:
             return 'TI-167'
-        elif 36 >= self.tension >1:
+        elif 36 >= self.tension > 1:
             return 'TI-168'
         return None
