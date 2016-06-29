@@ -11,6 +11,7 @@ Instalaciones soportadas
 - Lineas
 - Posiciones
 - Transformadores
+- Reactancias
 
 Para desarrollar
 ----------------
