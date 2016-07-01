@@ -4,12 +4,12 @@ from tipoinstalacion.models import CT
 from expects import expect, equal
 
 with description('Calculando el TI de un CT'):
-    with before.each:
-        self.c = CT()
 
     with context('si 12kV>=tension>1kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Caseta'):
             with context('si 1 máquina 15kVA'):
@@ -83,8 +83,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-31U'))
 
     with context('si 17.5kV>=tension>12kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Caseta'):
             with context('si 1 máquina 15kVA'):
@@ -158,8 +160,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-31V'))
 
     with context('si 24kV>=tension>17.5kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Caseta'):
             with context('si 1 máquina 15kVA'):
@@ -233,8 +237,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-31W'))
 
     with context('si 36kV>=tension>24kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 1
+        with before.each():
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Caseta'):
             with context('si 1 máquina 15kVA'):
@@ -308,8 +314,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-31B'))
 
     with context('si 52kV>=tension>36kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Caseta'):
             with context('si 1 máquina 15kVA'):
@@ -383,8 +391,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-31C'))
 
     with context('si 12kV>=tension>1kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Caseta'):
             with context('si 1 máquina 15kVA'):
@@ -458,8 +468,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-31D'))
 
     with context('si 12kV>=tension>1kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Caseta'):
             with context('si 2 máquinas 15kVA'):
@@ -542,8 +554,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-41U'))
 
     with context('si 17.5kV>=tension>12kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Caseta'):
             with context('si 2 máquinas 15kVA'):
@@ -626,8 +640,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-41V'))
 
     with context('si 24kV>=tension>17.5kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Caseta'):
             with context('si 2 máquinas 15kVA'):
@@ -718,8 +734,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-41W'))
 
     with context('si 36kV>=tension>24kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Caseta'):
             with context('si 2 máquinas 15kVA'):
@@ -802,8 +820,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-41B'))
 
     with context('si 52kV>=tension>36kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Caseta'):
             with context('si 2 máquinas 15kVA'):
@@ -886,8 +906,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-41C'))
 
     with context('si 72.5kV>=tension>52kV'):
-        self.c.situacion = 'C'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'C'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Caseta'):
             with context('si 2 máquinas 15kVA'):
@@ -970,8 +992,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-41D'))
 
     with context('si 12kV>=tension>=1kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Local'):
             with context('si 1 máquina 15kVA'):
@@ -1054,8 +1078,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-51U'))
 
     with context('si 17.5kV>=tension>12kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Local'):
             with context('si 1 máquina 15kVA'):
@@ -1138,8 +1164,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-51V'))
 
     with context('si 24kV>=tension>17.5kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Local'):
             with context('si 1 máquina 15kVA'):
@@ -1222,8 +1250,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-51W'))
 
     with context('si 36kV>=tension>24kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Local'):
             with context('si 1 máquina 15kVA'):
@@ -1306,8 +1336,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-51B'))
 
     with context('si 52kV>=tension>36kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Local'):
             with context('si 1 máquina 15kVA'):
@@ -1398,8 +1430,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-51C'))
 
     with context('si 72.5kV>=tension>52V'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Local'):
             with context('si 1 máquina 15kVA'):
@@ -1482,8 +1516,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-51D'))
 
     with context('si 12kV>=tension>=1kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Local'):
             with context('si 2 máquinas 15kVA'):
@@ -1574,8 +1610,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-61U'))
 
     with context('si 17.5kV>=tension>12kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Local'):
             with context('si 2 máquinas 15kVA'):
@@ -1658,8 +1696,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-61V'))
 
     with context('si 24kV>=tension>17.5kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Local'):
             with context('si 2 máquinas 15kVA'):
@@ -1742,8 +1782,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-61W'))
 
     with context('si 36kV>=tension>24kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Local'):
             with context('si 2 máquinas 15kVA'):
@@ -1826,8 +1868,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-61B'))
 
     with context('si 52kV>=tension>36kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Local'):
             with context('si 2 máquinas 15kVA'):
@@ -1910,8 +1954,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-61C'))
 
     with context('si 72.5kV>=tension>52kV'):
-        self.c.situacion = 'L'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'L'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Local'):
             with context('si 2 máquinas 15kVA'):
@@ -1994,8 +2040,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-61D'))
 
     with context('si 12kV>=tension>=1kV'):
-        self.c.situacion = 'I'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'I'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Intemprerie'):
             with context('si 2 máquinas 15kVA'):
@@ -2046,8 +2094,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-67U'))
 
     with context('si 17.5kV>=tension>12kV'):
-        self.c.situacion = 'I'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'I'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Intemprerie'):
             with context('si 2 máquinas 15kVA'):
@@ -2098,8 +2148,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-67V'))
 
     with context('si 24kV>=tension>17.5kV'):
-        self.c.situacion = 'I'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'I'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Intemprerie'):
             with context('si 2 máquinas 15kVA'):
@@ -2158,8 +2210,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-67W'))
 
     with context('si 36kV>=tension>24kV'):
-        self.c.situacion = 'I'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'I'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Intemprerie'):
             with context('si 2 máquinas 15kVA'):
@@ -2210,8 +2264,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-66B'))
 
     with context('si 52kV>=tension>36kV'):
-        self.c.situacion = 'I'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'I'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Intemprerie'):
             with context('si 2 máquinas 15kVA'):
@@ -2262,8 +2318,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-67C'))
 
     with context('si 72.5kV>=tension>52kV'):
-        self.c.situacion = 'I'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'I'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Intemprerie'):
             with context('si 2 máquinas 15kVA'):
@@ -2314,8 +2372,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-67D'))
 
     with context('si 12kV>=tension>=1kV'):
-        self.c.situacion = 'S'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'S'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Subterraneo'):
             with context('si 1 máquina 15kVA'):
@@ -2398,8 +2458,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-77U'))
 
     with context('si 12kV>=tension>=1kV'):
-        self.c.situacion = 'S'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'S'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Subterraneo'):
             with context('si 2 máquinas 15kVA'):
@@ -2490,8 +2552,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-87U'))
 
     with context('si 17.5kV>=tension>12kV'):
-        self.c.situacion = 'S'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'S'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Subterraneo'):
             with context('si 1 máquina 15kVA'):
@@ -2574,8 +2638,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-77V'))
 
     with context('si 17.5kV>=tension>12kV'):
-        self.c.situacion = 'S'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'S'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Subterraneo'):
             with context('si 2 máquinas 15kVA'):
@@ -2658,8 +2724,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-87V'))
 
     with context('si 24kV>=tension>17.5kV'):
-        self.c.situacion = 'S'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'S'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Subterraneo'):
             with context('si 1 máquina 15kVA'):
@@ -2734,8 +2802,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-76W'))
 
     with context('si 24kV>=tension>17.5kV'):
-        self.c.situacion = 'S'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'S'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Subterraneo'):
             with context('si 2 máquinas 15kVA'):
@@ -2818,8 +2888,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-87W'))
 
     with context('si 36kV>=tension>24kV'):
-        self.c.situacion = 'S'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'S'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Subterraneo'):
             with context('si 1 máquina 15kVA'):
@@ -2902,8 +2974,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-77B'))
 
     with context('si 36kV>=tension>24kV'):
-        self.c.situacion = 'S'
-        self.c.numero_maquinas = 2
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'S'
+            self.c.numero_maquinas = 2
 
         with context('si situacion es Subterraneo'):
             with context('si 2 máquinas 15kVA'):
@@ -2986,8 +3060,10 @@ with description('Calculando el TI de un CT'):
                         expect(self.c.tipoinstalacion).to(equal('TI-87B'))
 
     with context('si 52kV>=tension>36kV'):
-        self.c.situacion = 'S'
-        self.c.numero_maquinas = 1
+        with before.each:
+            self.c = CT()
+            self.c.situacion = 'S'
+            self.c.numero_maquinas = 1
 
         with context('si situacion es Subterraneo'):
             with context('si 1 máquina 15kVA'):
