@@ -759,3 +759,220 @@ class Transformador(object):
             elif 12 >= self.tension_s >= 1:
                 return 'TI-165B'
         return None
+
+
+class CT(object):
+    """
+    Objeto que representa un centro transformador.
+    """
+    def __init__(self):
+        self.tension = None
+        """Tension primaria en kV
+        """
+        self.potencia = None
+        """ Potencia del CT
+        """
+        self.numero_maquinas = None
+        """ Numero de maquinas
+        """
+
+        self.situacion = None
+        """ Situacion
+        C - Caseta
+        L - Local
+        I - Intemperie
+        S - Subeterraneo
+        """
+    @property
+    def tipoinstalacion(self):
+        """
+        Obtiene el tipo de instalacion de la linea
+
+        :return:
+        """
+
+        if self.situacion == 'C':
+            if 12 >= self.tension >= 1:
+                if self.numero_maquinas == 1:
+                    if self.potencia == 15:
+                        return 'TI-22U'
+                    elif self.potencia == 25:
+                        return 'TI-23U'
+                    elif self.potencia == 50:
+                        return 'TI-24U'
+                    elif self.potencia == 100:
+                        return 'TI-25U'
+                    elif self.potencia == 160:
+                        return 'TI-26U'
+                    elif self.potencia == 250:
+                        return 'TI-27U'
+                    elif self.potencia == 400:
+                        return 'TI-28U'
+                    elif self.potencia == 630:
+                        return 'TI-29U'
+                    elif self.potencia == 1000:
+                        return 'TI-30U'
+                    elif self.potencia == 1250:
+                        return 'TI-31U'
+                elif self.numero_maquinas == 2:
+                    if self.potencia == 15:
+                        return 'TI-32U'
+                    elif self.potencia == 25:
+                        return 'TI-33U'
+                    elif self.potencia == 50:
+                        return 'TI-34U'
+                    elif self.potencia == 100:
+                        return 'TI-35U'
+                    elif self.potencia == 160:
+                        return 'TI-36U'
+                    elif self.potencia == 250:
+                        return 'TI-37U'
+                    elif self.potencia == 400:
+                        return 'TI-38U'
+                    elif self.potencia == 630:
+                        return 'TI-39U'
+                    elif self.potencia == 1000:
+                        return 'TI-40U'
+                    elif self.potencia == 1250:
+                        return 'TI-41U'
+
+            elif 17.5 >= self.tension > 12:
+                if self.numero_maquinas == 1:
+                    if self.potencia == 15:
+                        return 'TI-22V'
+                    elif self.potencia == 25:
+                        return 'TI-23V'
+                    elif self.potencia == 50:
+                        return 'TI-24V'
+                    elif self.potencia == 100:
+                        return 'TI-25V'
+                    elif self.potencia == 160:
+                        return 'TI-26V'
+                    elif self.potencia == 250:
+                        return 'TI-27V'
+                    elif self.potencia == 400:
+                        return 'TI-28V'
+                    elif self.potencia == 630:
+                        return 'TI-29V'
+                    elif self.potencia == 1000:
+                        return 'TI-30V'
+                    elif self.potencia == 1250:
+                        return 'TI-31V'
+                elif self.numero_maquinas == 2:
+                    if self.potencia == 15:
+                        return 'TI-32V'
+                    elif self.potencia == 25:
+                        return 'TI-33V'
+                    elif self.potencia == 50:
+                        return 'TI-34V'
+                    elif self.potencia == 100:
+                        return 'TI-35V'
+                    elif self.potencia == 160:
+                        return 'TI-36V'
+                    elif self.potencia == 250:
+                        return 'TI-37V'
+                    elif self.potencia == 400:
+                        return 'TI-38V'
+                    elif self.potencia == 630:
+                        return 'TI-39V'
+                    elif self.potencia == 1000:
+                        return 'TI-40V'
+                    elif self.potencia == 1250:
+                        return 'TI-41V'
+            elif 24 >= self.tension > 17.5:
+                if self.numero_maquinas == 1:
+                    if self.potencia == 15:
+                        return 'TI-22W'
+                    elif self.potencia == 25:
+                        return 'TI-23W'
+                    elif self.potencia == 50:
+                        return 'TI-24W'
+                    elif self.potencia == 100:
+                        return 'TI-25W'
+                    elif self.potencia == 160:
+                        return 'TI-26W'
+                    elif self.potencia == 250:
+                        return 'TI-27W'
+                    elif self.potencia == 400:
+                        return 'TI-28W'
+                    elif self.potencia == 630:
+                        return 'TI-29W'
+                    elif self.potencia == 1000:
+                        return 'TI-30W'
+                    elif self.potencia == 1250:
+                        return 'TI-31W'
+            elif 36 >= self.tension > 24:
+                if self.numero_maquinas == 1:
+                    if self.potencia == 15:
+                        return 'TI-22B'
+                    elif self.potencia == 25:
+                        return 'TI-23B'
+                    elif self.potencia == 50:
+                        return 'TI-24B'
+                    elif self.potencia == 100:
+                        return 'TI-25B'
+                    elif self.potencia == 160:
+                        return 'TI-26B'
+                    elif self.potencia == 250:
+                        return 'TI-27B'
+                    elif self.potencia == 400:
+                        return 'TI-28B'
+                    elif self.potencia == 630:
+                        return 'TI-29B'
+                    elif self.potencia == 1000:
+                        return 'TI-30B'
+                    elif self.potencia == 1250:
+                        return 'TI-31B'
+            elif 52 >= self.tension > 36:
+                if self.numero_maquinas == 1:
+                    if self.potencia == 15:
+                        return 'TI-22C'
+                    elif self.potencia == 25:
+                        return 'TI-23C'
+                    elif self.potencia == 50:
+                        return 'TI-24C'
+                    elif self.potencia == 100:
+                        return 'TI-25C'
+                    elif self.potencia == 160:
+                        return 'TI-26C'
+                    elif self.potencia == 250:
+                        return 'TI-27C'
+                    elif self.potencia == 400:
+                        return 'TI-28C'
+                    elif self.potencia == 630:
+                        return 'TI-29C'
+                    elif self.potencia == 1000:
+                        return 'TI-30C'
+                    elif self.potencia == 1250:
+                        return 'TI-31C'
+            elif 72.5 >= self.tension > 52:
+                if self.numero_maquinas == 1:
+                    if self.potencia == 15:
+                        return 'TI-22D'
+                    elif self.potencia == 25:
+                        return 'TI-23D'
+                    elif self.potencia == 50:
+                        return 'TI-24D'
+                    elif self.potencia == 100:
+                        return 'TI-25D'
+                    elif self.potencia == 160:
+                        return 'TI-26D'
+                    elif self.potencia == 250:
+                        return 'TI-27D'
+                    elif self.potencia == 400:
+                        return 'TI-28D'
+                    elif self.potencia == 630:
+                        return 'TI-29D'
+                    elif self.potencia == 1000:
+                        return 'TI-30D'
+                    elif self.potencia == 1250:
+                        return 'TI-31D'
+
+        elif self.situacion == 'L':
+            pass
+        elif self.situacion == 'I':
+            pass
+        elif self.situacion == 'S':
+            pass
+
+        return None
