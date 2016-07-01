@@ -2564,3 +2564,767 @@ with description('Calculando el TI de un CT'):
                     for t in range(13, 17) + [17.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-76V'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-77V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-77V'))
+
+    with context('si 17.5kV>=tension>12kV'):
+        self.c.situacion = 'S'
+        self.c.numero_maquinas = 2
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 15kVA'):
+                self.c.potencia = 15
+                with it('must be TI-78V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-78V'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 25kVA'):
+                self.c.potencia = 25
+                with it('must be TI-79V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-79V'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 50kVA'):
+                self.c.potencia = 50
+                with it('must be TI-80V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-80V'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 100kVA'):
+                self.c.potencia = 100
+                with it('must be TI-81V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-81V'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 160kVA'):
+                self.c.potencia = 160
+                with it('must be TI-82V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-82V'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 250kVA'):
+                self.c.potencia = 250
+                with it('must be TI-83V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-83V'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 400kVA'):
+                self.c.potencia = 400
+                with it('must be TI-84V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-84V'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 630kVA'):
+                self.c.potencia = 630
+                with it('must be TI-85V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-85V'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 1000kVA'):
+                self.c.potencia = 1000
+                with it('must be TI-86V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-86V'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-87V'):
+                    for t in range(13, 17) + [17.5]:
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-87V'))
+
+    with context('si 24kV>=tension>17.5kV'):
+        self.c.situacion = 'S'
+        self.c.numero_maquinas = 1
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 15kVA'):
+                self.c.potencia = 15
+                with it('must be TI-68W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-68W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 25kVA'):
+                self.c.potencia = 25
+                with it('must be TI-69W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-69W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 50kVA'):
+                self.c.potencia = 50
+                with it('must be TI-70W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-70W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 100kVA'):
+                self.c.potencia = 100
+                with it('must be TI-71W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-71W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 160kVA'):
+                self.c.potencia = 160
+                with it('must be TI-72W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-72W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 250kVA'):
+                self.c.potencia = 250
+                with it('must be TI-73W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-73W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 400kVA'):
+                self.c.potencia = 400
+                with it('must be TI-74W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-74W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 1000kVA'):
+                self.c.potencia = 1000
+                with it('must be TI-75W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-75W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-76W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-76W'))
+
+    with context('si 24kV>=tension>17.5kV'):
+        self.c.situacion = 'S'
+        self.c.numero_maquinas = 2
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 15kVA'):
+                self.c.potencia = 15
+                with it('must be TI-78W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-78W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 25kVA'):
+                self.c.potencia = 25
+                with it('must be TI-79W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-79W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 50kVA'):
+                self.c.potencia = 50
+                with it('must be TI-80W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-80W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 100kVA'):
+                self.c.potencia = 100
+                with it('must be TI-81W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-81W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 160kVA'):
+                self.c.potencia = 160
+                with it('must be TI-82W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-82W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 250kVA'):
+                self.c.potencia = 250
+                with it('must be TI-83W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-83W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 400kVA'):
+                self.c.potencia = 400
+                with it('must be TI-84W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-84W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 630kVA'):
+                self.c.potencia = 630
+                with it('must be TI-85W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-85W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 1000kVA'):
+                self.c.potencia = 1000
+                with it('must be TI-86W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-86W'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-87W'):
+                    for t in range(18, 24):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-87W'))
+
+    with context('si 36kV>=tension>24kV'):
+        self.c.situacion = 'S'
+        self.c.numero_maquinas = 1
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 15kVA'):
+                self.c.potencia = 15
+                with it('must be TI-68B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-68B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 25kVA'):
+                self.c.potencia = 25
+                with it('must be TI-69B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-69B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 50kVA'):
+                self.c.potencia = 50
+                with it('must be TI-70B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-70B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 100kVA'):
+                self.c.potencia = 100
+                with it('must be TI-71B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-71B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 160kVA'):
+                self.c.potencia = 160
+                with it('must be TI-72B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-72B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 250kVA'):
+                self.c.potencia = 250
+                with it('must be TI-73B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-73B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 400kVA'):
+                self.c.potencia = 400
+                with it('must be TI-74B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-74B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 630kVA'):
+                self.c.potencia = 630
+                with it('must be TI-75B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-75B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 1000kVA'):
+                self.c.potencia = 1000
+                with it('must be TI-76B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-76B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-77B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-77B'))
+
+    with context('si 36kV>=tension>24kV'):
+        self.c.situacion = 'S'
+        self.c.numero_maquinas = 2
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 15kVA'):
+                self.c.potencia = 15
+                with it('must be TI-78B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-78B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 25kVA'):
+                self.c.potencia = 25
+                with it('must be TI-79B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-79B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 50kVA'):
+                self.c.potencia = 50
+                with it('must be TI-80B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-80B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 100kVA'):
+                self.c.potencia = 100
+                with it('must be TI-81B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-81B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 160kVA'):
+                self.c.potencia = 160
+                with it('must be TI-82B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-82B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 250kVA'):
+                self.c.potencia = 250
+                with it('must be TI-83B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-83B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 400kVA'):
+                self.c.potencia = 400
+                with it('must be TI-84B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-84B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 630kVA'):
+                self.c.potencia = 630
+                with it('must be TI-85B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-85B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 1000kVA'):
+                self.c.potencia = 1000
+                with it('must be TI-86B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-86B'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-87B'):
+                    for t in range(24, 36):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-87B'))
+
+    with context('si 52kV>=tension>36kV'):
+        self.c.situacion = 'S'
+        self.c.numero_maquinas = 1
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 15kVA'):
+                self.c.potencia = 15
+                with it('must be TI-68C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-68C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 25kVA'):
+                self.c.potencia = 25
+                with it('must be TI-69C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-69C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 50kVA'):
+                self.c.potencia = 50
+                with it('must be TI-70C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-70C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 100kVA'):
+                self.c.potencia = 100
+                with it('must be TI-71C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-71C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 160kVA'):
+                self.c.potencia = 160
+                with it('must be TI-72C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-72C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 250kVA'):
+                self.c.potencia = 250
+                with it('must be TI-73C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-73C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 400kVA'):
+                self.c.potencia = 400
+                with it('must be TI-74C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-74C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 630kVA'):
+                self.c.potencia = 630
+                with it('must be TI-75C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-75C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 1000kVA'):
+                self.c.potencia = 1000
+                with it('must be TI-76C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-76C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-77C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-77C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-77C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-77C'))
+
+    with context('si 52kV>=tension>36kV'):
+        self.c.situacion = 'S'
+        self.c.numero_maquinas = 2
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 15kVA'):
+                self.c.potencia = 15
+                with it('must be TI-78C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-78C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 25kVA'):
+                self.c.potencia = 25
+                with it('must be TI-79C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-79C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 50kVA'):
+                self.c.potencia = 50
+                with it('must be TI-80C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-80C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 100kVA'):
+                self.c.potencia = 100
+                with it('must be TI-81C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-81C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 160kVA'):
+                self.c.potencia = 160
+                with it('must be TI-82C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-82C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 250kVA'):
+                self.c.potencia = 250
+                with it('must be TI-83C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-83C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 400kVA'):
+                self.c.potencia = 400
+                with it('must be TI-84C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-84C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 630kVA'):
+                self.c.potencia = 630
+                with it('must be TI-85C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-85C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 1000kVA'):
+                self.c.potencia = 1000
+                with it('must be TI-86C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-86C'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-87C'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-87C'))
+
+    with context('si 72.5kV>=tension>52kV'):
+        self.c.situacion = 'S'
+        self.c.numero_maquinas = 1
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 15kVA'):
+                self.c.potencia = 15
+                with it('must be TI-68D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-68D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 25kVA'):
+                self.c.potencia = 25
+                with it('must be TI-69D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-69D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 50kVA'):
+                self.c.potencia = 50
+                with it('must be TI-70D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-70D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 100kVA'):
+                self.c.potencia = 100
+                with it('must be TI-71D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-71D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 160kVA'):
+                self.c.potencia = 160
+                with it('must be TI-72D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-72D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 250kVA'):
+                self.c.potencia = 250
+                with it('must be TI-73D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-73D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 400kVA'):
+                self.c.potencia = 400
+                with it('must be TI-74D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-74D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 630kVA'):
+                self.c.potencia = 630
+                with it('must be TI-75D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-75D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 1000kVA'):
+                self.c.potencia = 1000
+                with it('must be TI-76D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-76D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 1 máquina 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-77D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-77D'))
+
+    with context('si 72.5kV>=tension>52kV'):
+        self.c.situacion = 'S'
+        self.c.numero_maquinas = 2
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 15kVA'):
+                self.c.potencia = 15
+                with it('must be TI-78D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-78D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 25kVA'):
+                self.c.potencia = 25
+                with it('must be TI-79D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-79D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 50kVA'):
+                self.c.potencia = 50
+                with it('must be TI-80D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-80D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 100kVA'):
+                self.c.potencia = 100
+                with it('must be TI-81D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-81D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 160kVA'):
+                self.c.potencia = 160
+                with it('must be TI-82D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-82D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 250kVA'):
+                self.c.potencia = 250
+                with it('must be TI-83D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-83D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 400kVA'):
+                self.c.potencia = 400
+                with it('must be TI-84D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-84D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 630kVA'):
+                self.c.potencia = 630
+                with it('must be TI-85D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-85D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 1000kVA'):
+                self.c.potencia = 1000
+                with it('must be TI-86D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-86D'))
+
+        with context('si situacion es Subterraneo'):
+            with context('si 2 máquinas 1250kVA'):
+                self.c.potencia = 1250
+                with it('must be TI-87D'):
+                    for t in range(37, 52):
+                        self.c.tension = t
+                        expect(self.c.tipoinstalacion).to(equal('TI-87D'))
