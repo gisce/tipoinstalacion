@@ -761,6 +761,38 @@ class Transformador(object):
         return None
 
 
+class Reactancia(object):
+    """
+    Objeto que reperesenta una reactancia
+
+    Podemos obtener el Tipo de Instalcion creando un objeto reacancia, assignando
+    los
+
+    linea = Reactancai()
+    # TODO: Explicar dev
+
+    """
+
+    def __init__(self):
+        self.tension = None
+        """Tension en kV
+        """
+
+    @property
+    def tipoinstalacion(self):
+        """
+        Obtiene el tipo de instalacion de la reactancia
+
+        :return:
+        """
+        if 145 >= self.tension > 72.5:
+            return 'TI-166'
+        elif 72.5 >= self.tension > 36:
+            return 'TI-167'
+        elif 36 >= self.tension > 1:
+            return 'TI-168'
+        return None
+
 class CT(object):
     """
     Objeto que representa un centro transformador.
