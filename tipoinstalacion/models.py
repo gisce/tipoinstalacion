@@ -766,7 +766,6 @@ class CT(object):
     Objeto que representa un centro transformador.
     """
     def __init__(self):
-        super(CT, self).__init__()
         self.tension = None
         """Tension primaria en kV
         """
