@@ -12,6 +12,7 @@ Instalaciones soportadas
 - Posiciones
 - Transformadores
 - Reactancias
+- Condensadores
 
 Para desarrollar
 ----------------
