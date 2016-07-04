@@ -1650,4 +1650,58 @@ class CT(object):
                         return 'TI-86D'
                     elif self.potencia == 1250:
                         return 'TI-87D'
+        if self.numero_maquinas == 0:
+            if self.situacion == 'C' and (12 >= self.tension >= 1):
+                return 'TI-0CU'
+            elif self.situacion == 'I' and (12 >= self.tension >= 1):
+                return 'TI-OIU'
+            elif self.situacion == 'L' and (12 >= self.tension >= 1):
+                return 'TI-0LU'
+            elif self.situacion == 'S' and (12 >= self.tension >= 1):
+                return 'TI-0SU'
+
+            if self.situacion == 'C' and (17.5 >= self.tension > 12):
+                return 'TI-0CV'
+            elif self.situacion == 'I' and (17.5 >= self.tension > 12):
+                return 'TI-OIV'
+            elif self.situacion == 'L' and (17.5 >= self.tension > 12):
+                return 'TI-0LV'
+            elif self.situacion == 'S' and (17.5 >= self.tension > 12):
+                return 'TI-0SV'
+
+            if self.situacion == 'C' and (24 >= self.tension > 17.5):
+                return 'TI-0CW'
+            elif self.situacion == 'I' and (24 >= self.tension > 17.5):
+                return 'TI-OIW'
+            elif self.situacion == 'L' and (24 >= self.tension > 17.5):
+                return 'TI-0LW'
+            elif self.situacion == 'S' and (24 >= self.tension > 17.5):
+                return 'TI-0SW'
+
+            if self.situacion == 'C' and (36 >= self.tension > 24):
+                return 'TI-0CX'
+            elif self.situacion == 'I' and (36 >= self.tension > 24):
+                return 'TI-OIX'
+            elif self.situacion == 'L' and (36 >= self.tension > 24):
+                return 'TI-0LX'
+            elif self.situacion == 'S' and (36 >= self.tension > 24):
+                return 'TI-0SX'
+
+            if self.situacion == 'C' and (52 >= self.tension > 36):
+                return 'TI-0CY'
+            elif self.situacion == 'I' and (52 >= self.tension > 36):
+                return 'TI-OIY'
+            elif self.situacion == 'L' and (52 >= self.tension > 36):
+                return 'TI-0LY'
+            elif self.situacion == 'S' and (52 >= self.tension > 36):
+                return 'TI-0SY'
+
+            if self.situacion == 'C' and (72.5 >= self.tension > 52):
+                return 'TI-0CZ'
+            elif self.situacion == 'I' and (72.5 >= self.tension > 52):
+                return 'TI-OIZ'
+            elif self.situacion == 'L' and (72.5 >= self.tension > 52):
+                return 'TI-0LZ'
+            elif self.situacion == 'S' and (72.5 >= self.tension > 52):
+                return 'TI-0SZ'
         return None
