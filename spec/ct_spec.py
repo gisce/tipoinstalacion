@@ -3407,3 +3407,202 @@ with description('Calculando el TI de un CT'):
                         for t in range(37, 52):
                             self.c.tension = t
                             expect(self.c.tipoinstalacion).to(equal('TI-87D'))
+
+    with context('si Centor de reparto,seccionamiento o de reflexion sin transformacion'):
+        with before.each:
+            self.c = CT()
+            self.c.numero_maquinas = 0
+
+            with context('si situacion es Caseta'):
+                with context('si 12kV>= tension >=1kV'):
+                    with it('must be TI-0CU'):
+                        self.c.situacion = 'C'
+                        for t in range(1, 12):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0CU'))
+
+            with context('si situacion es Intemperie'):
+                with context('si 12kV>= tension >=1kV'):
+                    with it('must be TI-0IU'):
+                        self.c.situacion = 'I'
+                        for t in range(1, 12):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0IU'))
+
+            with context('si situacion es Local'):
+                with context('si 12kV>= tension >=1kV'):
+                    with it('msut be TI-0LU'):
+                        self.c.situacion = 'I'
+                        for t in range(1, 12):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0LU'))
+
+            with context('si situacion es Subterraneo'):
+                with context('si 12kV>= tension >=1kV'):
+                    with it('must be TI-0SU'):
+                        self.c.situacion = 'S'
+                        for t in range(1, 12):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0SU'))
+
+            with context('si situacion es Caseta'):
+                with context('si 17.5kV>= tension >12kV'):
+                    with it('must be TI-0CV'):
+                        self.c.situacion = 'C'
+                        for t in range(13, 17) + [17.5]:
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0CV'))
+
+            with context('si situacion es Intemperie'):
+                with context('si 17.5kV>= tension >12kV'):
+                    with it('must be TI-0IV'):
+                        self.c.situacion = 'I'
+                        for t in range(13, 17) + [17.5]:
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0IV'))
+
+            with context('si situacion es Local'):
+                with context('si 17.5kV>= tension >12kV'):
+                    with it('must be TI-0LV'):
+                        self.c.situacion = 'I'
+                        for t in range(13, 17) +[17.5]:
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0LV'))
+
+            with context('si situacion es Subterraneo'):
+                with context('si 17.5kV>= tension >12kV'):
+                    with it('must be TI-0SV'):
+                        self.c.situacion = 'S'
+                        for t in range(13, 17) + [17.5]:
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0SV'))
+
+
+            with context('si situacion es Caseta'):
+                with context('si 24V>= tension >17.5kV'):
+                    with it('must be TI-0CW'):
+                        self.c.situacion = 'C'
+                        for t in range(18, 24):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0CW'))
+
+            with context('si situacion es Intemperie'):
+                with context('si 24kV>= tension >17.5kV'):
+                    with it('must be TI-0IW'):
+                        self.c.situacion = 'I'
+                        for t in range(18, 24):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0IW'))
+
+            with context('si situacion es Local'):
+                with context('si 24kV>= tension >17.5kV'):
+                    with it('must be TI-0LW'):
+                        self.c.situacion = 'I'
+                        for t in range(18, 24):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0LW'))
+
+            with context('si situacion es Subterraneo'):
+                with context('si 24kV>= tension >17.5kV'):
+                    with it('must be TI-0SW'):
+                        self.c.situacion = 'S'
+                        for t in range(18, 24):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0SW'))
+
+
+            with context('si situacion es Caseta'):
+                with context('si 36kV>= tension >24kV'):
+                    with it('must be TI-0CX'):
+                        self.c.situacion = 'C'
+                        for t in range(24, 36):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0CX'))
+
+            with context('si situacion es Intemperie'):
+                with context('si 36kV>= tension >24kV'):
+                    with it('must be TI-0IX'):
+                        self.c.situacion = 'I'
+                        for t in range(24, 36):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0IX'))
+
+            with context('si situacion es Local'):
+                with context('si 36kV>= tension >24kV'):
+                    with it('must be TI-0LX'):
+                        self.c.situacion = 'I'
+                        for t in range(18, 24):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0LX'))
+
+            with context('si situacion es Subterraneo'):
+                with context('si 36kV>= tension >24kV'):
+                    with it('must be TI-0SX'):
+                        self.c.situacion = 'S'
+                        for t in range(18, 24):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0SX'))
+
+            with context('si situacion es Caseta'):
+                with context('si 52kV>= tension >36kV'):
+                    with it('must be TI-0CY'):
+                        self.c.situacion = 'C'
+                        for t in range(37, 52):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0CX'))
+
+            with context('si situacion es Intemperie'):
+                with context('si 52kV>= tension >36kV'):
+                    with it('must be TI-0IY'):
+                        self.c.situacion = 'I'
+                        for t in range(37, 52):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0IY'))
+
+            with context('si situacion es Local'):
+                with context('si 52kV>= tension >36kV'):
+                    with it('must be TI-0IY'):
+                        self.c.situacion = 'I'
+                        for t in range(37, 52):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0IY'))
+
+            with context('si situacion es Subterraneo'):
+                with context('si 52kV>= tension >36kV'):
+                    with it('must be TI-0SY'):
+                        self.c.situacion = 'S'
+                        for t in range(37, 52):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0SY'))
+
+            with context('si situacion es Caseta'):
+                with context('si 72.5kV>= tension >52kV'):
+                    with it('must be TI-0CY'):
+                        self.c.situacion = 'C'
+                        for t in range(53, 72) + [72.5]:
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0CX'))
+
+            with context('si situacion es Intemperie'):
+                with context('si 72.5kV>= tension >52kV'):
+                    with it('must be TI-0IY'):
+                        self.c.situacion = 'I'
+                        for t in range(53, 72) + [72.5]:
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0IY'))
+
+            with context('si situacion es Local'):
+                with context('si 72.5kV>= tension >52kV'):
+                    with it('must be TI-0IY'):
+                        self.c.situacion = 'I'
+                        for t in range(52, 72) + [72.5]:
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0IY'))
+
+            with context('si situacion es Subterraneo'):
+                with context('si 72.5kV>= tension >52kV'):
+                    with it('must be TI-0SY'):
+                        self.c.situacion = 'S'
+                        for t in range(37, 52):
+                            self.c.tension = t
+                            expect(self.c.tipoinstalacion).to(equal('TI-0SY'))
