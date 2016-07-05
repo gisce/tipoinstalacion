@@ -1760,3 +1760,42 @@ class CT(object):
             elif self.situacion == 'S' and (72.5 >= self.tension > 52):
                 return 'TI-0SZ'
         return None
+
+
+class Fiabilidad(object):
+    """
+    Objeto que representa un elemento de fiabilidad
+    """
+    def __init__(self):
+        self.tipoelemento = None
+        """Tipo de elemento:
+
+        - Seccionador de cuchillas: ``S``
+        - Reconectador: ``R``
+        - Reconectador: ``RS``
+        - Seccionador - Fusible (XS-SXS): ``SF``
+        - Autoseccionador/Seccionalizador: ``AS``
+        - Interruptor: ``I``
+        - Interruptor - seccionador: ``IS``
+        - Interruptor - seccionador telecontorlado: ``IST``
+
+        """
+
+    @property
+    def tipoinstalacion(self):
+        if self.tipoelemento == 'S':
+            return 'TI-174'
+        elif self.tipoelemento == 'R':
+            return 'TI-177'
+        elif self.tipoelemento == 'RS':
+            return 'TI-179'
+        elif self.tipoelemento == 'SF':
+            return 'TI-181'
+        elif self.tipoelemento == 'AS':
+            return 'TI-182'
+        elif self.tipoelemento == 'I':
+            return 'TI-183'
+        elif self.tipoelemento == 'IS':
+            return 'TI-187'
+        elif self.tipoelemento == 'IST':
+            return 'TI-187A'

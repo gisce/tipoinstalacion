@@ -14,6 +14,7 @@ Instalaciones soportadas
 - Reactancias
 - Condensadores
 - Centros transformadores
+- Fiabilidad
 
 Para desarrollar
 ----------------
