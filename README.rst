@@ -13,6 +13,7 @@ Instalaciones soportadas
 - Transformadores
 - Reactancias
 - Condensadores
+- Centros transformadores
 
 Para desarrollar
 ----------------
