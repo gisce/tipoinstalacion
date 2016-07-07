@@ -1391,9 +1391,9 @@ class CT(object):
                 elif self.potencia == 100:
                     return 'TI-65V'
                 elif self.potencia == 160:
-                    return 'TI-66v'
+                    return 'TI-66V'
                 elif self.potencia == 250:
-                    return 'TI-67v'
+                    return 'TI-67V'
             elif 24 >= self.tension > 17.5:
                 if self.potencia == 15:
                     return 'TI-62W'
