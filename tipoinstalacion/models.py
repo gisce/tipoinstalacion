@@ -816,6 +816,7 @@ class Reactancia(object):
             return 'TI-168'
         return None
 
+
 class CT(object):
     """
     Objeto que representa un centro transformador.
@@ -846,865 +847,637 @@ class CT(object):
 
         :return:
         """
+        from tipoinstalacion import nearest
 
         if self.situacion == 'C':
             if 12 >= self.tension >= 1:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-22U'
-                    elif self.potencia == 25:
-                        return 'TI-23U'
-                    elif self.potencia == 50:
-                        return 'TI-24U'
-                    elif self.potencia == 100:
-                        return 'TI-25U'
-                    elif self.potencia == 160:
-                        return 'TI-26U'
-                    elif self.potencia == 250:
-                        return 'TI-27U'
-                    elif self.potencia == 400:
-                        return 'TI-28U'
-                    elif self.potencia == 630:
-                        return 'TI-29U'
-                    elif self.potencia == 1000:
-                        return 'TI-30U'
-                    elif self.potencia == 1250:
-                        return 'TI-31U'
+                    values = {
+                        15: '22',
+                        25: '23',
+                        50: '24',
+                        100: '25',
+                        160: '26',
+                        250: '27',
+                        400: '28',
+                        630: '29',
+                        1000: '30',
+                        1250: '31'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}U'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-32U'
-                    elif self.potencia == 25:
-                        return 'TI-33U'
-                    elif self.potencia == 50:
-                        return 'TI-34U'
-                    elif self.potencia == 100:
-                        return 'TI-35U'
-                    elif self.potencia == 160:
-                        return 'TI-36U'
-                    elif self.potencia == 250:
-                        return 'TI-37U'
-                    elif self.potencia == 400:
-                        return 'TI-38U'
-                    elif self.potencia == 630:
-                        return 'TI-39U'
-                    elif self.potencia == 1000:
-                        return 'TI-40U'
-                    elif self.potencia == 1250:
-                        return 'TI-41U'
-
+                    values = {
+                        15: '32',
+                        25: '33',
+                        50: '34',
+                        100: '35',
+                        160: '36',
+                        250: '37',
+                        400: '38',
+                        630: '39',
+                        1000: '40',
+                        1250: '41'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}U'.format(values[key])
             elif 17.5 >= self.tension > 12:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-22V'
-                    elif self.potencia == 25:
-                        return 'TI-23V'
-                    elif self.potencia == 50:
-                        return 'TI-24V'
-                    elif self.potencia == 100:
-                        return 'TI-25V'
-                    elif self.potencia == 160:
-                        return 'TI-26V'
-                    elif self.potencia == 250:
-                        return 'TI-27V'
-                    elif self.potencia == 400:
-                        return 'TI-28V'
-                    elif self.potencia == 630:
-                        return 'TI-29V'
-                    elif self.potencia == 1000:
-                        return 'TI-30V'
-                    elif self.potencia == 1250:
-                        return 'TI-31V'
+                    values = {
+                        15: '22',
+                        25: '23',
+                        50: '24',
+                        100: '25',
+                        160: '26',
+                        250: '27',
+                        400: '28',
+                        630: '29',
+                        1000: '30',
+                        1250: '31'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}V'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-32V'
-                    elif self.potencia == 25:
-                        return 'TI-33V'
-                    elif self.potencia == 50:
-                        return 'TI-34V'
-                    elif self.potencia == 100:
-                        return 'TI-35V'
-                    elif self.potencia == 160:
-                        return 'TI-36V'
-                    elif self.potencia == 250:
-                        return 'TI-37V'
-                    elif self.potencia == 400:
-                        return 'TI-38V'
-                    elif self.potencia == 630:
-                        return 'TI-39V'
-                    elif self.potencia == 1000:
-                        return 'TI-40V'
-                    elif self.potencia == 1250:
-                        return 'TI-41V'
+                    values = {
+                        15: '32',
+                        25: '33',
+                        50: '34',
+                        100: '35',
+                        160: '36',
+                        250: '37',
+                        400: '38',
+                        630: '39',
+                        1000: '40',
+                        1250: '41'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}V'.format(values[key])
             elif 24 >= self.tension > 17.5:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-22W'
-                    elif self.potencia == 25:
-                        return 'TI-23W'
-                    elif self.potencia == 50:
-                        return 'TI-24W'
-                    elif self.potencia == 100:
-                        return 'TI-25W'
-                    elif self.potencia == 160:
-                        return 'TI-26W'
-                    elif self.potencia == 250:
-                        return 'TI-27W'
-                    elif self.potencia == 400:
-                        return 'TI-28W'
-                    elif self.potencia == 630:
-                        return 'TI-29W'
-                    elif self.potencia == 1000:
-                        return 'TI-30W'
-                    elif self.potencia == 1250:
-                        return 'TI-31W'
+                    values = {
+                        15: '22',
+                        25: '23',
+                        50: '24',
+                        100: '25',
+                        160: '26',
+                        250: '27',
+                        400: '28',
+                        630: '29',
+                        1000: '30',
+                        1250: '31'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}W'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-32W'
-                    elif self.potencia == 25:
-                        return 'TI-33W'
-                    elif self.potencia == 50:
-                        return 'TI-34W'
-                    elif self.potencia == 100:
-                        return 'TI-35W'
-                    elif self.potencia == 160:
-                        return 'TI-36W'
-                    elif self.potencia == 250:
-                        return 'TI-37W'
-                    elif self.potencia == 400:
-                        return 'TI-38W'
-                    elif self.potencia == 630:
-                        return 'TI-39W'
-                    elif self.potencia == 1000:
-                        return 'TI-40W'
-                    elif self.potencia == 1250:
-                        return 'TI-41W'
+                    values = {
+                        15: '32',
+                        25: '33',
+                        50: '34',
+                        100: '35',
+                        160: '36',
+                        250: '37',
+                        400: '38',
+                        630: '39',
+                        1000: '40',
+                        1250: '41'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}W'.format(values[key])
             elif 36 >= self.tension > 24:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-22B'
-                    elif self.potencia == 25:
-                        return 'TI-23B'
-                    elif self.potencia == 50:
-                        return 'TI-24B'
-                    elif self.potencia == 100:
-                        return 'TI-25B'
-                    elif self.potencia == 160:
-                        return 'TI-26B'
-                    elif self.potencia == 250:
-                        return 'TI-27B'
-                    elif self.potencia == 400:
-                        return 'TI-28B'
-                    elif self.potencia == 630:
-                        return 'TI-29B'
-                    elif self.potencia == 1000:
-                        return 'TI-30B'
-                    elif self.potencia == 1250:
-                        return 'TI-31B'
+                    values = {
+                        15: '22',
+                        25: '23',
+                        50: '24',
+                        100: '25',
+                        160: '26',
+                        250: '27',
+                        400: '28',
+                        630: '29',
+                        1000: '30',
+                        1250: '31'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}B'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-32B'
-                    elif self.potencia == 25:
-                        return 'TI-33B'
-                    elif self.potencia == 50:
-                        return 'TI-34B'
-                    elif self.potencia == 100:
-                        return 'TI-35B'
-                    elif self.potencia == 160:
-                        return 'TI-36B'
-                    elif self.potencia == 250:
-                        return 'TI-37B'
-                    elif self.potencia == 400:
-                        return 'TI-38B'
-                    elif self.potencia == 630:
-                        return 'TI-39B'
-                    elif self.potencia == 1000:
-                        return 'TI-40B'
-                    elif self.potencia == 1250:
-                        return 'TI-41B'
+                    values = {
+                        15: '32',
+                        25: '33',
+                        50: '34',
+                        100: '35',
+                        160: '36',
+                        250: '37',
+                        400: '38',
+                        630: '39',
+                        1000: '40',
+                        1250: '41'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}B'.format(values[key])
             elif 52 >= self.tension > 36:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-22C'
-                    elif self.potencia == 25:
-                        return 'TI-23C'
-                    elif self.potencia == 50:
-                        return 'TI-24C'
-                    elif self.potencia == 100:
-                        return 'TI-25C'
-                    elif self.potencia == 160:
-                        return 'TI-26C'
-                    elif self.potencia == 250:
-                        return 'TI-27C'
-                    elif self.potencia == 400:
-                        return 'TI-28C'
-                    elif self.potencia == 630:
-                        return 'TI-29C'
-                    elif self.potencia == 1000:
-                        return 'TI-30C'
-                    elif self.potencia == 1250:
-                        return 'TI-31C'
+                    values = {
+                        15: '22',
+                        25: '23',
+                        50: '24',
+                        100: '25',
+                        160: '26',
+                        250: '27',
+                        400: '28',
+                        630: '29',
+                        1000: '30',
+                        1240: '31'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}C'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-32C'
-                    elif self.potencia == 25:
-                        return 'TI-33C'
-                    elif self.potencia == 50:
-                        return 'TI-34C'
-                    elif self.potencia == 100:
-                        return 'TI-35C'
-                    elif self.potencia == 160:
-                        return 'TI-36C'
-                    elif self.potencia == 250:
-                        return 'TI-37C'
-                    elif self.potencia == 400:
-                        return 'TI-38C'
-                    elif self.potencia == 630:
-                        return 'TI-39C'
-                    elif self.potencia == 1000:
-                        return 'TI-40C'
-                    elif self.potencia == 1250:
-                        return 'TI-41C'
+                    values = {
+                        15: '32',
+                        25: '33',
+                        50: '34',
+                        100: '35',
+                        160: '36',
+                        250: '37',
+                        400: '38',
+                        630: '39',
+                        1000: '40',
+                        1250: '41'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}C'.format(values[key])
             elif 72.5 >= self.tension > 52:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-22D'
-                    elif self.potencia == 25:
-                        return 'TI-23D'
-                    elif self.potencia == 50:
-                        return 'TI-24D'
-                    elif self.potencia == 100:
-                        return 'TI-25D'
-                    elif self.potencia == 160:
-                        return 'TI-26D'
-                    elif self.potencia == 250:
-                        return 'TI-27D'
-                    elif self.potencia == 400:
-                        return 'TI-28D'
-                    elif self.potencia == 630:
-                        return 'TI-29D'
-                    elif self.potencia == 1000:
-                        return 'TI-30D'
-                    elif self.potencia == 1250:
-                        return 'TI-31D'
+                    values = {
+                        15: '22',
+                        25: '23',
+                        50: '24',
+                        100: '25',
+                        160: '26',
+                        250: '27',
+                        400: '28',
+                        630: '29',
+                        1000: '30',
+                        1250: '31',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}D'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-32D'
-                    elif self.potencia == 25:
-                        return 'TI-33D'
-                    elif self.potencia == 50:
-                        return 'TI-34D'
-                    elif self.potencia == 100:
-                        return 'TI-35D'
-                    elif self.potencia == 160:
-                        return 'TI-36D'
-                    elif self.potencia == 250:
-                        return 'TI-37D'
-                    elif self.potencia == 400:
-                        return 'TI-38D'
-                    elif self.potencia == 630:
-                        return 'TI-39D'
-                    elif self.potencia == 1000:
-                        return 'TI-40D'
-                    elif self.potencia == 1250:
-                        return 'TI-41D'
-
+                    values = {
+                        15: '32',
+                        25: '33',
+                        50: '34',
+                        100: '35',
+                        160: '36',
+                        250: '37',
+                        400: '38',
+                        630: '39',
+                        1000: '40',
+                        1250: '41',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}D'.format(values[key])
         elif self.situacion == 'L':
             if 12 >= self.tension >= 1:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-42U'
-                    elif self.potencia == 25:
-                        return 'TI-43U'
-                    elif self.potencia == 50:
-                        return 'TI-44U'
-                    elif self.potencia == 100:
-                        return 'TI-45U'
-                    elif self.potencia == 160:
-                        return 'TI-46U'
-                    elif self.potencia == 250:
-                        return 'TI-47U'
-                    elif self.potencia == 400:
-                        return 'TI-48U'
-                    elif self.potencia == 630:
-                        return 'TI-49U'
-                    elif self.potencia == 1000:
-                        return 'TI-50U'
-                    elif self.potencia == 1250:
-                        return 'TI-51U'
+                    values = {
+                        15: '42',
+                        25: '43',
+                        50: '44',
+                        100: '45',
+                        160: '46',
+                        250: '47',
+                        400: '48',
+                        630: '49',
+                        1000: '50',
+                        1250: '51',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}U'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-52U'
-                    elif self.potencia == 25:
-                        return 'TI-53U'
-                    elif self.potencia == 50:
-                        return 'TI-54U'
-                    elif self.potencia == 100:
-                        return 'TI-55U'
-                    elif self.potencia == 160:
-                        return 'TI-56U'
-                    elif self.potencia == 250:
-                        return 'TI-57U'
-                    elif self.potencia == 400:
-                        return 'TI-58U'
-                    elif self.potencia == 630:
-                        return 'TI-59U'
-                    elif self.potencia == 1000:
-                        return 'TI-60U'
-                    elif self.potencia == 1250:
-                        return 'TI-61U'
+                    values = {
+                        15: '52',
+                        25: '53',
+                        50: '54',
+                        100: '55',
+                        160: '56',
+                        250: '57',
+                        400: '58',
+                        630: '59',
+                        1000: '60',
+                        1250: '61',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}U'.format(values[key])
             elif 17.5 >= self.tension > 12:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-42V'
-                    elif self.potencia == 25:
-                        return 'TI-43V'
-                    elif self.potencia == 50:
-                        return 'TI-44V'
-                    elif self.potencia == 100:
-                        return 'TI-45V'
-                    elif self.potencia == 160:
-                        return 'TI-46V'
-                    elif self.potencia == 250:
-                        return 'TI-47V'
-                    elif self.potencia == 400:
-                        return 'TI-48V'
-                    elif self.potencia == 630:
-                        return 'TI-49V'
-                    elif self.potencia == 1000:
-                        return 'TI-50V'
-                    elif self.potencia == 1250:
-                        return 'TI-51V'
+                    values = {
+                        15: '42',
+                        25: '43',
+                        50: '44',
+                        100: '45',
+                        160: '46',
+                        250: '47',
+                        400: '48',
+                        630: '49',
+                        1000: '50',
+                        1250: '51',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}V'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-52V'
-                    elif self.potencia == 25:
-                        return 'TI-53V'
-                    elif self.potencia == 50:
-                        return 'TI-54V'
-                    elif self.potencia == 100:
-                        return 'TI-55V'
-                    elif self.potencia == 160:
-                        return 'TI-56V'
-                    elif self.potencia == 250:
-                        return 'TI-57V'
-                    elif self.potencia == 400:
-                        return 'TI-58V'
-                    elif self.potencia == 630:
-                        return 'TI-59V'
-                    elif self.potencia == 1000:
-                        return 'TI-60V'
-                    elif self.potencia == 1250:
-                        return 'TI-61V'
+                    values = {
+                        15: '52',
+                        25: '53',
+                        50: '54',
+                        100: '55',
+                        160: '56',
+                        250: '57',
+                        400: '58',
+                        630: '59',
+                        1000: '60',
+                        1250: '61',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}V'.format(values[key])
             elif 24 >= self.tension > 17.5:
                 if self .numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-42W'
-                    elif self.potencia == 25:
-                        return 'TI-43W'
-                    elif self.potencia == 50:
-                        return 'TI-44W'
-                    elif self.potencia == 100:
-                        return 'TI-45W'
-                    elif self.potencia == 160:
-                        return 'TI-46W'
-                    elif self.potencia == 250:
-                        return 'TI-47W'
-                    elif self.potencia == 400:
-                        return 'TI-48W'
-                    elif self.potencia == 630:
-                        return 'TI-49W'
-                    elif self.potencia == 1000:
-                        return 'TI-50W'
-                    elif self.potencia == 1250:
-                        return 'TI-51W'
+                    values = {
+                        15: '42',
+                        25: '43',
+                        50: '44',
+                        100: '45',
+                        160: '46',
+                        250: '47',
+                        400: '48',
+                        630: '49',
+                        1000: '50',
+                        1250: '51',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}W'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-52W'
-                    elif self.potencia == 25:
-                        return 'TI-53W'
-                    elif self.potencia == 50:
-                        return 'TI-54W'
-                    elif self.potencia == 100:
-                        return 'TI-55W'
-                    elif self.potencia == 160:
-                        return 'TI-56W'
-                    elif self.potencia == 250:
-                        return 'TI-57W'
-                    elif self.potencia == 400:
-                        return 'TI-58W'
-                    elif self.potencia == 630:
-                        return 'TI-59W'
-                    elif self.potencia == 1000:
-                        return 'TI-60W'
-                    elif self.potencia == 1250:
-                        return 'TI-61W'
+                    values = {
+                        15: '52',
+                        25: '53',
+                        50: '54',
+                        100: '55',
+                        160: '56',
+                        250: '57',
+                        400: '58',
+                        630: '59',
+                        1000: '60',
+                        1250: '61',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}W'.format(values[key])
             elif 36 >= self.tension > 24:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-42B'
-                    elif self.potencia == 25:
-                        return 'TI-43B'
-                    elif self.potencia == 50:
-                        return 'TI-44B'
-                    elif self.potencia == 100:
-                        return 'TI-45B'
-                    elif self.potencia == 160:
-                        return 'TI-46B'
-                    elif self.potencia == 250:
-                        return 'TI-47B'
-                    elif self.potencia == 400:
-                        return 'TI-48B'
-                    elif self.potencia == 630:
-                        return 'TI-49B'
-                    elif self.potencia == 1000:
-                        return 'TI-50B'
-                    elif self.potencia == 1250:
-                        return 'TI-51B'
+                    values = {
+                        15: '42',
+                        25: '43',
+                        50: '44',
+                        100: '45',
+                        160: '46',
+                        250: '47',
+                        400: '48',
+                        630: '49',
+                        1000: '50',
+                        1250: '51',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}B'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-52B'
-                    elif self.potencia == 25:
-                        return 'TI-53B'
-                    elif self.potencia == 50:
-                        return 'TI-54B'
-                    elif self.potencia == 100:
-                        return 'TI-55B'
-                    elif self.potencia == 160:
-                        return 'TI-56B'
-                    elif self.potencia == 250:
-                        return 'TI-57B'
-                    elif self.potencia == 400:
-                        return 'TI-58B'
-                    elif self.potencia == 630:
-                        return 'TI-59B'
-                    elif self.potencia == 1000:
-                        return 'TI-60B'
-                    elif self.potencia == 1250:
-                        return 'TI-61B'
+                    values = {
+                        15: '52',
+                        25: '53',
+                        50: '54',
+                        100: '55',
+                        160: '56',
+                        250: '57',
+                        400: '58',
+                        630: '59',
+                        1000: '60',
+                        1250: '61',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}B'.format(values[key])
             elif 52 >= self.tension > 36:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-42C'
-                    elif self.potencia == 25:
-                        return 'TI-43C'
-                    elif self.potencia == 50:
-                        return 'TI-44C'
-                    elif self.potencia == 100:
-                        return 'TI-45C'
-                    elif self.potencia == 160:
-                        return 'TI-46C'
-                    elif self.potencia == 250:
-                        return 'TI-47C'
-                    elif self.potencia == 400:
-                        return 'TI-48C'
-                    elif self.potencia == 630:
-                        return 'TI-49C'
-                    elif self.potencia == 1000:
-                        return 'TI-50C'
-                    elif self.potencia == 1250:
-                        return 'TI-51C'
+                    values = {
+                        15: '42',
+                        25: '43',
+                        50: '44',
+                        100: '45',
+                        160: '46',
+                        250: '47',
+                        400: '48',
+                        630: '49',
+                        1000: '50',
+                        1250: '51',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}C'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-52C'
-                    elif self.potencia == 25:
-                        return 'TI-53C'
-                    elif self.potencia == 50:
-                        return 'TI-54C'
-                    elif self.potencia == 100:
-                        return 'TI-55C'
-                    elif self.potencia == 160:
-                        return 'TI-56C'
-                    elif self.potencia == 250:
-                        return 'TI-57C'
-                    elif self.potencia == 400:
-                        return 'TI-58C'
-                    elif self.potencia == 630:
-                        return 'TI-59C'
-                    elif self.potencia == 1000:
-                        return 'TI-60C'
-                    elif self.potencia == 1250:
-                        return 'TI-61C'
+                    values = {
+                        15: '52',
+                        25: '53',
+                        50: '54',
+                        100: '55',
+                        160: '56',
+                        250: '57',
+                        400: '58',
+                        630: '59',
+                        1000: '60',
+                        1250: '61',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}C'.format(values[key])
             elif 72.5 >= self.tension > 52:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-42D'
-                    elif self.potencia == 25:
-                        return 'TI-43D'
-                    elif self.potencia == 50:
-                        return 'TI-44D'
-                    elif self.potencia == 100:
-                        return 'TI-45D'
-                    elif self.potencia == 160:
-                        return 'TI-46D'
-                    elif self.potencia == 250:
-                        return 'TI-47D'
-                    elif self.potencia == 400:
-                        return 'TI-48D'
-                    elif self.potencia == 630:
-                        return 'TI-49D'
-                    elif self.potencia == 1000:
-                        return 'TI-50D'
-                    elif self.potencia == 1250:
-                        return 'TI-51D'
+                    values = {
+                        15: '42',
+                        25: '43',
+                        50: '44',
+                        100: '45',
+                        160: '46',
+                        250: '47',
+                        400: '48',
+                        630: '49',
+                        1000: '50',
+                        1250: '51',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}D'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-52D'
-                    elif self.potencia == 25:
-                        return 'TI-53D'
-                    elif self.potencia == 50:
-                        return 'TI-54D'
-                    elif self.potencia == 100:
-                        return 'TI-55D'
-                    elif self.potencia == 160:
-                        return 'TI-56D'
-                    elif self.potencia == 250:
-                        return 'TI-57D'
-                    elif self.potencia == 400:
-                        return 'TI-58D'
-                    elif self.potencia == 630:
-                        return 'TI-59D'
-                    elif self.potencia == 1000:
-                        return 'TI-60D'
-                    elif self.potencia == 1250:
-                        return 'TI-61D'
+                    values = {
+                        15: '52',
+                        25: '53',
+                        50: '54',
+                        100: '55',
+                        160: '56',
+                        250: '57',
+                        400: '58',
+                        630: '59',
+                        1000: '60',
+                        1250: '61',
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}D'.format(values[key])
         elif self.situacion == 'I':
             if 12 >= self.tension >= 1:
-                if self.potencia == 15:
-                    return 'TI-62U'
-                elif self.potencia == 25:
-                    return 'TI-63U'
-                elif self.potencia == 50:
-                    return 'TI-64U'
-                elif self.potencia == 100:
-                    return 'TI-65U'
-                elif self.potencia == 160:
-                    return 'TI-66U'
-                elif self.potencia == 250:
-                    return 'TI-67U'
+                values = {
+                    15: '62',
+                    25: '63',
+                    50: '64',
+                    100: '65',
+                    160: '66',
+                    250: '67'
+                }
+                key = nearest(self.potencia, *values.keys())
+                return 'TI-{0}U'.format(values[key])
             elif 17.5 >= self.tension > 12:
-                if self.potencia == 15:
-                    return 'TI-62V'
-                elif self.potencia == 25:
-                    return 'TI-63V'
-                elif self.potencia == 50:
-                    return 'TI-64V'
-                elif self.potencia == 100:
-                    return 'TI-65V'
-                elif self.potencia == 160:
-                    return 'TI-66V'
-                elif self.potencia == 250:
-                    return 'TI-67V'
+                values = {
+                    15: '62',
+                    25: '63',
+                    50: '64',
+                    100: '65',
+                    160: '66',
+                    250: '67'
+                }
+                key = nearest(self.potencia, *values.keys())
+                return 'TI-{0}V'.format(values[key])
             elif 24 >= self.tension > 17.5:
-                if self.potencia == 15:
-                    return 'TI-62W'
-                elif self.potencia == 25:
-                    return 'TI-63W'
-                elif self.potencia == 50:
-                    return 'TI-64W'
-                elif self.potencia == 100:
-                    return 'TI-65W'
-                elif self.potencia == 160:
-                    return 'TI-66W'
-                elif self.potencia == 250:
-                    return 'TI-67W'
+                values = {
+                    15: '62',
+                    25: '63',
+                    50: '64',
+                    100: '65',
+                    160: '66',
+                    250: '67'
+                }
+                key = nearest(self.potencia, *values.keys())
+                return 'TI-{0}W'.format(values[key])
             elif 36 >= self.tension > 24:
-                if self.potencia == 15:
-                    return 'TI-62B'
-                elif self.potencia == 25:
-                    return 'TI-63B'
-                elif self.potencia == 50:
-                    return 'TI-64B'
-                elif self.potencia == 100:
-                    return 'TI-65B'
-                elif self.potencia == 160:
-                    return 'TI-66B'
-                elif self.potencia == 250:
-                    return 'TI-67B'
+                values = {
+                    15: '62',
+                    25: '63',
+                    50: '64',
+                    100: '65',
+                    160: '66',
+                    250: '67'
+                }
+                key = nearest(self.potencia, *values.keys())
+                return 'TI-{0}B'.format(values[key])
             elif 52 >= self.tension > 36:
-                if self.potencia == 15:
-                    return 'TI-62C'
-                elif self.potencia == 25:
-                    return 'TI-63C'
-                elif self.potencia == 50:
-                    return 'TI-64C'
-                elif self.potencia == 100:
-                    return 'TI-65C'
-                elif self.potencia == 160:
-                    return 'TI-66C'
-                elif self.potencia == 250:
-                    return 'TI-67C'
+                values = {
+                    15: '62',
+                    25: '63',
+                    50: '64',
+                    100: '65',
+                    160: '66',
+                    250: '67'
+                }
+                key = nearest(self.potencia, *values.keys())
+                return 'TI-{0}C'.format(values[key])
             elif 72.5 >= self.tension > 52:
-                if self.potencia == 15:
-                    return 'TI-62D'
-                elif self.potencia == 25:
-                    return 'TI-63D'
-                elif self.potencia == 50:
-                    return 'TI-64D'
-                elif self.potencia == 100:
-                    return 'TI-65D'
-                elif self.potencia == 160:
-                    return 'TI-66D'
-                elif self.potencia == 250:
-                    return 'TI-67D'
+                values = {
+                    15: '62',
+                    25: '63',
+                    50: '64',
+                    100: '65',
+                    160: '66',
+                    250: '67'
+                }
+                key = nearest(self.potencia, *values.keys())
+                return 'TI-{0}D'.format(values[key])
         elif self.situacion == 'S':
             if 12 >= self.tension >= 1:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-68U'
-                    elif self.potencia == 25:
-                        return 'TI-69U'
-                    elif self.potencia == 50:
-                        return 'TI-70U'
-                    elif self.potencia == 100:
-                        return 'TI-71U'
-                    elif self.potencia == 160:
-                        return 'TI-72U'
-                    elif self.potencia == 250:
-                        return 'TI-73U'
-                    elif self.potencia == 400:
-                        return 'TI-74U'
-                    elif self.potencia == 630:
-                        return 'TI-75U'
-                    elif self.potencia == 1000:
-                        return 'TI-76U'
-                    elif self.potencia == 1250:
-                        return 'TI-77U'
+                    values = {
+                        15: '68',
+                        25: '69',
+                        50: '70',
+                        100: '71',
+                        160: '72',
+                        250: '73',
+                        400: '74',
+                        630: '75',
+                        1000: '76',
+                        1250: '77'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}U'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-78U'
-                    elif self.potencia == 25:
-                        return 'TI-79U'
-                    elif self.potencia == 50:
-                        return 'TI-80U'
-                    elif self.potencia == 100:
-                        return 'TI-81U'
-                    elif self.potencia == 160:
-                        return 'TI-82U'
-                    elif self.potencia == 250:
-                        return 'TI-83U'
-                    elif self.potencia == 400:
-                        return 'TI-84U'
-                    elif self.potencia == 630:
-                        return 'TI-85U'
-                    elif self.potencia == 1000:
-                        return 'TI-86U'
-                    elif self.potencia == 1250:
-                        return 'TI-87U'
+                    values = {
+                        15: '78',
+                        25: '79',
+                        50: '80',
+                        100: '81',
+                        160: '82',
+                        250: '83',
+                        400: '84',
+                        630: '85',
+                        1000: '86',
+                        1250: '87'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}U'.format(values[key])
             elif 17.5 >= self.tension > 12:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-68V'
-                    elif self.potencia == 25:
-                        return 'TI-69V'
-                    elif self.potencia == 50:
-                        return 'TI-70V'
-                    elif self.potencia == 100:
-                        return 'TI-71V'
-                    elif self.potencia == 160:
-                        return 'TI-72V'
-                    elif self.potencia == 250:
-                        return 'TI-73V'
-                    elif self.potencia == 400:
-                        return 'TI-74V'
-                    elif self.potencia == 630:
-                        return 'TI-75V'
-                    elif self.potencia == 1000:
-                        return 'TI-76V'
-                    elif self.potencia == 1250:
-                        return 'TI-77V'
+                    values = {
+                        15: '68',
+                        25: '69',
+                        50: '70',
+                        100: '71',
+                        160: '72',
+                        250: '73',
+                        400: '74',
+                        630: '75',
+                        1000: '76',
+                        1250: '77'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}V'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-78V'
-                    elif self.potencia == 25:
-                        return 'TI-79V'
-                    elif self.potencia == 50:
-                        return 'TI-80V'
-                    elif self.potencia == 100:
-                        return 'TI-81V'
-                    elif self.potencia == 160:
-                        return 'TI-82V'
-                    elif self.potencia == 250:
-                        return 'TI-83V'
-                    elif self.potencia == 400:
-                        return 'TI-84V'
-                    elif self.potencia == 630:
-                        return 'TI-85V'
-                    elif self.potencia == 1000:
-                        return 'TI-86V'
-                    elif self.potencia == 1250:
-                        return 'TI-87V'
+                    values = {
+                        15: '78',
+                        25: '79',
+                        50: '80',
+                        100: '81',
+                        160: '82',
+                        250: '83',
+                        400: '84',
+                        630: '85',
+                        1000: '86',
+                        1250: '87'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}V'.format(values[key])
             elif 24 >= self.tension > 17.5:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-68W'
-                    elif self.potencia == 25:
-                        return 'TI-69W'
-                    elif self.potencia == 50:
-                        return 'TI-70W'
-                    elif self.potencia == 100:
-                        return 'TI-71W'
-                    elif self.potencia == 160:
-                        return 'TI-72W'
-                    elif self.potencia == 250:
-                        return 'TI-73W'
-                    elif self.potencia == 400:
-                        return 'TI-74W'
-                    elif self.potencia == 630:
-                        return 'TI-75W'
-                    elif self.potencia == 1000:
-                        return 'TI-76W'
-                    elif self.potencia == 1250:
-                        return 'TI-77W'
+                    values = {
+                        15: '68',
+                        25: '69',
+                        50: '70',
+                        100: '71',
+                        160: '72',
+                        250: '73',
+                        400: '74',
+                        630: '75',
+                        1000: '76',
+                        1250: '77'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}W'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-78W'
-                    elif self.potencia == 25:
-                        return 'TI-79W'
-                    elif self.potencia == 50:
-                        return 'TI-80W'
-                    elif self.potencia == 100:
-                        return 'TI-81W'
-                    elif self.potencia == 160:
-                        return 'TI-82W'
-                    elif self.potencia == 250:
-                        return 'TI-83W'
-                    elif self.potencia == 400:
-                        return 'TI-84W'
-                    elif self.potencia == 630:
-                        return 'TI-85W'
-                    elif self.potencia == 1000:
-                        return 'TI-86W'
-                    elif self.potencia == 1250:
-                        return 'TI-87W'
+                    values = {
+                        15: '78',
+                        25: '79',
+                        50: '80',
+                        100: '81',
+                        160: '82',
+                        250: '83',
+                        400: '84',
+                        630: '85',
+                        1000: '86',
+                        1250: '87'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}W'.format(values[key])
             elif 36 >= self.tension > 24:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-68B'
-                    elif self.potencia == 25:
-                        return 'TI-69B'
-                    elif self.potencia == 50:
-                        return 'TI-70B'
-                    elif self.potencia == 100:
-                        return 'TI-71B'
-                    elif self.potencia == 160:
-                        return 'TI-72B'
-                    elif self.potencia == 250:
-                        return 'TI-73B'
-                    elif self.potencia == 400:
-                        return 'TI-74B'
-                    elif self.potencia == 630:
-                        return 'TI-75B'
-                    elif self.potencia == 1000:
-                        return 'TI-76B'
-                    elif self.potencia == 1250:
-                        return 'TI-77B'
+                    values = {
+                        15: '68',
+                        25: '69',
+                        50: '70',
+                        100: '71',
+                        160: '72',
+                        250: '73',
+                        400: '74',
+                        630: '75',
+                        1000: '76',
+                        1250: '77'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}B'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-78B'
-                    elif self.potencia == 25:
-                        return 'TI-79B'
-                    elif self.potencia == 50:
-                        return 'TI-80B'
-                    elif self.potencia == 100:
-                        return 'TI-81B'
-                    elif self.potencia == 160:
-                        return 'TI-82B'
-                    elif self.potencia == 250:
-                        return 'TI-83B'
-                    elif self.potencia == 400:
-                        return 'TI-84B'
-                    elif self.potencia == 630:
-                        return 'TI-85B'
-                    elif self.potencia == 1000:
-                        return 'TI-86B'
-                    elif self.potencia == 1250:
-                        return 'TI-87B'
+                    values = {
+                        15: '78',
+                        25: '79',
+                        50: '80',
+                        100: '81',
+                        160: '82',
+                        250: '83',
+                        400: '84',
+                        630: '85',
+                        1000: '86',
+                        1250: '87'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}B'.format(values[key])
             elif 52 >= self.tension > 36:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-68C'
-                    elif self.potencia == 25:
-                        return 'TI-69C'
-                    elif self.potencia == 50:
-                        return 'TI-70C'
-                    elif self.potencia == 100:
-                        return 'TI-71C'
-                    elif self.potencia == 160:
-                        return 'TI-72C'
-                    elif self.potencia == 250:
-                        return 'TI-73C'
-                    elif self.potencia == 400:
-                        return 'TI-74C'
-                    elif self.potencia == 630:
-                        return 'TI-75C'
-                    elif self.potencia == 1000:
-                        return 'TI-76C'
-                    elif self.potencia == 1250:
-                        return 'TI-77C'
+                    values = {
+                        15: '68',
+                        25: '69',
+                        50: '70',
+                        100: '71',
+                        160: '72',
+                        250: '73',
+                        400: '74',
+                        630: '75',
+                        1000: '76',
+                        1250: '77'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}C'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-78C'
-                    elif self.potencia == 25:
-                        return 'TI-79B'
-                    elif self.potencia == 50:
-                        return 'TI-80C'
-                    elif self.potencia == 100:
-                        return 'TI-81C'
-                    elif self.potencia == 160:
-                        return 'TI-82C'
-                    elif self.potencia == 250:
-                        return 'TI-83C'
-                    elif self.potencia == 400:
-                        return 'TI-84C'
-                    elif self.potencia == 630:
-                        return 'TI-85C'
-                    elif self.potencia == 1000:
-                        return 'TI-86C'
-                    elif self.potencia == 1250:
-                        return 'TI-87C'
+                    values = {
+                        15: '78',
+                        25: '79',
+                        50: '80',
+                        100: '81',
+                        160: '82',
+                        250: '83',
+                        400: '84',
+                        630: '85',
+                        1000: '86',
+                        1250: '87'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}C'.format(values[key])
             elif 72.5 >= self.tension > 52:
                 if self.numero_maquinas == 1:
-                    if self.potencia == 15:
-                        return 'TI-68D'
-                    elif self.potencia == 25:
-                        return 'TI-69D'
-                    elif self.potencia == 50:
-                        return 'TI-70D'
-                    elif self.potencia == 100:
-                        return 'TI-71D'
-                    elif self.potencia == 160:
-                        return 'TI-72D'
-                    elif self.potencia == 250:
-                        return 'TI-73D'
-                    elif self.potencia == 400:
-                        return 'TI-74D'
-                    elif self.potencia == 630:
-                        return 'TI-75D'
-                    elif self.potencia == 1000:
-                        return 'TI-76D'
-                    elif self.potencia == 1250:
-                        return 'TI-77D'
+                    values = {
+                        15: '68',
+                        25: '69',
+                        50: '70',
+                        100: '71',
+                        160: '72',
+                        250: '73',
+                        400: '74',
+                        630: '75',
+                        1000: '76',
+                        1250: '77'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}C'.format(values[key])
                 elif self.numero_maquinas == 2:
-                    if self.potencia == 15:
-                        return 'TI-78D'
-                    elif self.potencia == 25:
-                        return 'TI-79D'
-                    elif self.potencia == 50:
-                        return 'TI-80D'
-                    elif self.potencia == 100:
-                        return 'TI-81D'
-                    elif self.potencia == 160:
-                        return 'TI-82D'
-                    elif self.potencia == 250:
-                        return 'TI-83D'
-                    elif self.potencia == 400:
-                        return 'TI-84D'
-                    elif self.potencia == 630:
-                        return 'TI-85D'
-                    elif self.potencia == 1000:
-                        return 'TI-86D'
-                    elif self.potencia == 1250:
-                        return 'TI-87D'
+                    values = {
+                        15: '78',
+                        25: '79',
+                        50: '80',
+                        100: '81',
+                        160: '82',
+                        250: '83',
+                        400: '84',
+                        630: '85',
+                        1000: '86',
+                        1250: '87'
+                    }
+                    key = nearest(self.potencia, *values.keys())
+                    return 'TI-{0}D'.format(values[key])
+
         if self.numero_maquinas == 0:
             if self.situacion == 'C' and (12 >= self.tension >= 1):
                 return 'TI-0CU'
