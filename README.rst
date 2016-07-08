@@ -5,6 +5,11 @@ Tipo Instalacion
 
 Libreria para calcular de forma automática el Tipo de Instalacion (TI)
 
+Especificaciones de referencia
+------------------------------
+
+BOE http://www.boe.es/boe/dias/2015/12/12/pdfs/BOE-A-2015-13488.pdf
+
 Instalaciones soportadas
 ------------------------
 
