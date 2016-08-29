@@ -2,6 +2,9 @@ Tipo Instalacion
 ================
 .. image:: https://travis-ci.org/gisce/tipoinstalacion.svg?branch=master
     :target: https://travis-ci.org/gisce/tipoinstalacion
+.. image:: https://coveralls.io/repos/github/gisce/tipoinstalacion/badge.svg?branch=master
+    :target: https://coveralls.io/github/gisce/tipoinstalacion?branch=master
+
 
 Libreria para calcular de forma automática el Tipo de Instalacion (TI)
 
