@@ -214,7 +214,7 @@ with description('Calculando el TI de una linia'):
                     expect(self.p.tipoinstalacion).to(equal('TI-104B'))
 
 with description('Calculando el TI de una linia'):
-    with context('si lat  124kV):
+    with context('si lat  124kV'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'C'
