@@ -810,7 +810,7 @@ with description('Calculando el TI de una linia'):
             self.tensiones = range(18, 24)
 
         with context('si la sección 0 < s <= 56 '):
-            with context('si la linea es Aerea circuito triple-Simplex'):
+            with context('si la linea es Aerea circuito doble-Simplex'):
                 with it('must be TI-10VX'):
                     for t in self.tensiones:
                         self.l.tension = t
@@ -819,7 +819,7 @@ with description('Calculando el TI de una linia'):
                             expect(self.l.tipoinstalacion).to(equal('TI-10VX'))
 
         with context('si la sección 56 < s <= 110 '):
-            with context('si la linea es Aerea circuito triple-Simplex'):
+            with context('si la linea es Aerea circuito doble-Simplex'):
                 with it('must be TI-10VY'):
                     for t in self.tensiones:
                         self.l.tension = t
@@ -828,12 +828,46 @@ with description('Calculando el TI de una linia'):
                             expect(self.l.tipoinstalacion).to(equal('TI-10VY'))
 
         with context('si la sección  110 < s'):
-            with context('si la linea es Aerea circuito triple-Simplex'):
+            with context('si la linea es Aerea circuito doble-Simplex'):
                 with it('must be TI-10VZ'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 111
                         expect(self.l.tipoinstalacion).to(equal('TI-10VZ'))
+
+    with context('si la  17,5Kv < tensión <= 24Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'AP'
+            self.l.num_circuitos = 2
+            self.l.num_conductores = 1
+            self.tensiones = range(18, 24)
+
+        with context('si la sección 0 < s <= 56 '):
+            with context('si la linea es Aerea circuito triple-Simplex'):
+                with it('must be TI-10VX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 56):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AVX'))
+
+        with context('si la sección 56 < s <= 110 '):
+            with context('si la linea es Aerea circuito triple-Simplex'):
+                with it('must be TI-10VY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(57, 110):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AVY'))
+
+        with context('si la sección  110 < s'):
+            with context('si la linea es Aerea circuito triple-Simplex'):
+                with it('must be TI-10VZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 111
+                        expect(self.l.tipoinstalacion).to(equal('TI-10AVZ'))
 
     with context('si la 12Kv < tensión <= 17,5Kv'):
         with before.each:
