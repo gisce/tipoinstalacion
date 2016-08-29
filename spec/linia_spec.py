@@ -18,7 +18,7 @@ def frange(start, end, step=0.1):
         res = round(float(r), precision)
         yield res
         r += step
-with description('Test sin tension'):
+with description('Test Linea sin tension'):
     with context('si la tension es nula'):
         with before.each:
             self.l = Linea()
@@ -34,6 +34,24 @@ with description('Test sin tension'):
             with it('must be None'):
                 self.l.despliegue = 'S'
                 expect(self.l.tipoinstalacion).to(equal(None))
+
+    with context('si la tension es 0'):
+        with before.each:
+            self.l = Linea()
+            self.l.tension = 0
+        with context('despliege AP'):
+            with it('must be None'):
+                self.l.despliegue = 'AP'
+                expect(self.l.tipoinstalacion).to(equal(None))
+        with context('despliege AF'):
+            with it('must be None'):
+                self.l.despliegue = 'AF'
+                expect(self.l.tipoinstalacion).to(equal(None))
+        with context('despliege S'):
+            with it('must be None'):
+                self.l.despliegue = 'S'
+                expect(self.l.tipoinstalacion).to(equal(None))
+
 
 with description('Calculando el TI de una linia'):
     with context('si lat tensión > 123 kV'):
