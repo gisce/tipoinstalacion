@@ -1461,7 +1461,7 @@ class CT(object):
                         1250: '77'
                     }
                     key = nearest(self.potencia, *values.keys())
-                    return 'TI-{0}C'.format(values[key])
+                    return 'TI-{0}D'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
                         15: '78',
