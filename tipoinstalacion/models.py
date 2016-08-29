@@ -849,7 +849,7 @@ class CT(object):
         """
         from tipoinstalacion import nearest
 
-        if self.situacion == 'C':
+        if self.situacion == 'C' and self.numero_maquinas != 0:
             if 12 >= self.tension >= 1:
                 if self.numero_maquinas == 1:
                     values = {
@@ -1036,7 +1036,7 @@ class CT(object):
                     }
                     key = nearest(self.potencia, *values.keys())
                     return 'TI-{0}D'.format(values[key])
-        elif self.situacion == 'L':
+        elif self.situacion == 'L' and self.numero_maquinas != 0:
             if 12 >= self.tension >= 1:
                 if self.numero_maquinas == 1:
                     values = {
@@ -1223,7 +1223,7 @@ class CT(object):
                     }
                     key = nearest(self.potencia, *values.keys())
                     return 'TI-{0}D'.format(values[key])
-        elif self.situacion == 'I':
+        elif self.situacion == 'I' and self.numero_maquinas != 0:
             if 12 >= self.tension >= 1:
                 values = {
                     15: '62',
@@ -1290,7 +1290,7 @@ class CT(object):
                 }
                 key = nearest(self.potencia, *values.keys())
                 return 'TI-{0}D'.format(values[key])
-        elif self.situacion == 'S':
+        elif self.situacion == 'S' and self.numero_maquinas != 0:
             if 12 >= self.tension >= 1:
                 if self.numero_maquinas == 1:
                     values = {
@@ -1482,7 +1482,7 @@ class CT(object):
             if self.situacion == 'C' and (12 >= self.tension >= 1):
                 return 'TI-0CU'
             elif self.situacion == 'I' and (12 >= self.tension >= 1):
-                return 'TI-OIU'
+                return 'TI-0IU'
             elif self.situacion == 'L' and (12 >= self.tension >= 1):
                 return 'TI-0LU'
             elif self.situacion == 'S' and (12 >= self.tension >= 1):
@@ -1491,7 +1491,7 @@ class CT(object):
             if self.situacion == 'C' and (17.5 >= self.tension > 12):
                 return 'TI-0CV'
             elif self.situacion == 'I' and (17.5 >= self.tension > 12):
-                return 'TI-OIV'
+                return 'TI-0IV'
             elif self.situacion == 'L' and (17.5 >= self.tension > 12):
                 return 'TI-0LV'
             elif self.situacion == 'S' and (17.5 >= self.tension > 12):
@@ -1500,7 +1500,7 @@ class CT(object):
             if self.situacion == 'C' and (24 >= self.tension > 17.5):
                 return 'TI-0CW'
             elif self.situacion == 'I' and (24 >= self.tension > 17.5):
-                return 'TI-OIW'
+                return 'TI-0IW'
             elif self.situacion == 'L' and (24 >= self.tension > 17.5):
                 return 'TI-0LW'
             elif self.situacion == 'S' and (24 >= self.tension > 17.5):
@@ -1509,7 +1509,7 @@ class CT(object):
             if self.situacion == 'C' and (36 >= self.tension > 24):
                 return 'TI-0CX'
             elif self.situacion == 'I' and (36 >= self.tension > 24):
-                return 'TI-OIX'
+                return 'TI-0IX'
             elif self.situacion == 'L' and (36 >= self.tension > 24):
                 return 'TI-0LX'
             elif self.situacion == 'S' and (36 >= self.tension > 24):
@@ -1518,7 +1518,7 @@ class CT(object):
             if self.situacion == 'C' and (52 >= self.tension > 36):
                 return 'TI-0CY'
             elif self.situacion == 'I' and (52 >= self.tension > 36):
-                return 'TI-OIY'
+                return 'TI-0IY'
             elif self.situacion == 'L' and (52 >= self.tension > 36):
                 return 'TI-0LY'
             elif self.situacion == 'S' and (52 >= self.tension > 36):
@@ -1527,7 +1527,7 @@ class CT(object):
             if self.situacion == 'C' and (72.5 >= self.tension > 52):
                 return 'TI-0CZ'
             elif self.situacion == 'I' and (72.5 >= self.tension > 52):
-                return 'TI-OIZ'
+                return 'TI-0IZ'
             elif self.situacion == 'L' and (72.5 >= self.tension > 52):
                 return 'TI-0LZ'
             elif self.situacion == 'S' and (72.5 >= self.tension > 52):
