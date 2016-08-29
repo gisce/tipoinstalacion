@@ -5,8 +5,9 @@ from expects import expect, equal
 
 with description('Calculando el TI de un CT'):
     with context('si valores Nulos'):
-        self.c = CT()
-        expect(self.c.tipoinstalacion).to(equal(None))
+        with before.each:
+            self.c = CT()
+            expect(self.c.tipoinstalacion).to(equal(None))
 
     with context('si 12kV>=tension>1kV'):
         with before.each:
