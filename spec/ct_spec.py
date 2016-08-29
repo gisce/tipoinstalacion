@@ -3337,7 +3337,7 @@ with description('Calculando el TI de un CT'):
             with context('si 2 máquinas 15kVA'):
                 with it('must be TI-78D'):
                     self.c.potencia = 15
-                    for t in range(37, 52):
+                    for t in range(53, 72) + [72.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-78D'))
 
@@ -3345,7 +3345,7 @@ with description('Calculando el TI de un CT'):
             with context('si 2 máquinas 25kVA'):
                 with it('must be TI-79D'):
                     self.c.potencia = 25
-                    for t in range(37, 52):
+                    for t in range(53, 72) + [72.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-79D'))
 
@@ -3353,7 +3353,7 @@ with description('Calculando el TI de un CT'):
             with context('si 2 máquinas 50kVA'):
                 with it('must be TI-80D'):
                     self.c.potencia = 50
-                    for t in range(37, 52):
+                    for t in range(53, 72) + [72.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-80D'))
 
@@ -3361,7 +3361,7 @@ with description('Calculando el TI de un CT'):
             with context('si 2 máquinas 100kVA'):
                 with it('must be TI-81D'):
                     self.c.potencia = 100
-                    for t in range(37, 52):
+                    for t in range(53, 72) + [72.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-81D'))
 
@@ -3369,7 +3369,7 @@ with description('Calculando el TI de un CT'):
             with context('si 2 máquinas 160kVA'):
                 with it('must be TI-82D'):
                     self.c.potencia = 160
-                    for t in range(37, 52):
+                    for t in range(53, 72) + [72.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-82D'))
 
@@ -3377,7 +3377,7 @@ with description('Calculando el TI de un CT'):
             with context('si 2 máquinas 250kVA'):
                 with it('must be TI-83D'):
                     self.c.potencia = 250
-                    for t in range(37, 52):
+                    for t in range(53, 72) + [72.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-83D'))
 
@@ -3385,7 +3385,7 @@ with description('Calculando el TI de un CT'):
             with context('si 2 máquinas 400kVA'):
                 with it('must be TI-84D'):
                     self.c.potencia = 400
-                    for t in range(37, 52):
+                    for t in range(53, 72) + [72.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-84D'))
 
@@ -3393,7 +3393,7 @@ with description('Calculando el TI de un CT'):
             with context('si 2 máquinas 630kVA'):
                 with it('must be TI-85D'):
                     self.c.potencia = 630
-                    for t in range(37, 52):
+                    for t in range(53, 72) + [72.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-85D'))
 
@@ -3401,7 +3401,7 @@ with description('Calculando el TI de un CT'):
             with context('si 2 máquinas 1000kVA'):
                 with it('must be TI-86D'):
                     self.c.potencia = 1000
-                    for t in range(37, 52):
+                    for t in range(53, 72) + [72.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-86D'))
 
@@ -3409,7 +3409,7 @@ with description('Calculando el TI de un CT'):
             with context('si 2 máquinas 1250kVA'):
                 with it('must be TI-87D'):
                     self.c.potencia = 1250
-                    for t in range(37, 52):
+                    for t in range(53, 72) + [72.5]:
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-87D'))
 
