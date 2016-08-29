@@ -843,7 +843,7 @@ class CT(object):
     @property
     def tipoinstalacion(self):
         """
-        Obtiene el tipo de instalacion de la linea
+        Obtiene el tipo de instalacion del CT
 
         :return:
         """
