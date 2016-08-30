@@ -214,6 +214,22 @@ with description('Calculando el TI de una linia'):
                     expect(self.p.tipoinstalacion).to(equal('TI-104B'))
 
 with description('Calculando el TI de una linia'):
+    with context('si lat  124kV'):
+        with before.each:
+            self.p = Posicion()
+            self.p.tipo = 'C'
+        with context('situado en Initerior'):
+            with it('must be TI-91V'):
+                self.p.situacion = 'I'
+                self.p.tension = 124
+                expect(self.p.tipoinstalacion).to(equal('TI-91U'))
+        with context('situado en Intemperie'):
+            with it('must be TI-92V'):
+                self.p.situacion = 'E'
+                self.p.tension = 124
+                expect(self.p.tipoinstalacion).to(equal('TI-92U'))
+
+with description('Calculando el TI de una linia'):
     with context('si lat  123kV >= tensión > 72.5Kv'):
         with before.each:
             self.p = Posicion()
