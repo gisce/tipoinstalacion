@@ -50,6 +50,9 @@ class Linea(object):
         :return:
         """
 
+        if self.despliegue is None:
+            return None
+
         if self.despliegue[0] == 'A':
             u = self.tension
             s = self.seccion

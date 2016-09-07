@@ -34,6 +34,9 @@ with description('Test Linea sin tension'):
             with it('must be None'):
                 self.l.despliegue = 'S'
                 expect(self.l.tipoinstalacion).to(equal(None))
+        with context('si no tiene despliegue'):
+            with it('must be None'):
+                expect(self.l.tipoinstalacion).to(be_none)
 
     with context('si la tension es 0'):
         with before.each:
