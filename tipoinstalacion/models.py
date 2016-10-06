@@ -867,7 +867,7 @@ class CT(object):
                         1000: '30',
                         1250: '31'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}U'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -882,7 +882,7 @@ class CT(object):
                         1000: '40',
                         1250: '41'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}U'.format(values[key])
             elif 17.5 >= self.tension > 12:
                 if self.numero_maquinas == 1:
@@ -898,7 +898,7 @@ class CT(object):
                         1000: '30',
                         1250: '31'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}V'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -913,7 +913,7 @@ class CT(object):
                         1000: '40',
                         1250: '41'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}V'.format(values[key])
             elif 24 >= self.tension > 17.5:
                 if self.numero_maquinas == 1:
@@ -929,7 +929,7 @@ class CT(object):
                         1000: '30',
                         1250: '31'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}W'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -944,7 +944,7 @@ class CT(object):
                         1000: '40',
                         1250: '41'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}W'.format(values[key])
             elif 36 >= self.tension > 24:
                 if self.numero_maquinas == 1:
@@ -960,7 +960,7 @@ class CT(object):
                         1000: '30',
                         1250: '31'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}B'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -975,7 +975,7 @@ class CT(object):
                         1000: '40',
                         1250: '41'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}B'.format(values[key])
             elif 52 >= self.tension > 36:
                 if self.numero_maquinas == 1:
@@ -991,7 +991,7 @@ class CT(object):
                         1000: '30',
                         1240: '31'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}C'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1006,7 +1006,7 @@ class CT(object):
                         1000: '40',
                         1250: '41'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}C'.format(values[key])
             elif 72.5 >= self.tension > 52:
                 if self.numero_maquinas == 1:
@@ -1022,7 +1022,7 @@ class CT(object):
                         1000: '30',
                         1250: '31',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}D'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1037,7 +1037,7 @@ class CT(object):
                         1000: '40',
                         1250: '41',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}D'.format(values[key])
         elif self.situacion == 'L' and self.numero_maquinas != 0:
             if 12 >= self.tension >= 1:
@@ -1054,7 +1054,7 @@ class CT(object):
                         1000: '50',
                         1250: '51',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}U'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1069,7 +1069,7 @@ class CT(object):
                         1000: '60',
                         1250: '61',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}U'.format(values[key])
             elif 17.5 >= self.tension > 12:
                 if self.numero_maquinas == 1:
@@ -1085,7 +1085,7 @@ class CT(object):
                         1000: '50',
                         1250: '51',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}V'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1100,7 +1100,7 @@ class CT(object):
                         1000: '60',
                         1250: '61',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}V'.format(values[key])
             elif 24 >= self.tension > 17.5:
                 if self .numero_maquinas == 1:
@@ -1116,7 +1116,7 @@ class CT(object):
                         1000: '50',
                         1250: '51',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}W'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1131,7 +1131,7 @@ class CT(object):
                         1000: '60',
                         1250: '61',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}W'.format(values[key])
             elif 36 >= self.tension > 24:
                 if self.numero_maquinas == 1:
@@ -1147,7 +1147,7 @@ class CT(object):
                         1000: '50',
                         1250: '51',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}B'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1162,7 +1162,7 @@ class CT(object):
                         1000: '60',
                         1250: '61',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}B'.format(values[key])
             elif 52 >= self.tension > 36:
                 if self.numero_maquinas == 1:
@@ -1178,7 +1178,7 @@ class CT(object):
                         1000: '50',
                         1250: '51',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}C'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1193,7 +1193,7 @@ class CT(object):
                         1000: '60',
                         1250: '61',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}C'.format(values[key])
             elif 72.5 >= self.tension > 52:
                 if self.numero_maquinas == 1:
@@ -1209,7 +1209,7 @@ class CT(object):
                         1000: '50',
                         1250: '51',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}D'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1224,7 +1224,7 @@ class CT(object):
                         1000: '60',
                         1250: '61',
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}D'.format(values[key])
         elif self.situacion == 'I' and self.numero_maquinas != 0:
             if 12 >= self.tension >= 1:
@@ -1236,7 +1236,7 @@ class CT(object):
                     160: '66',
                     250: '67'
                 }
-                key = nearest(self.potencia, *values.keys())
+                key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                 return 'TI-{0}U'.format(values[key])
             elif 17.5 >= self.tension > 12:
                 values = {
@@ -1247,7 +1247,7 @@ class CT(object):
                     160: '66',
                     250: '67'
                 }
-                key = nearest(self.potencia, *values.keys())
+                key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                 return 'TI-{0}V'.format(values[key])
             elif 24 >= self.tension > 17.5:
                 values = {
@@ -1258,7 +1258,7 @@ class CT(object):
                     160: '66',
                     250: '67'
                 }
-                key = nearest(self.potencia, *values.keys())
+                key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                 return 'TI-{0}W'.format(values[key])
             elif 36 >= self.tension > 24:
                 values = {
@@ -1269,7 +1269,7 @@ class CT(object):
                     160: '66',
                     250: '67'
                 }
-                key = nearest(self.potencia, *values.keys())
+                key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                 return 'TI-{0}B'.format(values[key])
             elif 52 >= self.tension > 36:
                 values = {
@@ -1280,7 +1280,7 @@ class CT(object):
                     160: '66',
                     250: '67'
                 }
-                key = nearest(self.potencia, *values.keys())
+                key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                 return 'TI-{0}C'.format(values[key])
             elif 72.5 >= self.tension > 52:
                 values = {
@@ -1291,7 +1291,7 @@ class CT(object):
                     160: '66',
                     250: '67'
                 }
-                key = nearest(self.potencia, *values.keys())
+                key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                 return 'TI-{0}D'.format(values[key])
         elif self.situacion == 'S' and self.numero_maquinas != 0:
             if 12 >= self.tension >= 1:
@@ -1308,7 +1308,7 @@ class CT(object):
                         1000: '76',
                         1250: '77'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}U'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1323,7 +1323,7 @@ class CT(object):
                         1000: '86',
                         1250: '87'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}U'.format(values[key])
             elif 17.5 >= self.tension > 12:
                 if self.numero_maquinas == 1:
@@ -1339,7 +1339,7 @@ class CT(object):
                         1000: '76',
                         1250: '77'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}V'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1354,7 +1354,7 @@ class CT(object):
                         1000: '86',
                         1250: '87'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}V'.format(values[key])
             elif 24 >= self.tension > 17.5:
                 if self.numero_maquinas == 1:
@@ -1370,7 +1370,7 @@ class CT(object):
                         1000: '76',
                         1250: '77'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}W'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1385,7 +1385,7 @@ class CT(object):
                         1000: '86',
                         1250: '87'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}W'.format(values[key])
             elif 36 >= self.tension > 24:
                 if self.numero_maquinas == 1:
@@ -1401,7 +1401,7 @@ class CT(object):
                         1000: '76',
                         1250: '77'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}B'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1416,7 +1416,7 @@ class CT(object):
                         1000: '86',
                         1250: '87'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}B'.format(values[key])
             elif 52 >= self.tension > 36:
                 if self.numero_maquinas == 1:
@@ -1432,7 +1432,7 @@ class CT(object):
                         1000: '76',
                         1250: '77'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}C'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1447,7 +1447,7 @@ class CT(object):
                         1000: '86',
                         1250: '87'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}C'.format(values[key])
             elif 72.5 >= self.tension > 52:
                 if self.numero_maquinas == 1:
@@ -1463,7 +1463,7 @@ class CT(object):
                         1000: '76',
                         1250: '77'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}D'.format(values[key])
                 elif self.numero_maquinas == 2:
                     values = {
@@ -1478,7 +1478,7 @@ class CT(object):
                         1000: '86',
                         1250: '87'
                     }
-                    key = nearest(self.potencia, *values.keys())
+                    key = nearest(self.potencia/self.numero_maquinas, *values.keys())
                     return 'TI-{0}D'.format(values[key])
 
         if self.numero_maquinas == 0:
