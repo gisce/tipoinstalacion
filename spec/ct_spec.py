@@ -1610,7 +1610,7 @@ with description('Calculando el TI de un CT'):
         with context('si situacion es Local'):
             with context('si 2 máquinas 1250kVA'):
                 with it('must be TI-61U'):
-                    self.c.potencia = 1250
+                    self.c.potencia = 1250 *2
                     for t in range(1, 12):
                         self.c.tension = t
                         expect(self.c.tipoinstalacion).to(equal('TI-61U'))
