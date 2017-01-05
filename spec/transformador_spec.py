@@ -136,7 +136,7 @@ with description('Calculando el TI de un transformador'):
 with description('Calculando el TI de un transformador'):
     with before.each:
         self.t = Transformador()
-        self.tensions_p = range(37, 72) + [72.5]
+        self.tensions_p = range(36, 72)
 
     with context('si lat 72Kv >= tensión primario >=36 kV'):
         with context('si 36Kv >= tension de secundario > 24Kv'):
