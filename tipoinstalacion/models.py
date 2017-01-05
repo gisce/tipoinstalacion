@@ -127,7 +127,7 @@ class Linea(object):
                         elif 300 < s:
                             return 'TI-4VZ'
                 elif self.num_circuitos == 3:
-                    if self.num_conductores ==1:
+                    if self.num_conductores == 1:
                         if 0 < s <= 180:
                             return 'TI-3AVX'
                         elif 180 < s <= 300:
@@ -642,7 +642,7 @@ class Posicion(object):
                     return 'TI-105W'
                 elif self.situacion == 'E':
                     return 'TI-106W'
-            elif 12>=self.tension>=1:
+            elif 12 >= self.tension >= 1:
                 if self.situacion == 'I':
                     return 'TI-105B'
                 elif self.situacion == 'E':
@@ -710,14 +710,14 @@ class Transformador(object):
 
         :return:
         """
-        if self.tension_p == 420:
+        if 245 < self.tension_p:
             if 245 >= self.tension_s > 123:
                 return 'TI-158U'
             elif 123 >= self.tension_s > 72.5:
                 return 'TI-158V'
             elif 72.5 >= self.tension_s > 36:
                 return 'TI-158W'
-        elif self.tension_p == 245:
+        elif 145 < self.tension_p <= 245:
             if 245 >= self.tension_s > 123:
                 return 'TI-159U'
             elif 123 >= self.tension_s > 72.5:
@@ -730,7 +730,7 @@ class Transformador(object):
                 return 'TI-161W'
             elif 12 >= self.tension_s >= 1:
                 return 'TI-161B'
-        elif 145 >= self.tension_p > 72.5:
+        elif 72.5 <= self.tension_p <= 145:
             if 72.5 >= self.tension_s > 52:
                 return 'TI-162U'
             elif 52 >= self.tension_s > 36:
@@ -743,7 +743,7 @@ class Transformador(object):
                 return 'TI-163W'
             elif 12 >= self.tension_s >= 1:
                 return 'TI-163B'
-        elif 72.5 >= self.tension_p > 36:
+        elif 36 <= self.tension_p < 72.5:
             if 36 >= self.tension_s > 24:
                 return 'TI-164U'
             elif 24 >= self.tension_s > 17.5:
@@ -752,7 +752,7 @@ class Transformador(object):
                 return 'TI-164W'
             elif 12 >= self.tension_s >= 1:
                 return 'TI-164B'
-        elif 36 > self.tension_p >= 1:
+        elif 1 <= self.tension_p < 36:
             if 30 >= self.tension_s > 24:
                 return 'TI-165U'
             elif 24 >= self.tension_s > 17.5:
@@ -787,12 +787,13 @@ class Condensador(object):
         elif 36 >= self.tension > 1:
             return 'TI-171'
 
+
 class Reactancia(object):
     """
     Objeto que reperesenta una reactancia
 
-    Podemos obtener el Tipo de Instalcion creando un objeto reacancia, assignando
-    los
+    Podemos obtener el Tipo de Instalcion creando un objeto reacancia,
+    assignando los
 
     linea = Reactancai()
     # TODO: Explicar dev
