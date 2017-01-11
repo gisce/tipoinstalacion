@@ -4,7 +4,7 @@ import setuptools
 
 setuptools.setup(
     name='tipoinstalacion',
-    version='0.1.6',
+    version='0.1.7',
     packages=setuptools.find_packages(),
     url='https://github.com/gisce/tipoinstalacion',
     license='MIT',
