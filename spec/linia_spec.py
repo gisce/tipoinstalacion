@@ -18,6 +18,7 @@ def frange(start, end, step=0.1):
         res = round(float(r), precision)
         yield res
         r += step
+
 with description('Test Linea sin tension'):
     with context('si la tension es nula'):
         with before.each:
@@ -192,6 +193,33 @@ with description('Calculando el TI de una linia'):
                     self.l.seccion = 301
                     expect(self.l.tipoinstalacion).to(equal('TI-3AUZ'))
 
+    with context('si lat tensión > 123 kV'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'AP'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.l.tension = 124
+        with context('si la sección 0 < s < 180 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-3AUX'):
+                    for s in range(1, 180):
+                        self.l.seccion = s
+                        expect(self.l.tipoinstalacion).to(equal('TI-3AUX'))
+
+        with context('si la sección 180 < s <= 300 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-3AUY'):
+                    for s in range(181, 300):
+                        self.l.seccion = s
+                        expect(self.l.tipoinstalacion).to(equal('TI-3AUY'))
+
+        with context('si la sección  s < 300 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-3AUZ'):
+                    self.l.seccion = 301
+                    expect(self.l.tipoinstalacion).to(equal('TI-3AUZ'))
+
     with context('si la 72,5Kv < tensión<=123Kv'):
         with before.each:
             self.l = Linea()
@@ -360,7 +388,41 @@ with description('Calculando el TI de una linia'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
-                        expect(self.l.tipoinstalacion).to(equal( 'TI-3AVZ'))
+                        expect(self.l.tipoinstalacion).to(equal('TI-3AVZ'))
+
+    with context('si la 72,5Kv < tensión<=123Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'AP'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(73, 123) + [72.6]
+
+        with context('si la sección 0 < s < 180 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-3AVX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 180):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-3AVX'))
+
+        with context('si la sección 180 < s <= 300 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-3AVY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(181, 299):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-3AVY'))
+
+        with context('si la sección  s < 300 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-3AVZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 301
+                        expect(self.l.tipoinstalacion).to(equal('TI-3AVZ'))
 
     with context('si la 52Kv < tensión<=72,5Kv'):
         with before.each:
@@ -517,7 +579,7 @@ with description('Calculando el TI de una linia'):
 
         with context('si la sección 180 < s <= 300 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
-                with it('must be TI-8UY'):
+                with it('must be TI-7AUX'):
                     for t in self.tensiones:
                         self.l.tension = t
                         for s in range(181, 299):
@@ -526,7 +588,41 @@ with description('Calculando el TI de una linia'):
 
         with context('si la sección  s < 300 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
-                with it('must be TI-8UZ'):
+                with it('must be TI-7AUZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 301
+                        expect(self.l.tipoinstalacion).to(equal('TI-7AUZ'))
+
+    with context('si la 52Kv < tensión<=72,5Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'AP'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(53, 72) + [72.5]
+
+        with context('si la sección 0 < s < 180 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-7AUY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 180):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-7AUY'))
+
+        with context('si la sección 180 < s <= 300 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-7AUX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(181, 299):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-7AUX'))
+
+        with context('si la sección  s < 300 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-7AUZ'):
                     for t in self.tensiones:
                         self.l.tension = t
                         self.l.seccion = 301
@@ -702,6 +798,40 @@ with description('Calculando el TI de una linia'):
                         self.l.seccion = 301
                         expect(self.l.tipoinstalacion).to(equal('TI-7AVZ'))
 
+    with context('si la  36Kv < tensión <= 52Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'AP'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(37, 52)
+
+        with context('si la sección 0 < s < 180 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-7AVY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 180):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-7AVY'))
+
+        with context('si la sección 180 < s <= 300 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-7AVX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(181, 299):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-7AVX'))
+
+        with context('si la sección  s < 300 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-7AVZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 301
+                        expect(self.l.tipoinstalacion).to(equal('TI-7AVZ'))
+
     with context('si la  24Kv < tensión <= 36Kv'):
         with before.each:
             self.l = Linea()
@@ -798,6 +928,40 @@ with description('Calculando el TI de una linia'):
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito triple'):
+                with it('must be TI-10AUZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 111
+                        expect(self.l.tipoinstalacion).to(equal('TI-10AUZ'))
+
+    with context('si la  24Kv < tensión <= 36Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'AP'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(25, 36)
+
+        with context('si la sección 0 < s <= 56 '):
+            with context('si la linea es Aerea circuito cuatruple'):
+                with it('must be TI-10AUX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 56):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AUX'))
+
+        with context('si la sección 56 < s <= 110 '):
+            with context('si la linea es Aerea circuito cuatruple'):
+                with it('must be TI-10AUY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(57, 110):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AUY'))
+
+        with context('si la sección  110 < s'):
+            with context('si la linea es Aerea circuito cuatruple'):
                 with it('must be TI-10AUZ'):
                     for t in self.tensiones:
                         self.l.tension = t
@@ -906,6 +1070,40 @@ with description('Calculando el TI de una linia'):
                         self.l.seccion = 111
                         expect(self.l.tipoinstalacion).to(equal('TI-10AVZ'))
 
+    with context('si la  17,5Kv < tensión <= 24Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'AP'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(18, 24)
+
+        with context('si la sección 0 < s <= 56 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-10AVX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 56):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AVX'))
+
+        with context('si la sección 56 < s <= 110 '):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-10AVY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(57, 110):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AVY'))
+
+        with context('si la sección  110 < s'):
+            with context('si la linea es Aerea cuatruple circuito-Simplex'):
+                with it('must be TI-10AVZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 111
+                        expect(self.l.tipoinstalacion).to(equal('TI-10AVZ'))
+
     with context('si la 12Kv < tensión <= 17,5Kv'):
         with before.each:
             self.l = Linea()
@@ -1008,6 +1206,40 @@ with description('Calculando el TI de una linia'):
                         self.l.seccion = 111
                         expect(self.l.tipoinstalacion).to(equal('TI-10AWZ'))
 
+    with context('si la 12Kv < tensión <= 17,5Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'AP'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(13, 17) + [17.5]
+
+        with context('si la sección 0 < s <= 56 '):
+            with context('si la linea es Aerea circuito cuatruple'):
+                with it('must be TI-10AWX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 56):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AWX'))
+
+        with context('si la sección 56 < s <= 110 '):
+            with context('si la linea es Aerea circuito cuatruple'):
+                with it('must be TI-10AWY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(57, 110):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-10AWY'))
+
+        with context('si la sección  110 < s'):
+            with context('si la linea es Aerea circuito cuatruple'):
+                with it('must be TI-10AWZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 111
+                        expect(self.l.tipoinstalacion).to(equal('TI-10AWZ'))
+
     with context('si la 1Kv < tensión <= 12Kv'):
         with before.each:
             self.l = Linea()
@@ -1104,6 +1336,40 @@ with description('Calculando el TI de una linia'):
 
         with context('si la sección  110 < s'):
             with context('si la linea es Aerea circuito triple'):
+                with it('must be TI-10ABZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 111
+                        expect(self.l.tipoinstalacion).to(equal('TI-10ABZ'))
+
+    with context('si la 1Kv < tensión <= 12Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'AP'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(2, 12)
+
+        with context('si la sección 0 < s <= 56 '):
+            with context('si la linea es Aerea circuito cuatruple'):
+                with it('must be TI-10ABX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 56):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-10ABX'))
+
+        with context('si la sección 56 < s <= 110 '):
+            with context('si la linea es Aerea circuito cuatruple'):
+                with it('must be TI-10ABY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(57, 110):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-10ABY'))
+
+        with context('si la sección  110 < s'):
+            with context('si la linea es Aerea circuito cuatruple'):
                 with it('must be TI-10ABZ'):
                     for t in self.tensiones:
                         self.l.tension = t
@@ -1275,6 +1541,40 @@ with description('Calculando el TI de una linia'):
                         self.l.seccion = 1201
                         expect(self.l.tipoinstalacion).to(equal('TI-15AUZ'))
 
+    with context('si la 123Kv < tensión '):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'S'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = [124]
+
+        with context('si la sección 0 < s <= 630 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-15UX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 630):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-15AUX'))
+
+        with context('si la sección 630 < s <= 1200 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-15UY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(631, 1200):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-15AUY'))
+
+        with context('si la sección  1200 < s '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-15UZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 1201
+                        expect(self.l.tipoinstalacion).to(equal('TI-15AUZ'))
+
     with context('si la 72,5Kv < tensión =<123Kv'):
         with before.each:
             self.l = Linea()
@@ -1371,6 +1671,40 @@ with description('Calculando el TI de una linia'):
 
         with context('si la sección  s <= 630 '):
             with context('si la linea es Subterranea circuito triple'):
+                with it('must be TI-15AVZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 1201
+                        expect(self.l.tipoinstalacion).to(equal('TI-15AVZ'))
+
+    with context('si la 72,5Kv < tensión =<123Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'S'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(73, 123)
+
+        with context('si la sección 0 < s <= 630 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-15AVX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 630):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-15AVX'))
+
+        with context('si la sección 0 < s <= 630 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-15AVY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(631, 1200):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-15AVY'))
+
+        with context('si la sección  s <= 630 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
                 with it('must be TI-15AVZ'):
                     for t in self.tensiones:
                         self.l.tension = t
@@ -1479,6 +1813,40 @@ with description('Calculando el TI de una linia'):
                         self.l.seccion = 1201
                         expect(self.l.tipoinstalacion).to(equal('TI-17AUZ'))
 
+    with context('si la  52Kv < tensión =<72,5Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'S'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(53, 72) + [72.5]
+
+        with context('si la sección 0 < s <= 300 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-17AUX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 300):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-17AUX'))
+
+        with context('si la sección 300 < s <= 500 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-17AUY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(301, 500):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-17AUY'))
+
+        with context('si la sección  500 < s '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-17AUZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 1201
+                        expect(self.l.tipoinstalacion).to(equal('TI-17AUZ'))
+
     with context('si la   36Kv < tensión =<52Kv'):
         with before.each:
             self.l = Linea()
@@ -1575,6 +1943,40 @@ with description('Calculando el TI de una linia'):
 
         with context('si la sección  500 < s '):
             with context('si la linea es Subterranea circuito triple'):
+                with it('must be TI-17AVZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 501
+                        expect(self.l.tipoinstalacion).to(equal('TI-17AVZ'))
+
+    with context('si la   36Kv < tensión =<52Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'S'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(37, 52)
+
+        with context('si la sección 0 < s <= 300 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-17AVX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 300):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-17AVX'))
+
+        with context('si la sección 300 < s <= 500 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-17AVY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(301, 500):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-17AVY'))
+
+        with context('si la sección  500 < s '):
+            with context('si la linea es Subterranea circuito cuatruple'):
                 with it('must be TI-17AVZ'):
                     for t in self.tensiones:
                         self.l.tension = t
@@ -1683,6 +2085,40 @@ with description('Calculando el TI de una linia'):
                         self.l.seccion = 301
                         expect(self.l.tipoinstalacion).to(equal('TI-19AUZ'))
 
+    with context('si la   24Kv < tensión =<36Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'S'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(25, 36)
+
+        with context('si la sección 0 < s <= 200 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-19AUX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 200):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AUX'))
+
+        with context('si la sección 200 < s <= 300 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-19AUY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(201, 300):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AUY'))
+
+        with context('si la sección  300 < s '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-19AUZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 301
+                        expect(self.l.tipoinstalacion).to(equal('TI-19AUZ'))
+
     with context('si la  17,5Kv < tensión =<24Kv'):
         with before.each:
             self.l = Linea()
@@ -1779,6 +2215,40 @@ with description('Calculando el TI de una linia'):
 
         with context('si la sección  300 < s '):
             with context('si la linea es Subterranea circuito triple'):
+                with it('must be TI-19AVZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 301
+                        expect(self.l.tipoinstalacion).to(equal('TI-19AVZ'))
+
+    with context('si la  17,5Kv < tensión =<24Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'S'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(18, 24)
+
+        with context('si la sección 0 < s <= 200 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-19AVX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 200):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AVX'))
+
+        with context('si la sección 200 < s <= 300 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-19AVY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(201, 300):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AVY'))
+
+        with context('si la sección  300 < s '):
+            with context('si la linea es Subterranea circuito cuatruple'):
                 with it('must be TI-19AVZ'):
                     for t in self.tensiones:
                         self.l.tension = t
@@ -1887,6 +2357,40 @@ with description('Calculando el TI de una linia'):
                         self.l.seccion = 301
                         expect(self.l.tipoinstalacion).to(equal('TI-19AWZ'))
 
+    with context('si la  12Kv < tensión =<17,5Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'S'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(13, 17) + [17.5]
+
+        with context('si la sección 0 < s <= 200 '):
+            with context('si la linea es Subterranea cuatruple circuito simple'):
+                with it('must be TI-19AWX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 200):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AWX'))
+
+        with context('si la sección 200 < s <= 300 '):
+            with context('si la linea es Subterranea cuatruple circuito simple'):
+                with it('must be TI-19AWY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(201, 300):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-19AWY'))
+
+        with context('si la sección  300 < s '):
+            with context('si la linea es Subterranea cuatruple circuito simple'):
+                with it('must be TI-19AWZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 301
+                        expect(self.l.tipoinstalacion).to(equal('TI-19AWZ'))
+
     with context('si la 1Kv =< tensión =<12Kv'):
         with before.each:
             self.l = Linea()
@@ -1983,6 +2487,40 @@ with description('Calculando el TI de una linia'):
 
         with context('si la sección  200 < s '):
             with context('si la linea es Subterranea circuito doble'):
+                with it('must be TI-19ABZ'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        self.l.seccion = 201
+                        expect(self.l.tipoinstalacion).to(equal('TI-19ABZ'))
+
+    with context('si la 1Kv =< tensión =<12Kv'):
+        with before.each:
+            self.l = Linea()
+            self.l.despliegue = 'S'
+            self.l.num_circuitos = 4
+            self.l.num_conductores = 1
+            self.tensiones = range(1, 12)
+
+        with context('si la sección 0 < s <= 100 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-19ABX'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(1, 100):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-19ABX'))
+
+        with context('si la sección 100 < s <= 200 '):
+            with context('si la linea es Subterranea circuito cuatruple'):
+                with it('must be TI-19ABY'):
+                    for t in self.tensiones:
+                        self.l.tension = t
+                        for s in range(101, 200):
+                            self.l.seccion = s
+                            expect(self.l.tipoinstalacion).to(equal('TI-19ABY'))
+
+        with context('si la sección  200 < s '):
+            with context('si la linea es Subterranea circuito cuatruple'):
                 with it('must be TI-19ABZ'):
                     for t in self.tensiones:
                         self.l.tension = t

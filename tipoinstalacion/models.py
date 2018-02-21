@@ -87,7 +87,7 @@ class Linea(object):
                             return 'TI-4UY'
                         elif 300 < s:
                             return 'TI-4UZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if self.num_conductores == 1:
                         if 0 < s <= 180:
                             return 'TI-3AUX'
@@ -126,7 +126,7 @@ class Linea(object):
                             return 'TI-4VY'
                         elif 300 < s:
                             return 'TI-4VZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if self.num_conductores == 1:
                         if 0 < s <= 180:
                             return 'TI-3AVX'
@@ -173,6 +173,14 @@ class Linea(object):
                             return 'TI-7AUX'
                         elif 300 < s:
                             return 'TI-7AUZ'
+                elif self.num_circuitos >= 3:
+                    if self.num_conductores == 1:
+                        if 0 < s <= 180:
+                            return 'TI-7AUY'
+                        elif 180 < s <= 300:
+                            return 'TI-7AUX'
+                        elif 300 < s:
+                            return 'TI-7AUZ'
             elif 52 >= u > 36:
                 if self.num_circuitos == 1:
                     if self.num_conductores == 1:
@@ -204,7 +212,7 @@ class Linea(object):
                             return 'TI-8VY'
                         elif 300 < s:
                             return 'TI-8VZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if self.num_conductores == 1:
                         if 0 < s <= 180:
                             return 'TI-7AVY'
@@ -227,7 +235,7 @@ class Linea(object):
                         return 'TI-10UY'
                     elif 110 < s:
                         return 'TI-10UZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 56:
                         return 'TI-10AUX'
                     elif 56 < s <= 110:
@@ -249,7 +257,7 @@ class Linea(object):
                         return 'TI-10VY'
                     elif 110 < s:
                         return 'TI-10VZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 56:
                         return 'TI-10AVX'
                     elif 56 < s <= 110:
@@ -271,7 +279,7 @@ class Linea(object):
                         return 'TI-10WY'
                     elif 110 < s:
                         return 'TI-10WZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 56:
                         return 'TI-10AWX'
                     elif 56 < s <= 110:
@@ -293,7 +301,7 @@ class Linea(object):
                         return 'TI-10BY'
                     elif 110 < s:
                         return 'TI-10BZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 56:
                         return 'TI-10ABX'
                     elif 56 < s <= 110:
@@ -340,7 +348,7 @@ class Linea(object):
                         return 'TI-15UY'
                     elif 1200 < s:
                         return 'TI-15UZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 630:
                         return 'TI-15AUX'
                     elif 630 < s <= 1200:
@@ -362,7 +370,7 @@ class Linea(object):
                         return 'TI-15VY'
                     elif 1200 < s:
                         return 'TI-15VZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 630:
                         return 'TI-15AVX'
                     elif 630 < s <= 1200:
@@ -384,7 +392,7 @@ class Linea(object):
                         return 'TI-17UX'
                     elif 500 < s:
                         return 'TI-17UZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 300:
                         return 'TI-17AUX'
                     elif 300 < s <= 500:
@@ -406,7 +414,7 @@ class Linea(object):
                         return 'TI-17VX'
                     elif 500 < s:
                         return 'TI-17VZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 300:
                         return 'TI-17AVX'
                     elif 300 < s <= 500:
@@ -429,7 +437,7 @@ class Linea(object):
                         return 'TI-19UY'
                     elif 300 < s:
                         return 'TI-19UZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 200:
                         return 'TI-19AUX'
                     elif 200 < s <= 300:
@@ -452,7 +460,7 @@ class Linea(object):
                         return 'TI-19VY'
                     elif 300 < s:
                         return 'TI-19VZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 200:
                         return 'TI-19AVX'
                     elif 200 < s <= 300:
@@ -475,7 +483,7 @@ class Linea(object):
                         return 'TI-19WY'
                     elif 300 < s:
                         return 'TI-19WZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 200:
                         return 'TI-19AWX'
                     elif 200 < s <= 300:
@@ -497,7 +505,7 @@ class Linea(object):
                         return 'TI-19BY'
                     elif 200 < s:
                         return 'TI-19BZ'
-                elif self.num_circuitos == 3:
+                elif self.num_circuitos >= 3:
                     if 0 < s <= 100:
                         return 'TI-19ABX'
                     elif 100 < s <= 200:
