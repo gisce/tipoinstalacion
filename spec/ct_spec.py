@@ -3160,6 +3160,7 @@ with description('Calculando el TI de un CT'):
 
     with context('si 52kV>=tension>36kV'):
         with before.each:
+            self.c = CT()
             self.c.situacion = 'S'
             self.c.numero_maquinas = 2
 
@@ -3245,6 +3246,7 @@ with description('Calculando el TI de un CT'):
 
     with context('si 72.5kV>=tension>52kV'):
         with before.each:
+            self.c = CT()
             self.c.situacion = 'S'
             self.c.numero_maquinas = 1
 
@@ -3330,6 +3332,7 @@ with description('Calculando el TI de un CT'):
 
     with context('si 72.5kV>=tension>52kV'):
         with before.each:
+            self.c = CT()
             self.c.situacion = 'S'
             self.c.numero_maquinas = 2
 
