@@ -226,7 +226,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123) + [72.6]
+            self.tensiones = list(range(73, 123)) + [72.6]
 
         with context('si la sección 0 < s <= 180 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -260,7 +260,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 1
             self.l.num_conductores = 2
-            self.tensiones = range(73, 123) + [72.6]
+            self.tensiones = list(range(73, 123)) + [72.6]
 
         with context('si la sección 0 < s < 180 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -294,7 +294,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123) + [72.6]
+            self.tensiones = list(range(73, 123)) + [72.6]
 
         with context('si la sección 0 < s <= 180 '):
             with context('si la linea es Aerea circuito doble-Simplex'):
@@ -328,7 +328,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 2
             self.l.num_conductores = 2
-            self.tensiones = range(73, 123) + [72.6]
+            self.tensiones = list(range(73, 123)) + [72.6]
 
         with context('si la sección 0 < s <= 180 '):
             with context('si la linea es Aerea circuito doble-Duplex'):
@@ -362,7 +362,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123) + [72.6]
+            self.tensiones = list(range(73, 123)) + [72.6]
 
         with context('si la sección 0 < s < 180 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -396,7 +396,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 4
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123) + [72.6]
+            self.tensiones = list(range(73, 123)) + [72.6]
 
         with context('si la sección 0 < s < 180 '):
             with context('si la linea es Aerea cuatruple circuito-Simplex'):
@@ -430,7 +430,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(53, 72) + [72.5]
+            self.tensiones = list(range(53, 72)) + [72.5]
 
         with context('si la sección 0 < s <= 180 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -464,7 +464,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 1
             self.l.num_conductores = 2
-            self.tensiones = range(53, 72) + [72.5]
+            self.tensiones = list(range(53, 72)) + [72.5]
 
         with context('si la sección 0 < s <= 180 '):
             with context('si la linea es Aerea circuito simple-Duplex'):
@@ -498,7 +498,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(53, 72) + [72.5]
+            self.tensiones = list(range(53, 72)) + [72.5]
 
         with context('si la sección 0 < s < 180 '):
             with context('si la linea es Aerea circuito doble-Simplex'):
@@ -532,7 +532,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 2
             self.l.num_conductores = 2
-            self.tensiones = range(53, 72) + [72.5]
+            self.tensiones = list(range(53, 72)) + [72.5]
 
         with context('si la sección 0 < s < 180 '):
             with context('si la linea es Aerea circuito doble-Duplex'):
@@ -566,7 +566,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(53, 72) + [72.5]
+            self.tensiones = list(range(53, 72)) + [72.5]
 
         with context('si la sección 0 < s < 180 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -600,7 +600,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 4
             self.l.num_conductores = 1
-            self.tensiones = range(53, 72) + [72.5]
+            self.tensiones = list(range(53, 72)) + [72.5]
 
         with context('si la sección 0 < s < 180 '):
             with context('si la linea es Aerea cuatruple circuito-Simplex'):
@@ -634,7 +634,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(37, 52)
+            self.tensiones = list(range(37, 52))
 
         with context('si la sección 0 < s <= 180 '):
             with context('si la linea es Aerea circuito simple-Simplex'):
@@ -668,7 +668,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 1
             self.l.num_conductores = 2
-            self.tensiones = range(37, 52)
+            self.tensiones = list(range(37, 52))
 
         with context('si la sección 0 < s <= 180 '):
             with context('si la linea es Aerea circuito simple-Duplex'):
@@ -702,7 +702,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(37, 52)
+            self.tensiones = list(range(37, 52))
 
         with context('si la sección 0 < s <= 180 '):
             with context('si la linea es Aerea circuito doble-Simplex'):
@@ -736,7 +736,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 2
             self.l.num_conductores = 2
-            self.tensiones = range(37, 52)
+            self.tensiones = list(range(37, 52))
 
         with context('si la sección 0 < s <= 180 '):
             with context('si la linea es Aerea circuito doble-Duplex'):
@@ -770,7 +770,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(37, 52)
+            self.tensiones = list(range(37, 52))
 
         with context('si la sección 0 < s < 180 '):
             with context('si la linea es Aerea circuito triple-Simplex'):
@@ -804,7 +804,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 4
             self.l.num_conductores = 1
-            self.tensiones = range(37, 52)
+            self.tensiones = list(range(37, 52))
 
         with context('si la sección 0 < s < 180 '):
             with context('si la linea es Aerea cuatruple circuito-Simplex'):
@@ -1110,7 +1110,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(13, 17)+[17.5]
+            self.tensiones = list(range(13, 17))+[17.5]
 
         with context('si la sección 0 < s <= 56 '):
             with context('si la linea es Aerea circuito simple'):
@@ -1144,7 +1144,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(13, 17)+[17.5]
+            self.tensiones = list(range(13, 17))+[17.5]
 
         with context('si la sección 0 < s <= 56 '):
             with context('si la linea es Aerea circuito doble'):
@@ -1178,7 +1178,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(13, 17) + [17.5]
+            self.tensiones = list(range(13, 17)) + [17.5]
 
         with context('si la sección 0 < s <= 56 '):
             with context('si la linea es Aerea circuito triple'):
@@ -1212,7 +1212,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'AP'
             self.l.num_circuitos = 4
             self.l.num_conductores = 1
-            self.tensiones = range(13, 17) + [17.5]
+            self.tensiones = list(range(13, 17)) + [17.5]
 
         with context('si la sección 0 < s <= 56 '):
             with context('si la linea es Aerea circuito cuatruple'):
@@ -1581,7 +1581,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123)
+            self.tensiones = list(range(73, 123))
 
         with context('si la sección 0 < s <= 630 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1615,7 +1615,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123)
+            self.tensiones = list(range(73, 123))
 
         with context('si la sección 0 < s <= 630 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1649,7 +1649,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123)
+            self.tensiones = list(range(73, 123))
 
         with context('si la sección 0 < s <= 630 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1683,7 +1683,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 4
             self.l.num_conductores = 1
-            self.tensiones = range(73, 123)
+            self.tensiones = list(range(73, 123))
 
         with context('si la sección 0 < s <= 630 '):
             with context('si la linea es Subterranea circuito cuatruple'):
@@ -1717,7 +1717,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(53, 72) + [72.5]
+            self.tensiones = list(range(53, 72)) + [72.5]
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1751,7 +1751,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(53, 72) + [72.5]
+            self.tensiones = list(range(53, 72)) + [72.5]
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1785,7 +1785,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(53, 72) + [72.5]
+            self.tensiones = list(range(53, 72)) + [72.5]
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito tripe'):
@@ -1819,7 +1819,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 4
             self.l.num_conductores = 1
-            self.tensiones = range(53, 72) + [72.5]
+            self.tensiones = list(range(53, 72)) + [72.5]
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito cuatruple'):
@@ -1853,7 +1853,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(37, 52)
+            self.tensiones = list(range(37, 52))
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -1887,7 +1887,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(37, 52)
+            self.tensiones = list(range(37, 52))
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito doble'):
@@ -1921,7 +1921,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(37, 52)
+            self.tensiones = list(range(37, 52))
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito triple'):
@@ -1955,7 +1955,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 4
             self.l.num_conductores = 1
-            self.tensiones = range(37, 52)
+            self.tensiones = list(range(37, 52))
 
         with context('si la sección 0 < s <= 300 '):
             with context('si la linea es Subterranea circuito cuatruple'):
@@ -2261,7 +2261,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 1
             self.l.num_conductores = 1
-            self.tensiones = range(13, 17) + [17.5]
+            self.tensiones = list(range(13, 17)) + [17.5]
 
         with context('si la sección 0 < s <= 200 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -2295,7 +2295,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 2
             self.l.num_conductores = 1
-            self.tensiones = range(13, 17) + [17.5]
+            self.tensiones = list(range(13, 17)) + [17.5]
 
         with context('si la sección 0 < s <= 200 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -2329,7 +2329,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 3
             self.l.num_conductores = 1
-            self.tensiones = range(13, 17) + [17.5]
+            self.tensiones = list(range(13, 17)) + [17.5]
 
         with context('si la sección 0 < s <= 200 '):
             with context('si la linea es Subterranea circuito simple'):
@@ -2363,7 +2363,7 @@ with description('Calculando el TI de una linia'):
             self.l.despliegue = 'S'
             self.l.num_circuitos = 4
             self.l.num_conductores = 1
-            self.tensiones = range(13, 17) + [17.5]
+            self.tensiones = list(range(13, 17)) + [17.5]
 
         with context('si la sección 0 < s <= 200 '):
             with context('si la linea es Subterranea cuatruple circuito simple'):

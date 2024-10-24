@@ -22,7 +22,7 @@ with description('Calculando el TI de un transformador'):
 
         with context('si 72Kv >= tension de secundario > 36Kv'):
             with it('must be TI-158W'):
-                for t in range(37, 72) + [72.5]:
+                for t in list(range(37, 72)) + [72.5]:
                     self.t.tension_s = t
                     expect(self.t.tipoinstalacion).to(equal('TI-158W'))
 
@@ -48,7 +48,7 @@ with description('Calculando el TI de un transformador'):
     with context('si lat tensión primario = 245 kV'):
         with context('si 72.5v >= tension de secundario > 36Kv'):
             with it('must be TI-160U'):
-                for t in range(37, 72) + [72.5]:
+                for t in list(range(37, 72)) + [72.5]:
                     self.t.tension_s = t
                     expect(self.t.tipoinstalacion).to(equal('TI-160U'))
 
@@ -62,7 +62,7 @@ with description('Calculando el TI de un transformador'):
     with context('si lat tensión primario = 245 kV'):
         with context('si 17.5Kv >= tension de secundario > 12Kv'):
             with it('must be TI-161W'):
-                for t in range(13, 17) + [17.5]:
+                for t in list(range(13, 17)) + [17.5]:
                     self.t.tension_s = t
                     expect(self.t.tipoinstalacion).to(equal('TI-161W'))
 
@@ -83,7 +83,7 @@ with description('Calculando el TI de un transformador'):
             with it('must be TI-162U'):
                 for t_p in self.tensions_p:
                     self.t.tension_p = t_p
-                    for t in range(53, 72) + [72.5]:
+                    for t in list(range(53, 72)) + [72.5]:
                         self.t.tension_s = t
                         expect(self.t.tipoinstalacion).to(equal('TI-162U'))
 
@@ -92,7 +92,7 @@ with description('Calculando el TI de un transformador'):
             with it('must be TI-162V'):
                 for t_p in self.tensions_p:
                     self.t.tension_p = t_p
-                    for t in range(37, 52):
+                    for t in list(range(37, 52)):
                         self.t.tension_s = t
                         expect(self.t.tipoinstalacion).to(equal('TI-162V'))
 
@@ -119,7 +119,7 @@ with description('Calculando el TI de un transformador'):
             with it('must be TI-163W'):
                 for t_p in self.tensions_p:
                     self.t.tension_p = t_p
-                    for t in range(13, 16) + [17.5]:
+                    for t in list(range(13, 16)) + [17.5]:
                         self.t.tension_s = t
                         expect(self.t.tipoinstalacion).to(equal('TI-163W'))
 
@@ -193,7 +193,7 @@ with description('Calculando el TI de un transformador'):
             with it('must be TI-165W'):
                 for t_p in self.tensions_p:
                     self.t.tension_p = t_p
-                    for t in range(13, 17) + [17.5]:
+                    for t in list(range(13, 17)) + [17.5]:
                         self.t.tension_s = t
                         expect(self.t.tipoinstalacion).to(equal('TI-165W'))
 

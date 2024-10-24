@@ -1,5 +1,5 @@
-
 # coding=utf-8
+from __future__ import absolute_import, unicode_literals
 """
 Modelos de datos básicos para calcular los Tipos de Instalacion.
 """
@@ -56,6 +56,8 @@ class Linea(object):
         if self.despliegue[0] == 'A':
             u = self.tension
             s = self.seccion
+            if not u:
+                u = 0
             if u > 123:
                 if self.num_circuitos == 1:
                     if self.num_conductores == 1:
@@ -333,6 +335,8 @@ class Linea(object):
         elif self.despliegue[0] == 'S':
             u = self.tension
             s = self.seccion
+            if not u:
+                u = 0
             if u > 123:
                 if self.num_circuitos == 1:
                     if 0 < s <= 630:
