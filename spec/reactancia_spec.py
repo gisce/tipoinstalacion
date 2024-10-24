@@ -15,7 +15,7 @@ with description('Calculando el TI de una reactancia'):
 
     with context('si la 72.5kV>=tenision>36kV'):
         with it('must be TI-167'):
-            for t in range(37, 72) + [72.5]:
+            for t in list(range(37, 72)) + [72.5]:
                 self.r.tension = t
                 expect(self.r.tipoinstalacion).to(equal('TI-167'))
 

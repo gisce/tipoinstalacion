@@ -43,7 +43,7 @@ with description('Calculando el TI de una posicion'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'B'
-            self.tensions = range(73, 123)
+            self.tensions = list(range(73, 123))
         with context('situado en Initerior'):
             with it('must be TI-88V'):
                 self.p.situacion = 'I'
@@ -68,7 +68,7 @@ with description('Calculando el TI de una posicion'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'B'
-            self.tensions = range(53, 72) + [72.5]
+            self.tensions = list(range(53, 72)) + [72.5]
         with context('situado en Initerior'):
             with it('must be TI-95U'):
                 self.p.situacion = 'I'
@@ -93,7 +93,7 @@ with description('Calculando el TI de una linia'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'B'
-            self.tensions = range(37, 52)
+            self.tensions = list(list(range(37, 52)))
         with context('situado en Initerior'):
             with it('must be TI-95V'):
                 self.p.situacion = 'I'
@@ -168,7 +168,7 @@ with description('Calculando el TI de una linia'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'B'
-            self.tensions = range(13, 17) + [17.5]
+            self.tensions = list(range(13, 17)) + [17.5]
         with context('situado en Initerior'):
             with it('must be TI-102W'):
                 self.p.situacion = 'I'
@@ -234,7 +234,7 @@ with description('Calculando el TI de una linia'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'C'
-            self.tensions = range(73, 123)
+            self.tensions = list(range(73, 123))
         with context('situado en Initerior'):
             with it('must be TI-91V'):
                 self.p.situacion = 'I'
@@ -253,7 +253,7 @@ with description('Calculando el TI de una linia'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'C'
-            self.tensions = range(53,72) + [72.5]
+            self.tensions = list(range(53,72)) + [72.5]
         with context('situado en Initerior'):
             with it('must be TI-98U'):
                 self.p.situacion = 'I'
@@ -272,7 +272,7 @@ with description('Calculando el TI de una linia'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'C'
-            self.tensions = range(37, 52)
+            self.tensions = list(range(37, 52))
         with context('situado en Initerior'):
             with it('must be TI-99V'):
                 self.p.situacion = 'I'
@@ -329,7 +329,7 @@ with description('Calculando el TI de una linia'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'C'
-            self.tensions = range(13, 17) + [17.5]
+            self.tensions = list(range(13, 17)) + [17.5]
         with context('situado en Initerior'):
             with it('must be TI-105W'):
                 self.p.situacion = 'I'
@@ -387,7 +387,7 @@ with description('Calculando el TI de una linia'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'H'
-            self.tensions = range(73, 123)
+            self.tensions = list(range(73, 123))
         with context('situado en Initerior'):
             with it('must be TI-93V'):
                 self.p.situacion = 'I'
@@ -406,7 +406,7 @@ with description('Calculando el TI de una linia'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'H'
-            self.tensions = range(53, 72) + [72.5]
+            self.tensions = list(range(53, 72)) + [72.5]
         with context('situado en Initerior'):
             with it('must be TI-100U'):
                 self.p.situacion = 'I'
@@ -425,7 +425,7 @@ with description('Calculando el TI de una linia'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'H'
-            self.tensions = range(37, 52)
+            self.tensions = list(range(37, 52))
         with context('situado en Initerior'):
             with it('must be TI-100V'):
                 self.p.situacion = 'I'
@@ -482,7 +482,7 @@ with description('Calculando el TI de una linia'):
         with before.each:
             self.p = Posicion()
             self.p.tipo = 'H'
-            self.tensions = range(13, 17) + [17.5]
+            self.tensions = list(range(13, 17)) + [17.5]
         with context('situado en Initerior'):
             with it('must be TI-107W'):
                 self.p.situacion = 'I'
