@@ -58,6 +58,8 @@ class Linea(object):
             s = self.seccion
             if not u:
                 u = 0
+            if not s:
+                s = 0
             if u > 123:
                 if self.num_circuitos == 1:
                     if self.num_conductores == 1:
@@ -337,6 +339,8 @@ class Linea(object):
             s = self.seccion
             if not u:
                 u = 0
+            if not s:
+                s = 0
             if u > 123:
                 if self.num_circuitos == 1:
                     if 0 < s <= 630:
