@@ -12,6 +12,6 @@ with description('Searching the nearest element'):
             x = nearest(14, 1, 2, 3, 20, 40)
             expect(x).to(equal(20))
         with context('if the element is just in the middle between to values'):
-            with it('must return the greatest'):
+            with it('must return the lowest'):
                 x = nearest(35, 0, 30, 40)
-                expect(x).to(equal(40))
+                expect(x).to(equal(30))
