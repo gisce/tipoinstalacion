@@ -8,18 +8,16 @@ except Exception as e:
 
 def nearest(value, *values):
     """
-    Get the nearest value from values
+    Get the nearest value from values.
+    That is, the highest key less than or equal to `value`.
+    If there is none, returns the lowest of the keys.
+
     :param value: value to find
     :param values: list of values to return
     :return: the nearest value from values
     """
-    ant_diff = None
-    values = list(sorted(values))
-    for idx, v in enumerate(values):
-        diff = abs(value - v)
-        if diff == 0:
-            return v
-        elif ant_diff is not None and diff > ant_diff:
-            return values[idx - 1]
-        ant_diff = diff
-    return v
+    keys = sorted(values)
+    for k in reversed(keys):
+        if k <= value:
+            return k
+    return keys[0]
