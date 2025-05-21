@@ -8,18 +8,21 @@ except Exception as e:
 
 def nearest(value, *values):
     """
-    Get the nearest value from values
+    Get the nearest value from values.
+    If there is a tie, returns the lowest of the keys.
+
     :param value: value to find
     :param values: list of values to return
     :return: the nearest value from values
     """
-    ant_diff = None
-    values = list(sorted(values))
-    for idx, v in enumerate(values):
+    values = sorted(values)
+    best = values[0]
+    best_diff = abs(value - best)
+    for v in values[1:]:
         diff = abs(value - v)
-        if diff == 0:
-            return v
-        elif ant_diff is not None and diff > ant_diff:
-            return values[idx - 1]
-        ant_diff = diff
-    return v
+        if diff < best_diff:
+            best = v
+            best_diff = diff
+        elif diff == best_diff and v < best:
+            best = v  # breaks draw in favor of the floor value
+    return best
