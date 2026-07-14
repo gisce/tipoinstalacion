@@ -8,6 +8,9 @@ on:
 
 jobs:
   run-tests:
+    if: |
+      github.event_name == 'push' ||
+      contains(github.event.pull_request.labels.*.name, 'to be merged')
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
