@@ -28,26 +28,28 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Install Python 2
+    - name: Run tests with Python 2.7
       if: matrix.python-version == '2.7'
       run: |
-          sudo apt update
-          sudo apt install python2 python-pip
-          sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
-          sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
-          printf '1\n' | sudo update-alternatives --config python
-          cd /usr/bin
-          sudo ln -s /usr/bin/pip2 ./pip
+        docker run --rm -v "$PWD:/work" -w /work python:2.7 bash -lc "
+          python -m pip install --upgrade 'pip<21' 'setuptools<45' wheel &&
+          pip install -r requirements-dev.txt &&
+          pip install -e . &&
+          mamba
+        "
 
     - name: Upgrade pip
+      if: matrix.python-version != '2.7'
       run: |
         pip install --upgrade pip setuptools wheel
 
     - name: Install dependencies
+      if: matrix.python-version != '2.7'
       run: |
         pip install -r requirements-dev.txt
         pip install -e .
 
     - name: Run test
+      if: matrix.python-version != '2.7'
       run: |
         mamba
